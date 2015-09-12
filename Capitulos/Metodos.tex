@@ -1,0 +1,89 @@
+%---------------------------------------------------------------------
+%
+%                          Métodos
+%
+%---------------------------------------------------------------------
+%
+\chapter{Métodos de clasificación}
+\label{capMetodos}
+
+En esta sección se describirán los aspectos fundamentales del funcionamiento de los cuatro métodos de clasificación con que se analizarán los datos: Discriminante Lineal de Fisher (LDA), Bayes Naive, Máquinas de Soporte Vectorial (SVM) y Random Forest.
+
+\section{Discriminante Lineal de Fisher}
+\label{capMetodos:sec:LDA}
+
+El método del discriminante lineal utilizado es una generalización del descripto originalmente por Fisher \citep{fisher1936use}. El mismo resulta óptimo en el caso de variables con distribución normal y permite encontrar el hiperplano que mejor separa las dos clases, siendo posible la generalización para un número mayor de clases \citep{rao1948utilization}.\\
+En la figura~\ref{capMetodos:fig:LDA} se ilustra el caso de dos poblaciónes diferentes (A y B) que se pretende separar con un hiperplano.\\
+
+\figura{Bitmap/03/LDA}{width=1\textwidth}{capMetodos:fig:LDA}%
+{Separación lineal de 2 clases.}
+
+En el trabajo de Fisher se demuestra que el vector que determina al hiperplano que mejor separa las clases es:
+
+\begin{equation}
+w=(\mu_1-\mu_2)(\Sigma_1 + \Sigma_2)^{-1}
+\end{equation}
+
+
+siendo $\mu_i$ la media de la clase \textit{i} y $\Sigma_i$ la matriz de covarianza de dicha clase.\\ 
+Uno de los problemas que surgen al utilizar esta herramienta para separar clases es la inversión de la suma de las matrices de covarianza. Cuando el número de muestras es pequeño (como en el caso de la cantidad de \textit{trials} que un animal realiza en una sesión de entrenamiento), la inversión de dicha matriz suele estar mal condicionada. En estos casos, se puede utilizar la pseudoinversa de la matriz suma, dando como resultado una discriminación pseudolineal del problema \citep{liu2007efficient}. Dada la sencillez del procedimiento para encontrar el hiperplano que mejor separa dos clases, este método es ampliamente aplicado en gran variedad de señales de origen neuronal \citep{aggarwal2013state,velliste2014motor}.
+
+
+\section{Bayes Naive}
+\label{capMetodos:sec:BN}
+
+En este método se asume que las variables (\textit{features}) son independientes entre sí. Por esta suposición que generalmente no se cumple pero que simplifica radicalmente el proceso de estimación, se considera al método ``ingenuo'' (\textit{naive}).\\
+\textit{Bayes Naive} utiliza una función de distribución a priori, el teorema de Bayes y la suposición previa para poder predecir la función de distribución a posteriori de las variables \citep{duda1973pattern}. Los mejores resultados con \textit{Bayes Naive}, se obtienen cuando la dimensión del espacio de \textit{features} es alta, debido a que la estimación de la función densidad de probabilidad se vuelve poco eficiente \citep{hastie2009elements}. El método resulta rápido, incremental y apto para el trabajo con atributos discretos y continuos \citep{kononenko1993successive}, y tiene excelente performance cuando es aplicado a datos provenientes de variables continuas y normalmente distribuidas. 
+Sin embargo, su ingenuidad puede derivar en un bajo rendimiento cuando existen  dependencias fuertes entre las variables que fueron originalmente consideradas como independientes.
+
+\figura{Bitmap/03/BN}{width=1\textwidth}{capMetodos:fig:BN}%
+{Ejemplo de clasificación con Bayes Naive}
+
+En la figura~\ref{capMetodos:fig:BN} se muestra una clasificación entre tres clases con Bayes Naive con el objetivo de explicar el funcionamiento del método.\\
+Se tiene una muestra ``m'' que se quiere clasificar. En la misma se encuentran presentes dos \textit{features} ``F1'' y ``F2''.\\
+Al empezar a clasificar, se utiliza la probabilidad a priori. Generalmente es determinada por la cantidad de apariciones de cada clase en el corpus de entrenamiento. El punto ``A'' es determinado por esta probabilidad. Luego se evalúan cada uno de los \textit{features} de la muestra a clasificar. La aparición del \textit{feature} ``F1'' indica una cierta probabilidad favorable a la clase 1, este \textit{feature} mueve el resultado hacia el punto ``B''. La aparición del \textit{feature} ``F2'' vuelve a correr la probabilidad, esta vez hacia el punto ``C''. Dado que en la muestra, los únicos dos \textit{features} que se encontraron son ``F1'' y ``F2'', se da la clasificación por terminada. La Clase 3 es la que está mas cerca del punto ``C'', por lo tanto el resultado devuelto por el clasificador será que la muestra ``m'' pertenece a dicha clase.\\
+
+Este método fue utilizado para clasificación de \textit{spikes} en forma semiautomática en \citet{harris2000accuracy} con buenos resultados, superando la clasificación manual. A su vez, en \citet{hu2005feature} se lo utilizó para predecir la decisión de una rata clasificando los \textit{spikes} de las neuronas del área cortical motora. En esa ocasión se lo combinó con un análisis de componentes principales para extraer las mejores \textit{features} y de esta manera competir con la performance obtenida con clasificadores mas robustos.\\ Al igual que con el Clasificador Lineal de Fisher, este método es ampliamente utilizado debido a su velocidad de entrenamiento y clasificación.\\ Se pueden encontrar mas ejemplos de su aplicación en procesamiento de señales neuronales en \citet{schmuker2014neuromorphic, valenti2006automatic}
+
+\section{SVM}
+\label{capMetodos:sec:SVM}
+
+El método \textit{Support Vector Machine} (SVM) se basa en la idea de proyectar los datos en un espacio dimensional mayor, con el fin de encontrar un hiperplano que permita separar las clases. Las características del hiperplano aseguran una alta capacidad de generalización de este método de aprendizaje automático \citep{cortes1995support}.
+\\
+Una vez encontrado el hiperplano, se busca un margen $m$ que maximice el espacio entre las clases. Los vectores que se encuentran a distancia $m$ del hiperplano son llamados \textit{support vectors} (vectores de soporte).
+\figura{Bitmap/03/SVM}{width=1\textwidth}{capMetodos:fig:SVM}%
+{Separación con margen. Los vectores p1 y p3 son los llamados \textit{support vectors}}
+
+Se busca que el margen sea ancho para una mayor capacidad de generalización. Para lograrlo, SVM utiliza una condición de márgenes relajados \textit{"soft margin"} que permite que haya algunos elementos de las clases a separar dentro de los márgenes (puntos a1, a2 y b1 en la figura~\ref{capMetodos:fig:SVM}). El balance entre maximizar el margen y minimizar la cantidad de elementos dentro del mismo impacta en la performance y en el error de clasificación.\\
+
+Trabajar con espacios de grandes dimensiones es muy costoso tanto a nivel de procesamiento como de memoria. En vez de proyectar cada punto en la nueva dimensión, se utiliza lo que se conoce como \textit{kernel trick} (el truco del kernel).
+El ``truco'' se encuentra en que no es necesario realizar toda la transformación a la nueva dimensión, simplemente basta con poder calcular el producto interno en dicho espacio.\\
+Para ello, se utilizan funciones de kernel que simplifican el cálculo y permiten computar el producto interno de dos vectores pertenecientes a una dimensión $N$ en una dimensión $M$, con $M \geq N$, trabajando en la misma dimensión $N$.\\
+Se define $K : \mathbb{R}^N \times \mathbb{R}^N \to \mathbb{R} $ y $\phi: \mathbb{R}^N \to \mathbb{R}^M$ tal que $K(x_i, x_j) =\langle \phi(x_i),\phi(x_j) \rangle_M$ donde $\langle \cdot,\cdot \rangle_M$ es el producto interno de $\mathbb{R}^M$ y $\phi(x)$ transforma $x$ a $\mathbb{R}^M$.
+Dado que $K$ trabaja exclusivamente en $\mathbb{R}^N$ y el resultado es un escalar, se está computando el producto interno de $M$ en $N$.\\ 
+La construcción de la función de Kernel ideal para un problema particular puede ser compleja, sin embargo existen varias funciones genéricas que se adaptan a muchos problemas del mundo real \citep{press2007numerical}:\\
+\begin{enumerate}
+\item Lineal: $K(x_i,x_j) = x_i \cdot x_j +c$
+\item Potencia: $K(x_i,x_j) = (x_i \cdot x_j)^d$
+\item Polinómico: $K(x_i,x_j) =  (a x_i \cdot x_j + c)^d$
+\item Sigmoide: $K(x_i,x_j) =  tanh(a x_i \cdot x_j + c)$
+\item Función Básica Radial Gaussiana: $K(x_i,x_j) =  exp(-\frac{1}{2} |x_i - x_j|^2 / \sigma^2 )$
+\end{enumerate}
+\vspace{2 mm}
+Debido a que este es un método de clasificación mas robusto que los métodos enunciados anteriormente \citep{hu2005feature}, es ampliamente utilizado para el procesamiento de señales neuronales. En \citet{vogelstein2004spike} se lo utiliza en el proceso de ordenamiento de \textit{spikes} y reducción de ruido, con resultados superiores a las técnicas de ordenamiento de \textit{spikes} basadas en ``template-matching''. Otro ejemplo es el de resolución de superposiciones en ordenamiento de \textit{spikes} descripto en \citet{ding2008spike}.\\
+También es utilizado en la detección de \textit{spikes} en señales electroencefalográficas \citep{acir2004automatic}.\\\\
+\noindent
+Este método se enuncia en \citet{cortes1995support}.
+
+\section{Random Forest}
+\label{capMetodos:sec:RF}
+ 
+El método de \textit{Random Forest} utiliza la técnica divide y conquista (\textit{divide and conquer}). Se trata de un ensamble de árboles de decisión entrenados con valores provenientes de un vector de muestras aleatorias, tomadas de forma independiente y con la misma distribución para todos los árboles \citep{breiman2001random}. De esta manera, mediante un sistema de votos, se logra asignar la clase correspondiente a cada una de las muestras. Como los árboles de decisión son predictores sin sesgo pero tienen alta \mbox{varianza}, Random Forest busca reducir la varianza promediando un alto número de árboles de decisión \citep{hastie2009elements}. De esta forma, el error de generalización tiende a un límite cuanto mayor sea el número de árboles \citep{breiman2001random}.
+El método es un caso particular de \textit{bagging}, cuya idea principal es promediar muchos modelos con ruido y muy poco sesgo para conseguir reducir la varianza. Los árboles de decisión son candidatos ideales para \textit{bagging},  debido a que pueden capturar estructuras con interacción compleja en los datos y tienen relativamente bajo sesgo cuando crecen lo suficientemente profundo. Adicionalmente, los árboles se benefician en gran medida con el promedio, dado que son muy sensibles al ruido en los datos \citep{hastie2009elements}. En la figura~\ref{capMetodos:fig:RF} se ejemplifica el uso de Random Forest para la determinación de la probabilidad que una muestra pertenezca a la clase \textit{\textbf{c}} dado que se observó la variable \textit{\textbf{f}}.
+
+\figura{Bitmap/03/RF}{width=1\textwidth}{capMetodos:fig:RF}%
+{Proceso de clasificación de una muestra con Random Forest}
+
+Cada variable (\textit{feature}) ``f'' de la muestra a clasificar es evaluada en cada árbol, recorriendo en forma binaria las ramas, hasta llegar a una hoja. Estas hojas determinan la probabilidad que la muestra pertenezca a la clase ``c'', dado que esta posee el \textit{feature} ``f''. Esta probabilidad constituye el voto de cada árbol para la clase c. Recorriendo el vector de \textit{features} y sometiendo cada \textit{feature} de la muestra al mismo proceso de votación, se obtiene, mediante la suma de todos los votos, la decisión acerca de la clase a la que pertenece la muestra. \citep{kim2013fire,breiman2001random}. \\
+
+Este método se ha utilizado tanto para la clasificación, como para la selección de las \textit{features} mas relevantes en el procesamiento de señales neuronales. En \citet{oh2003estimating} fue empleado para reducir el número de variables en un ensamble de tren de \textit{spikes}. A su vez en \citet{lehmann2007application, fraiwan2012automated} se utilizó Random Forest en señales electroencefalográficas, para detectar la enfermedad del Alzheimer.

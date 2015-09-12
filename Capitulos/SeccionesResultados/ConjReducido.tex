@@ -1,0 +1,97 @@
+%-------------------------------------------------------------------
+\section[Dependencia tamaño poblacional]{Dependencia con el tamaño de la población}
+\label{capResultados:sec:conjRed}
+
+Como se mencionó en la sección anterior, la necesidad de reducir el volumen y consumo de las interfaces portátiles, obligan a reducir el número de electrodos a ser registrados y procesados. Por otro lado, la reducción del número de electrodos acarrea otras ventajas asociadas a los problemas de rechazo.
+\\En este capítulo se estudia la robustez de cada método de decodificación en función del número de neuronas intervinientes en el análisis. Se utilizó nuevamente la técnica de \textit{bootstrapping} (500 re-muestreos con reemplazo) y en cada re-muestreo se tomó un porcentaje fijo (100\%, 75\%, 50\%, 25\%, 10\% y 5\%) y aleatorio de neuronas del set VTA. La figura siguiente muestra el resultado de la performance de clasificación para los cuatro métodos y diferentes porcentajes de neuronas utilizadas en el análisis.
+ 
+\begin{figure}[H]
+\centering
+%
+\begin{SubFloat}
+	{\label{fig:capResultados:linearComparationAll}}%
+	\includegraphics[width=0.45\textwidth]%
+	{Imagenes/Bitmap/08/linear_comparation_all}%
+	\end{SubFloat}
+	\qquad
+	\begin{SubFloat}
+	{\label{fig:capResultados:linearComparation34}}%
+	\includegraphics[width=0.45\textwidth]%
+	{Imagenes/Bitmap/08/linear_comparation_34}%
+	\end{SubFloat}
+	\begin{SubFloat}
+	{\label{fig:capResultados:linearComparation12}}%
+	\includegraphics[width=0.45\textwidth]%
+	{Imagenes/Bitmap/08/linear_comparation_12}%
+	\end{SubFloat}
+	\qquad
+	\begin{SubFloat}
+	{\label{fig:capResultados:linearComparation14}}%
+	\includegraphics[width=0.45\textwidth]%
+	{Imagenes/Bitmap/08/linear_comparation_14}%
+	\end{SubFloat}
+	\begin{SubFloat}
+	{\label{fig:capResultados:linearComparation110}}%
+	\includegraphics[width=0.45\textwidth]%
+	{Imagenes/Bitmap/08/linear_comparation_110}%
+	\end{SubFloat}
+	\qquad
+	\begin{SubFloat}
+	{\label{fig:capResultados:linearComparation120}}%
+	\includegraphics[width=0.45\textwidth]%
+	{Imagenes/Bitmap/08/linear_comparation_120}%
+	\end{SubFloat}
+	\caption{Gráficos performance/tiempo. Cada sub-gráfico corresponde a un porcentaje de neuronas: a) 100\%, b) 75\%, c) 50\%, d) 25\%, e) 10\%, f) 5\%%
+\label{fig:capResultados:linearComparation}}
+\end{figure}
+En la figura~\ref{fig:capResultados:linearComparation} se puede ver como, cuando la cantidad de neuronas involucradas disminuye, decrece la performance de clasificación en todos los métodos. 
+Observando los últimos $2500 ms$ se ve que para las cuatro primeras figuras, LDA tiene una performance menor a los otros métodos, diferencia que desaparece cuando el porcentaje de neuronas utilizadas es menor o igual a 10\%.\\\\
+       
+La figura siguiente muestra la variación de la performance promedio, para los cuatro métodos, tomando la información posterior a la desaparición del estímulo.
+
+\figura{Bitmap/08/bar_comparation}{width=1\textwidth}{capResultados:fig:barComparation}%
+{Gráfico de barras promediando la performance a partir de $5000 ms$. Se grafica la performance en función del porcentaje de neuronas y del método de clasificación utilizado.}
+
+Se observa que independientemente del método, cuando la cantidad de neuronas es mayor o igual a $77$ ($50\%$) la performance se mantiene casi constante, independientemente de cuantas neuronas mas se agreguen. Por el contrario, debajo del $50\%$ la performance decrece linealmente a medida que el número de neuronas disminuye.\\
+
+Como se ha visto en los análisis de neurona única (sección~\ref{capSetDeDatos:sec:features:subsec:monoNeuronal}), en el conjunto de datos existen neuronas cuya performance de clasificación es alta. Esto puede traer aparejado que el decrecimiento de la performance en alguno de los conjuntos reducidos anteriores, se deba a la eliminación de dichas neuronas. Por este motivo se decidió realizar un nuevo análisis excluyendo aquellas neuronas cuya performance individual supere el 70\%. 
+En VTA, se eliminaron $27$ neuronas, de acuerdo con el gráfico~\ref{capSetDeDatos:fig:VTAIndividual}. Las neuronas eliminadas son las siguientes: [2 3 6 29 45 72 73 87 102 105 109 110 113 114 115 116 118 122 123 131 132 133 137 138 141 143 145].\\\\ La figura~\ref{capResultados:fig:VTAAllLineForbidden} muestra la performace de clasificación con este conjunto reducido de datos.
+
+\figura{Bitmap/11/VTA_all_line_forbidden}{width=1\textwidth}{capResultados:fig:VTAAllLineForbidden}%
+{Comparación para las neuronas VTA que su performance individual no supera en media al $70\%$.}
+
+Comparando la figura~\ref{capResultados:fig:VTAAllLineForbidden} con la figura~\ref{capResultados:fig:AllMethods} se puede observar que la forma de la curva para los cuatro métodos continúa siendo exactamente la misma.\\
+
+Para poder observar si la performance disminuyó se realizó el siguiente gráfico de barras.
+
+\figura{Bitmap/11/VTA_all_bar_forbidden_5000}{width=1\textwidth}{capResultados:fig:VTAAllBarForbidden5000}%
+{Comparación para todas las neuronas VTA cuya performance individual no supera en media al $70\%$. Gráfico de barras a partir del milisegundo $5000$.}
+
+Al compararlo con el gráfico~\ref{capResultados:fig:linCompAllBar} se puede apreciar una disminución en la performance del $1.66\%$ con \textit{Random Forest}. A su vez, eliminando 38 neuronas al azar (corrida con el 75\% de neuronas), la performance con Random Forest disminuyó apenas en 0.32\%. Por consiguiente se demuestra que esas 27 neuronas eliminadas son mas importantes que la media de las demás para la clasificación. Asimismo se logra probar que la información está almacenada en el conjunto de las neuronas y no depende de ninguna de ellas individualmente.\\\\
+
+Para el área PFC se realizó el mismo procedimiento, corriendo nuevamente los métodos y descartando las neuronas cuya performance individual sea mayor en media al $70\%$ de acuerdo con el gráfico~\ref{capSetDeDatos:fig:PFCIndividual}. Las neuronas eliminadas son cuatro: (77 80 82 84).
+
+\figura{Bitmap/11/PFC_all_line_forbidden}{width=1\textwidth}{capResultados:fig:PFCAllLineForbidden}%
+{Comparación para las neuronas PFC cuya performance individual no supera en media al $70\%$.}
+
+Si se compara la figura~\ref{capResultados:fig:PFCAllLineForbidden} con la figura~\ref{capResultados:fig:AllMethodsPFC}, se observa como el pico posterior al estímulo desapareció y la performance se incrementa lentamente luego del estímulo.\\ 
+
+De esta manera queda demostrado que el pico posterior al estímulo, era un efecto de unas pocas neuronas que separaban las clases $100 ms$ después de escuchado el tono.\\
+
+En el gráfico de barras~\ref{capResultados:fig:PFCAllBarForbidden6000} se aprecia que hubo una disminución de aproximadamente 5\% en todos los métodos con respecto al gráfico~\ref{capResultados:fig:PFCAllBar6000}.
+
+\figura{Bitmap/11/PFC_all_bar_forbidden_6000}{width=1\textwidth}{capResultados:fig:PFCAllBarForbidden6000}%
+{Comparación para todas las neuronas PFC cuya performance individual no supera en media al $70\%$. Gráfico de barras a partir del milisegundo $6500$.}
+
+Dado que el resultado varió en un 5\% aproximadamente, se realizó nuevamente la comparación de las medias ventana a ventana.
+
+\figura{Bitmap/07/media_mayor_que_PFC_forbidden}{width=1\linewidth}{capResultados:fig:mediaCompPFCForbidden}%
+{Significancia en la que la media de un método es mejor que la de otro a partir del milisegundo $6500$ para las neuronas PFC, sin las cuatro neuronas que superan el 70\% de performance en su clasificación individual.}
+
+En la tabla~\ref{capResultados:fig:mediaCompPFCForbidden} se observa que las conclusiones expuestas en la sección anterior no cambian. La única diferencia con la tabla~\ref{capResultados:fig:mediaCompPFC} radica en entre Random Forest y SVM no se aprecian diferencias significativas.
+
+\subsection{Conclusión}
+\label{capResultados:sec:conjRed:subsec:conclusion}
+Los métodos de clasificación analizados requieren una cantidad mínima de neuronas para clasificar con performance significativamente mayor al 50\%.\\
+Es importante notar que con sólo 8 neuronas se puede predecir el estímulo presentado (con \textit{Random Forest}) con una performance de $0.798\pm0.089$. Este resultado puede ser aceptable dependiendo del problema que se quiera resolver, pero resulta importante cuando se desea minimizar la cantidad de electrodos implantados.\\
+Asimismo es para destacar la distribución poblacional de la información, dado que la performance de la misma sobrepasa el 90\%, aunque se tomen neuronas cuya performance individual no supere el 70\%.

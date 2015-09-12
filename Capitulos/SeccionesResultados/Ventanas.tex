@@ -1,0 +1,26 @@
+%-------------------------------------------------------------------
+\section[Evolución temporal]{Evolución temporal: análisis por ventanas}
+%-------------------------------------------------------------------
+\label{capResultados:sec:enfoqueVentanas}
+
+Como se mostró en el capítulo~\ref{capSetDeDatos}, la información contenida en la población de neuronas ayuda a predecir el estímulo presentado con mayor performance que el promedio de lo que consigue cada neurona individualmente. Sin embargo, en ese análisis exploratorio sobre la actividad de las neuronas de VTA, se consideró la actividad total de cada neurona dentro de la ventana de análisis $(-4000ms, 4000ms)$ alrededor del inicio del tono. Para entender en que momento comienzan las neuronas a tener información sobre el estímulo presentado, en esta sección se realizará un análisis en ventanas pequeñas $(300 ms)$ que se deslizan cada $10 ms$ a lo largo de la duración del trial.\\\\
+La actividad total en cada ventana por neurona se utilizó como \textit{feature} para entrenar los clasificadores y, como antes, la salida deseada para cada trial fue el tipo GO correcto o NOGO correcto. En la figura~\ref{capResultados:fig:windowsTime} se muestra un ejemplo de ventana aplicado sobre la matriz de 0 y 1 original.
+
+\figura{Bitmap/05/windows_time}{width=1\linewidth}{capResultados:fig:windowsTime}%
+{División de la neurona en ventanas}
+
+
+De esta manera, para cada neurona, en un instante determinado puede generarse el vector $X_w$ que contiene la actividad en la ventana $w$ y tiene asociado un vector $Y_w$ con la información acerca del tipo de trial. La figura~\ref{capResultados:fig:XYmatrix} muestra un ejemplo de la estructura de datos construida para entrenar los clasificadores.
+
+\figura{Bitmap/05/XYmatrix}{width=0.9\linewidth}{capResultados:fig:XYmatrix}%
+{Composición de la matriz $X_w$ y el vector $Y_w$}
+ 
+
+La figura~\ref{capResultados:fig:LDARunTime} muestra el resultado del análisis con el algoritmo LDA, entrenando un clasificador por cada ventana, tomando 70 \% de los trials al azar y verificando con el 30 \% restante.
+
+\figura{Bitmap/05/LDA_run_time}{width=1\linewidth}{capResultados:fig:LDARunTime}%
+{LDA - Performance en función del tiempo.}
+
+En la figura~\ref{capResultados:fig:LDARunTime} se puede apreciar claramente como a partir del inicio del tono (4000 ms) la performance comienza a incrementarse. Puede observarse que la performance del clasificador es cercana a lo esperado por azar cuando el tono no fue todavía presentado.También puede notarse la gran fluctuación que hay entre ventanas contiguas, esto se debe principalmente a la variabilidad en los datos. Para determinar si el incremento en la performance es significativo, se realizó un análisis con re-muestreo con el fin de determinar la variabilidad alrededor del valor promedio\\
+
+

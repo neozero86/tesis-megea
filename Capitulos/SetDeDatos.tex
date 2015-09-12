@@ -1,0 +1,131 @@
+%---------------------------------------------------------------------
+%
+%                         Set de datos
+%
+%---------------------------------------------------------------------
+
+\chapter{Set de datos}
+\label{capSetDeDatos}
+
+%-------------------------------------------------------------------
+\section{Origen de los Datos}
+%-------------------------------------------------------------------
+\label{capSetDeDatos:sec:origen}
+
+El set de datos analizado proviene del registro de la actividad neuronal correspondiente a cuatro ratas macho adulto Long Evans. Las mismas fueron entrenadas para discriminar dos estímulos auditivos de frecuencias diferentes ($1KHz$ y $8KHz$). Luego que alcanzaran una performace mayor a 80\%, probadas en el paradigma de discriminación, se registró la actividad neuronal del área tegmental ventral (VTA) y de la Corteza PreFrontal (PFC). Se realizaron 30 sesiones de registro (con los 4 animales), obteniéndose luego de un proceso de \textit{spike} sorting 153 neuronas VTA y 95 neuronas PFC. \citep{spikeSorting}.\\\\
+Para el entrenamiento se utilizó el paradigma GO/NOGO. Dicho paradigma consiste en una tarea de discriminación, en la cual los estímulos son presentados en un flujo continuo y los participantes deben realizar una decisión binaria para cada uno de ellos. Se presentan 2 tipos de estímulo distintos, en un caso se espera de los participantes una respuesta motora (caso GO), mientras que en el otro dichos participantes deben contener la respuesta (caso NOGO) \citep{donders1969speed}.\\
+En dos de los animales entrenados, la presentación del estímulo auditivo de mayor frecuencia fue asociada con la respuesta GO (sacar la lengua en una ventana temporal de 2 segundos posteriores al estímulo), mientras que el de menor frecuencia fue asociado con la respuesta NOGO (esconder la lengua por 2 segundos). En los otros dos animales los estímulos se asociaron a las respuestas de manera opuesta, para evitar cualquier sesgo en los resultados. En todos los casos la respuesta GO correcta (sacar la lengua cuando el tono presentado era el correcto) fue recompensada con una gota de agua. La respuesta de \textit{lick} fue filmada con una cámara y se determinó a través del procesamiento de imágenes de la zona bucal de cada animal.\\
+
+
+%------------------------
+Los animales fueron registrados una vez por día (sesión) y en cada sesión se repitió la secuencia Tono > Respuesta > Refuerzo tantas veces (trials) como el animal quiso, hasta alcanzar la saciedad. Los trials de cada sesión se dividieron de acuerdo a la respuesta que el animal tuvo que realizar y de acuerdo a si la misma fue o no correcta:
+\begin{itemize}
+\item \textbf{GOc}: trial GO correcto, el animal tuvo que sacar la lengua una vez (lick) y recibió agua
+\item \textbf{GOi}: trial GO incorrecto, el animal tuvo que sacar la lengua una vez (lick) y no lo hizo.
+\item \textbf{NOGOc}: trial NOGO correcto, el animal tuvo que esconder la lengua durante 2 segundos (no-lick) y así lo hizo.
+\item \textbf{NOGOi}: trial NOGO incorrecto, el animal tuvo que esconder la lengua durante 2 segundos (no-lick) y sin embargo la sacó.
+\end{itemize}
+Como cada tipo de trial tiene unívocamente asociado un estímulo auditivo determinado, la relación estímulo-respuesta es unívoca. Por este motivo hablar de trial GOc en el procesamiento de datos es equivalente a hablar de un estímulo auditivo determinado, presentado durante ese trial.\\\\
+Para el análisis se tomó una ventana de $-4000$ $ms$ a $+4001$ $ms$ para las neuronas VTA y de $-4000$ $ms$ a $+3000$ $ms$ para las neuronas PFC, siendo $0 ms$ el inicio del estímulo. La duración del mismo es de $1000 ms$.
+\\\\
+La información relativa al formato y distribución de los datos, junto con el análisis de los mismos se detalla en las secciones~\ref{apendiceSetDeDatos:sec:formato} y~\ref{apendiceSetDeDatos:sec:analisis} del Apéndice~\ref{apendiceSetDeDatos}.  
+
+
+%-------------------------------------------------------------------
+\section{Selección de Features}
+%-------------------------------------------------------------------
+\label{capSetDeDatos:sec:features}
+
+La técnica utilizada para entrenar los algoritmos estadísticos elegidos fue aprendizaje supervisado \citep{mohri2012foundations}. Esta técnica consiste en predecir la clase a la que pertenece una muestra después de haber aprendido con una serie de ejemplos (datos de entrenamiento). Para el aprendizaje supervisado se tomó en forma aleatoria el 70\% de los datos para el entrenamiento y se validó el resultado del entrenamiento con el 30\% restante de los mismos (etapa de test). Como característica de la señal (\textit{feature}) se utilizó la actividad media de las neuronas en una ventana temporal determinada, esto es, la tasa de disparo promedio. Podrían haberse empleado otras características de la señal neuronal como el Inter Spike Interval o incluso la variabilidad con respecto al promedio, pero la tasa de disparo es una medida directa de actividad, lo que simplifica la validación de los resultados obtenidos.
+
+
+\subsection{Análisis de neurona única}
+\label{capSetDeDatos:sec:features:subsec:monoNeuronal}
+
+Como primera aproximación se intentará separar las clases utilizando la actividad de una sola neurona por clasificador, repitiendo el proceso para todas las neuronas de la población registrada. En otros términos, se estudiará cuanta información en promedio tiene el conjunto de neuronas, sin considerar que puede haber interacción entre ellas.
+\\\\
+Para entrenar los clasificadores se debe generar un espacio de \textit{features}, que permita al clasificador utilizado, encontrar correlaciones entre los mismos y las respuestas esperadas. \\
+Se sabe, de acuerdo a lo observado en la sección~\ref{capSetDeDatos:sec:origen}, que cada \textit{trial} se corresponde unívocamente con una respuesta del animal. Por ende, es posible deducir que la respuesta esperada para cada \textit{trial} será la respuesta del animal (GOc, GOi, NOGOc, NOGOi). \\
+Los clasificadores requieren una matriz de \textit{features} y un vector de salidas esperadas para poder realizar el entrenamiento. De ahora en adelante se llamará a esta matriz $X$ y al vector de respuestas esperadas $Y$.\\
+Las columnas de $X$ serán los \textit{features}, y las filas los \textit{trials}. Cada fila de $X$ tendrá una salida esperada, que se incluirá en el vector $Y$. Lo que denota que la fila $n$ de $X$ se corresponde con la posición $n$ de $Y$.\\\\
+El análisis entonces consiste en determinar cuales serán los \textit{features} que se utilizarán en el entrenamiento.
+%-------------------------------------------
+\figura{Bitmap/04/XeY}{width=1\textwidth}{capSetDeDatos:fig:XeY}%
+{Matriz $X$ y Vector $Y$}
+
+Utilizando solamente una neurona, se explorarán 2 opciones:
+\begin{enumerate}[A.]
+\item Tomar como columna de la matriz $X$ a cada milisegundo, teniendo entonces $8001$ columnas. Para cada intersección con cada fila (trial), habrá un 1 si hubo un \textit{spike} y un 0 si no lo hubo.
+\item Tomar como columna de la matriz $X$ la suma de todos los \textit{spikes} durante los $8001ms$. De esta forma se tendrá una única columna en la matriz $X$. Esta opción representa una medida de cuanto disparó la neurona.
+\end{enumerate}
+
+\vspace{0.8cm}
+El primer problema observado radica en la poca cantidad de trials GOi y NOGOi, lo que apareja que los clasificadores no encuentren un patrón para poder diferenciarlos de los demás.\\
+
+\figura{Bitmap/04/Analisis_Mononeuronal_Matriz_de_Confusion}{width=1\textwidth}{capSetDeDatos:fig:MonoConfMat}%
+{Matriz de confusión de una neurona LDA con las cuatro clases, donde se observa la poca cantidad de trials GOi y NOGOi, en comparación con las otras dos clases.}
+
+Por el motivo explicado y los resultados obtenidos, se decidió de ahora en mas utilizar solamente los trials de GOc y NOGOc para simplificar el trabajo de los clasificadores. \\
+
+Con esta simplificación, se intentó separar las clases GOc y NOGOc. \\\\
+Para el set de neuronas LDA:\\ 
+Utilizando la opción A, la performance obtenida fue de $0.5354 \pm 0.0956$.\\
+Utilizando la opción B, la performance fue de $0.5910 \pm 0.1179$. \\\\
+La performance total se calculó como el promedio de la performance individual de clasificación entre las 153 neuronas $\pm$ su desvío estándar. \\\\\\
+Para el set de neuronas PFC:\\
+Utilizando la opción A, la performance obtenida fue de $0.5072 \pm 0.0485$.\\
+Utilizando la opción B, la performance fue de $0.5433 \pm 0.0755$. \\\\
+La performance total se calculó como el promedio de la performance individual de clasificación entre las 95 neuronas $\pm$ su desvío estándar. \\\\
+
+A efectos de tener una mejor comprensión del set de datos, se muestra a continuación la clasificación individual de cada neurona.\\
+Se entrenó entonces, utilizando la opción B, un clasificador LDA para cada neurona corriendo el algoritmo 500 veces y se calculó la media.\\
+
+\figura{Bitmap/11/VTA_individual}{width=1\textwidth}{capSetDeDatos:fig:VTAIndividual}%
+{Performance de las neuronas VTA - Corridas individuales. Cada par X-Y corresponde a una neurona con su precisión de clasificación (media para las 500 corridas). - LDA}
+
+\figura{Bitmap/11/PFC_individual}{width=1\textwidth}{capSetDeDatos:fig:PFCIndividual}%
+{Performance de las neuronas PFC - Corridas individuales. Cada par X-Y corresponde a una neurona con su precisión de clasificación (media para las 500 corridas). - LDA}
+
+Se pueden observar neuronas que por si solas clasifican el set de datos.\\
+En el caso de PFC se aprecia como la media de la neurona $80$ supera el $90\%$ y la $84$ el $80\%$. Estas neuronas son casos aislados, que si bien separan correctamente las clases, no representan el comportamiento global.\\
+En VTA, en cambio, no hay ninguna neurona que sobrepase el $90\%$, pero se observan varias que están por arriba del $80\%$.\\\\
+
+Dado que la media de la performance de clasificación $\pm$ su desvio estándar con LDA se solapan con el $0.5$, se puede inferir que el resultado no es significativo. Por ende, descartando los casos aislados, se concluyó que con una sola neurona no hay suficiente información para diferenciar los trials.\\\\
+
+\subsection{Análisis poblacional}
+\label{capSetDeDatos:sec:features:subsec:poblacional}
+
+\subsubsection{Análisis}
+\label{capSetDeDatos:sec:features:subsec:poblacional:subsubsec:analisis}
+
+Como se vio en la sección anterior, la predicción del estímulo presentado en base a la información obtenida de neuronas individuales no es significativa. Es por este motivo, que se intentará analizar si el contenido de información de la población de neuronas aumenta en función del número de neuronas registradas. \\
+Si las neuronas fuesen procesos estocásticos independientes, es esperable que el contenido de información no aumente, pero si existen interacciones de segundo o mayor orden probablemente la predicción del estímulo sea posible. \\\\
+
+Al analizar varias neuronas, al igual que en el caso anterior, se debe definir con que \textit{features} se entrenarán los clasificadores.\\
+Aprovechando el análisis de neurona única realizado en la sección anterior, se puede elaborar un análisis similar para el caso poblacional. La opción B del análisis de neurona única ahora parece mas interesante, ya que de esta manerá se tiene un \textit{feature} por cada neurona. De este modo la matriz $X$ queda armada de la siguiente forma: cada neurona es una columna y cada trial una fila. La misma esta completa con la suma de los \textit{spikes} para cada neurona en cada trial.\\
+Para las salidas esperadas $Y$, al igual que en el caso anterior, se toman las respuestas de los trials.\\\\
+Definir un \textit{feature} por cada neurona implica tener una dimensión distinta para cada neurona, lo cual puede ayudar a facilitar la clasificación. En la figura~\ref{capSetDeDatos:fig:2neuronsclassification} se puede apreciar un ejemplo de 2 neuronas, donde individualmente la clasificación sería muy difícil, pero al graficar las 2 dimensiones, se vuelve un problema linealmente separable.
+
+\figura{Bitmap/04/2neuronsclassification}{width=1\textwidth}{capSetDeDatos:fig:2neuronsclassification}%
+{Figura a modo de ejemplo (datos ficticios) que ilustra un problema no linealmente separable si se considera cada neurona por separado, pero que se vuelve linealmente clasificable tomando como \textit{feature} a cada neurona.}
+ 
+
+\subsubsection{Preparación}
+\label{capSetDeDatos:sec:features:subsec:poblacional:subsubsec:preparacion}
+
+La construcción se realiza para el área VTA para simplificar la explicación, pero el procedimiento aplica de igual manera al área PFC.
+
+La matriz $X$ enseñada al clasificador tiene a las neuronas como columnas y los distintos trials de GOc y NOGOc como filas. El vector $Y$ contiene las respuestas esperadas. \\\\
+Para armar dicha matriz, se debe buscar la máxima cantidad de trials GOc y NOGOc que aparecen mínimamente en todas las neuronas. Se cuenta con 31 trials GOc y 23 trials NOGOc disponibles como mínimo en todas las sesiones. Se elije entonces el mínimo valor de los dos (23) para conseguir que la matriz tenga la misma cantidad de trials de uno y de otro y que el análisis resulte balanceado.\\\\
+Se tiene la matriz $X$ con 153 columnas (cantidad total de neuronas VTA que se registraron en las 30 sesiones) y 46 filas que representan 23 trials GOc y 23 trials NOGOc. También se cuenta con el vector $Y$ con 46 posiciones donde en cada posición se colocará un 1 o un 2, dependiendo si el trial (fila de $X$) correspondiente a este número de posición corresponde a la clase 1 (GOc) o a la clase 2 (NOGOc). \\
+
+\figura{Bitmap/04/XeYPoblacional}{width=1\textwidth}{capSetDeDatos:fig:XeYPoblacional}%
+{Matriz $X$ y Vector $Y$ - Análisis poblacional - $x_{i,j}$ representa la suma de todos los \textit{spikes} para el \textit{trial} $i$ de la neurona $j$ }
+
+A su vez, se toma el 70\%  de las filas de la matriz $X$ para entrenamiento y el 30\% restante para medir la performance de clasificación.\\\\\
+
+\subsubsection{Resultados}
+\label{capSetDeDatos:sec:features:subsec:poblacional:subsubsec:resultados}
+
+Se entrenó un LDA con las matrices mencionadas anteriormente y se consiguió una performance alrededor del 90\%. \\
+Estos resultados son significativos, mas adelante se analizarán las implicancias de los mismos.  
