@@ -1,0 +1,43 @@
+DONE + Modificar gráfico compuesto de las corridas de conjunto reducido
+DONE	- label solo en el primero
+DONE	- redibujar el primero con el mismo formato que los demás
+DONE	- eje y solamente 0 0.5 1
+DONE	- eje x solo en los últimos 2
+DONE	- lineas de los ejes
+
+DONE + Modificar gráfico de barras de conj reducido.
+DONE	- hacer 1 solo gráfico compuesto, donde cada barra sean 4 sub barritas. 
+	
+DONE + Pasar Apareadas a iteraciones y a conjunto reducido (limpieza de ruido)
+DONE	- cambiar titulo de limpieza de ruido
+DONE	- generar figura de comparación de los 4 métodos PFC
+DONE	- Sacar colores gráficos de barras en PFC
+DONE	- mover todo PFC para que arranque en el ms 4000
+DONE	- corregir todo donde hable de PFC
+	
+DONE + Conclusión en sección ventana reducida	
+	
+DONE + Reducir tamaño encabezados.
+
+DONE + Poner en el Apéndice las configuraciones de los métodos
+
+DONE + Arreglar errores de compilación de los cap que ya fueron corregidos por Sergio
+
+DONE + Arreglar todos los colores de los gráficos
+
+DONE + Agregar las librerías usadas en el apéndice de las configuraciones
+
+DONE + hacer agradecimientos
++ sacar pagina de las ref
+
+DONE + Mover al principio. \textbf{Es importante destacar que para las secciones~\ref{capResultados:sec:conjRed}, ~\ref{capResultados:sec:tamVen} y~\ref{capResultados:sec:aplicaciones} solo se tendrán en cuenta las neuronas del Área VTA debido a que la mayor parte del análisis se realizó sobre este sector.}\\\\
+
++ Conclusion
+	- cambiar lo de RF del final con lo visto en el video.
+	- Agregar lo de los parametros de SVM al final de la conclusion o en otro lado.
+	
+DONE + Correr un corrector ortografico sobre el texto.
+
+
+Ajustar los parametros de SVM y RF para obtener la mejor performance dependiendo de la zona del cerebro.
+Agregar tipos de features para combinar con los que ya utilizamos en los clasificadores con el objetivo de obtener una mejor clasificación en un menor tiempo.

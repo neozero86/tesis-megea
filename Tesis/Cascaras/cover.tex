@@ -1,0 +1,120 @@
+%---------------------------------------------------------------------
+%
+%                          cover.tex
+%
+%---------------------------------------------------------------------
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Título del documento:
+% \tituloPortada{titulo}
+% Nota:
+% Si no se define se utiliza el del \titulo. Este comando permite
+% cambiar el título de forma que se especifiquen dónde se quieren
+% los retornos de carro cuando se utilizan fuentes grandes.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\tituloPortada{%
+\acs{MAA} \acl{MAA} \acf{MAA} para decodificar información contenida en potenciales de acción neuronales}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Autor del documento:
+% \autorPortada{Nombre}
+% Se utiliza en la portada y en el valor por defecto del
+% primer subtítulo de la segunda portada.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\autorPortada{Matías Leonel Egea}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Fecha de publicación:
+% \fechaPublicacion{Fecha}
+% Puede ser vacío. Aparece en la última línea de ambas portadas
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\fechaPublicacion{Julio 2015}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Imagen de la portada (y escala)
+% \imagenPortada{Fichero}
+% \escalaImagenPortada{Numero}
+% Si no se especifica, se utiliza la imagen TODO.pdf
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\imagenPortada{Imagenes/Vectorial/logo_caratula.png}
+\escalaImagenPortada{.7}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Tipo de documento.
+% \tipoDocumento{Tipo}
+% Para el texto justo debajo del escudo.
+% Si no se indica, se utiliza "TESIS DOCTORAL".
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\tipoDocumento{Tesis de Grado para la obtención\\del título de Ingeniero en Informática\\realizada por}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Institución/departamento asociado al documento.
+% \institucion{Nombre}
+% Puede tener varias líneas. Se utiliza en las dos portadas.
+% Si no se indica aparecerá vacío.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\institucion{%
+Facultad de Ingeniería\\[0.2em]
+Universidad de Buenos Aires
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Director del trabajo.
+% \directorPortada{Nombre}
+% Se utiliza para el valor por defecto del segundo subtítulo, donde
+% se indica quién es el director del trabajo.
+% Si se fuerza un subtítulo distinto, no hace falta definirlo.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\directorPortada{Sergio Lew}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Texto del primer subtítulo de la segunda portada.
+% \textoPrimerSubtituloPortada{Texto}
+% Para configurar el primer "texto libre" de la segunda portada.
+% Si no se especifica se indica "Memoria que presenta para optar al
+% título de Doctor en Informática" seguido del \autorPortada.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\textoPrimerSubtituloPortada{%
+\textit{Tesis de grado}  \\ [0.3em]
+\textbf{Ingeniería en Informática} \\ [0.3em]
+\textbf{2015/7}
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Texto del segundo subtítulo de la segunda portada.
+% \textoSegundoSubtituloPortada{Texto}
+% Para configurar el segundo "texto libre" de la segunda portada.
+% Si no se especifica se indica "Dirigida por el Doctor" seguido
+% del \directorPortada.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\textoSegundoSubtituloPortada{%
+%\textit{Versión \texisVer}
+%}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% \explicacionDobleCara
+% Si se utiliza, se aclara que el documento está preparado para la
+% impresión a doble cara.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\explicacionDobleCara
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% \isbn
+% Si se utiliza, aparecerá el ISBN detrás de la segunda portada.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\isbn{978-84-692-7109-4}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% \copyrightInfo
+% Si se utiliza, aparecerá información de los derechos de copyright
+% detrás de la segunda portada.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\copyrightInfo{\autor}
+
+
+%%
+%% Creamos las portadas
+%%
+\makeCover

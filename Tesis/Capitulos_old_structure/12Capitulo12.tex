@@ -1,0 +1,72 @@
+%---------------------------------------------------------------------
+%
+%                          Capítulo 12
+%
+%---------------------------------------------------------------------
+
+\chapter{Conclusiones}
+\label{capConclusiones}
+	
+\begin{resumen}
+En este capítulo se presentarán las conclusiones del presente trabajo.
+\end{resumen}
+	
+
+%-------------------------------------------------------------------
+\section{Introducción}
+\label{capConclusiones:sec:introduccion}
+A lo largo de esta tesis se trabajó el set de datos desde distintos ángulos con diferentes objetivos.
+Como meta principal se buscó determinar si existe información acerca del estímulo auditivo en las areas VTA y PFC del cerebro de la rata. Se investigó, tanto si hay información en cada neurona en forma individual como a nivel poblacional.
+Como objetivos secundarios, se buscó determinar: 
+\begin{itemize}
+\item Cual de los métodos estadísticos de aprendizaje automático utilizados funciona mejor para clasificar \textit{spikes}.
+\item La menor cantidad de neuronas necesarias para poder extraer información del conjunto.
+\item La menor cantidad de milisegundos registrados para poder clasificar los \textit{spikes}.
+\end{itemize}
+
+En este capítulo se mostrarán las conclusiones obtenidas, haciendo foco en los objetivos alcanzados.
+
+%-------------------------------------------------------------------
+\section{Demostración de información auditiva}
+\label{capConclusiones:sec:demInformacion}
+
+En los capítulos~\ref{capInterpretacion} y~\ref{capAnalisisPFC} se buscó clasificar los \textit{spikes} de las neuronas analizándolas en forma individual. Si bien en ciertos casos aislados se logró clasificar los \textit{spikes} en forma correcta (secciones~\ref{capAnalisisPFC:sec:analisis:subsec:individual} y~\ref{capAnalisisPFC:sec:analisisVTA:subsec:individual}), en su mayoría no fue posible obtener una performance que se aleje significativamente del azar. Se concluye, entonces, que utilizando los registros de una sola neurona no es posible garantizar extraer información de la misma.\\
+A su vez, en dichos capítulos, se analizó la población de neuronas esperando que la interacción entre ellas brinde más información al problema. Luego de analizar los resultados obtenidos, se concluye que existe información almacenada en el conjunto de neuronas y que la misma se halla como un fenómeno poblacional.\\
+En la sección~\ref{capAplicacionesPracticas:sec:prediccionTono} del capítulo~\ref{capAplicacionesPracticas} se diferenciaron los \textit{trials} tomando como criterio a que tono pertenecían. De esta forma se terminó de demostrar que la información acerca del estímulo auditivo se encuentra almacenada en las areas VTA y PFC del cerebro de la rata.
+ 
+%-------------------------------------------------------------------  
+\section{Métodos Estadísticos}
+\label{capConclusiones:sec:metEstadisticos}
+
+A lo largo de esta tesis, se probaron cuatro métodos estadísticos de clasificación (LDA, Bayes Naive, SVM y Random Forest (capítulo~\ref{capMetodos})) en diferentes situaciones, con diferente cantidad y tipo de información, siempre realizando clasificación binaria de \textit{spikes}.\\
+A estos cuatro métodos se los evaluó clasificando todas las neuronas disponibles (capítulo~\ref{capIterResult}), tanto tomando diferentes entradas al azar asi como con exactamente las mismas entradas (capítulo~\ref{capCompYApareadas}). Luego, se redujo paulatinamente la cantidad de neuronas, disminuyendo así las \textit{features} de entrenamiento (capítulo~\ref{capConjRed}). A su vez, se los entrenó también aumentando y disminuyendo la cantidad de \textit{spikes} disponibles para el análisis (capítulo~\ref{capTamVen}).\\ 
+En todas las pruebas los métodos más destacados fueron Random Forest y SVM con una leve ventaja del primero sobre el segundo.  \\
+
+En las figuras~\ref{capCompYApareadas:fig:mediaCompUnpaired} y ~\ref{capCompYApareadas:fig:mediaComp} se puede observar como las medias de Random Forest y SVM  son superiores a la de Bayes Naive en más del 80\% y superiores a LDA en el 100\% de las veces. \\\\
+
+A diferencia de SVM, Random Forest es más facilmente configurable y menos dependiente del dominio en lo que se refiere a sus parámetros de configuración.\\
+Como ventaja adicional en algunos casos aislados Random Forest obtuvo una ventaja considerable con respecto a SVM, no encontrandose casos donde suceda lo contrario (figuras~\ref{fig:capConjRed:linearComparation14},~\ref{fig:capConjRed:linearComparation110} y~\ref{capAnalisisPFC:fig:PFCAllBar36003900}).\\
+
+Como conclusión, el método que mejor performance obtuvo a lo largo de todas las pruebas fue Random Forest.
+
+%-------------------------------------------------------------------  
+\section{Cantidad de neuronas}
+\label{capConclusiones:sec:cantNeuronas}
+
+En el capítulo~\ref{capConjRed} se redujo paulatinamente la cantidad de neuronas con el objetivo de determinar el menor número necesario para poder extraer la información acerca del tono.\\
+La figura~\ref{fig:capConjRed:barComparationMethods} muestra el desempeño de cada metodo en función de la cantidad de neuronas empleadas para el entrenamiento.\\
+Se observó que ya con 16 neuronas se puede obtener una performance de clasificación que ronda el 90\%. Esta conclusión no es menor, ya que en un entrenamiento \textit{on-line}, registrar un gran numero de neuronas puede ser dificultoso.\\
+Por otro lado si es posible registrar muchas neuronas, con mas de 100 se observa que la performance ronda el 99\% y se mantiene estable a medida que se incrementa aun más el numero de neuronas.
+
+%-------------------------------------------------------------------  
+\section{Cantidad de milisegundos}
+\label{capConclusiones:sec:cantMilisegundos}
+
+En el capítulo~\ref{capTamVen} se estudió la cantidad de milisegundos posteriores al tono que deben ser registrados para asegurarse que la información auditiva esté almacenada correctamente.\\
+Se llegó a la conclusion que a partir que el tono es enseñado a la rata, se deben esperar $700$ ms antes de poder clasificar con una performance de $0.94\pm0.05$ y $1100 ms$ para garantizar una performance mayor a $0.98\pm0.03$.\\
+Esto permite arribar a dos conclusiones:
+\begin{itemize}
+\item Tomando una buena cantidad de neuronas del area VTA y con menos de $1 s$ de información se puede predecir que decisión tomará la rata.
+\item Se demostró que en promedio, la rata tarda menos de $1 s$ en entender el estímulo recibido.  
+\end{itemize}
+

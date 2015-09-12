@@ -1,0 +1,41 @@
+Capítulo 2:
+
+1) Con fortalezas y debilidades del dataset me refiero a:
+- si hay datos faltantes o incompletos
+- si hay un desbalance en la cantidad de datos para cada clase.
+- si hay suficiente cantidad de datos para trabajar.
+- de que tipo son las variables
+- si hace falta completar o reacomodar los datos para poder trabajarlos.
+
+2) Agregue una explicación al paradigma GO vs NOGO. Decime si te parece que hay algo que no va, ya que quizá algunas cosas apliquen solo para humanos.
+"Se utilizó el paradigma GO/NOGO, utilizado por primera vez por (Donders,
+1969).
+El mismo se trata de realizar pruebas que evalúan la reacción del espécimen,
+en las cuales el mismo debe responder únicamente a uno de los dos estímulos
+(identificado como GO), y a su vez no debe responder al otro estímulo (identificado como NOGO).
+Asimismo, en este tipo de pruebas el tiempo de reacción selectivo (decidir
+la respuesta en base al estímulo presentado) es mayor al tiempo de reacción
+simple. Esto se debe que además del análisis correspondiente a la percepción
+del estímulo y la ejecución de la respuesta, se suma la tarea de decidir la
+reacción en función del estímulo presentado. Estos resultados son enunciados
+en (Miller et al., 1991).
+Por otro lado, (Verbruggen y Logan, 2008) obtienen como resultado en sus
+ensayos que el tiempo de respuesta correspondiente a los estímulos NOGO
+(asociado a la inhibición de respuesta), es mayor que el tiempo asociado a
+los estímulos identificados como GO."
+
+
+Capitulo 3:
+
+3) Creo que está bien lo que puse del porque uso la version pseudolinear del lda, lo saqué de acá:
+http://parnec.nuaa.edu.cn/zhangdq/iconip06.pdf
+http://www.mathworks.com/help/stats/discriminant-analysis.html 
+¿Agrego la referencias?
+
+4) Para explicar el método Bayes-Naive estuve buscando bastante quién lo creó, 
+pero nadie se lo atribuye ya que es aplicar el teorema de bayes considerando todas las variables independientes..
+Por eso tome el paper de Kononenko donde por lo menos se describe al método.
+No puedo citar otra cosa porque la explicación de por que no se sabe ni quien lo creó, ni en que fecha la saque de distintos foros.
+En otra tesis citaban a Kononenko como el creador, pero en paper de como 50 años anteriores a los paper de Kononenko ya se hablaba del clasificador.
+Si queres sigo buscando y citando distintos papers...
+

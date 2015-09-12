@@ -1,0 +1,144 @@
+%---------------------------------------------------------------------
+%
+%                          Capítulo 11
+%
+%---------------------------------------------------------------------
+
+\chapter{Análisis PFC}
+\label{capAnalisisPFC}
+	
+\begin{resumen}
+En este capítulo se analizarán las neuronas de la Corteza PreFrontal (PFC). 
+\end{resumen}
+	
+%-------------------------------------------------------------------
+\section{Introducción}
+\label{capAnalisisPFC:sec:introduccion}
+
+Durante este trabajo se analizaron las neuronas del Área Tegmental Ventral (VTA) del cerebro de la rata. En este capítulo se realizará un análisis similar al de los capítulos~\ref{capInterpretacion},~\ref{capIterResult} y~\ref{capCompYApareadas} con las neuronas pertenecientes al área PFC.
+
+%-------------------------------------------------------------------
+\section{Análisis PFC}
+\label{capAnalisisPFC:sec:analisis}
+
+La diferencia estructural con las neuronas de VTA es que se cuenta con 95 neuronas de PFC y la cantidad de milisegundos registrada es 6501 (3500ms antes del tono, y 3000ms posteriores al tono).
+En el Apéndice~\ref{apendiceSetDeDatos}, secciones~\ref{apendiceSetDeDatos:sec:formato} y~\ref{apendiceSetDeDatos:sec:analisis} se describe este set de datos con mas detalle.
+
+%-------------------------------------------------------------------
+\subsection{Neurona Única}
+\label{capAnalisisPFC:sec:analisis:subsec:monoNeuronal}
+
+Realizando el mismo análisis que en el capítulo~\ref{capInterpretacion}, se entreno un LDA con los mismos features hallados en dicho capitulo. Se repiten a continuación las opciones A y B que fueron las elegidas para el entrenamiento:
+\begin{enumerate}[A.]
+\item Tomar como un \textit{feature} a cada milisegundo, teniendo entonces una matriz $X$ de $6501$ columnas.
+\item Tomar la suma de todos los milisegundos como un único \textit{feature}, teniendo una sola columna en la matriz $X$.
+\end{enumerate} 
+Entrenando con estas opciones se intentó separar las clases GOc y NOGOc. \\\\
+Utilizando la opcion A, la performance obtenida para las 95 neuronas fue de $0.5072 \pm 0.0485$.\\
+Utilizando la opcion B la performance fue de $0.5433 \pm 0.0755$. \\\\
+La performance total se calculo como el promedio de la performance individual de clasificación entre las 95 neuronas $\pm$ su desvío estandar. \\\\
+
+Dado que la performance de clasificación $\pm$ su desvio estandar se solapan con el $0.5$ el resultado no es significativo. Por ende se concluyó, que con una sola neurona de PFC no hay suficiente información para diferenciar los trials, al igual que ocurría con las neuronas de VTA. 
+
+%-------------------------------------------------------------------
+\subsection{Poblacional}
+\label{capAnalisisPFC:sec:analisis:subsec:poblacional}
+
+Se realizó el mismo análisis que en la sección~\ref{capInterpretacion:sec:interpretaciones:subsec:poblacional:subsubsec:analisis} y se corrieron los algorítmos estadísticos de forma apareada al igual que en el capítulo~\ref{capCompYApareadas}.\\
+A continuación se pueden ver los resultados:
+\figura{Bitmap/11/PFC_all_line}{width=1\textwidth}{capAnalisisPFC:fig:PFCAllLine}%
+{Comparación apareada para todas las neuronas PFC.}
+
+La figura~\ref{capAnalisisPFC:fig:PFCAllLine} permite observar los métodos a lo largo de los $6501$ ms.\\
+Se puede observar un incremento importante de la performance $100 ms$ despues de la presentacion del estímulo.\\ Este fenomeno no se observó cuando se analizaba el area VTA.
+
+\figura{Bitmap/11/PFC_all_bar_6000}{width=1\textwidth}{capAnalisisPFC:fig:PFCAllBar6000}%
+{Comparación apareada para todas las neuronas PFC en barras a partir del milisegundo $6000$.}
+
+En la figura~\ref{capAnalisisPFC:fig:PFCAllBar6000} se aprecia como se logró alcanzar un $0.9566 \pm 0.0498$ utilizando random forest. Si bien es menor que la obtenida en el Area VTA, igualmente alcanza para demostrar que en PFC también hay información acerca del tono.\\\\
+
+En la siguiente figura se puede observar el incremento que tiene lugar un instante posterior a la presentación del estímulo.
+
+\figura{Bitmap/11/PFC_all_bar_3600_3900}{width=1\textwidth}{capAnalisisPFC:fig:PFCAllBar36003900}%
+{Comparación apareada para todas las neuronas PFC en barras entre los milisegundos $3600$ y $3900$.}
+
+Durante el análisis del area VTA, se vió que la performance se incrementaba a medida aumentaba el tiempo y una vez que la rata había tomado una decisión esta se veía reflejada en la performance creciente.
+ 
+%-------------------------------------------------------------------
+\subsection{Individual}
+\label{capAnalisisPFC:sec:analisis:subsec:individual}
+
+Para analizar el pico que se da posterior al estímulo se decidió estudiar que pasa con cada neurona de forma individual, con el objetivo de determinar si hay alguna que se aleje demasiado de la media y pueda producir dicho efecto.\\
+
+Se entrenó entonces un clasificador LDA para cada neurona 500 veces y se calculó la media y el desvio estandar.
+
+\figura{Bitmap/11/PFC_individual}{width=1\textwidth}{capAnalisisPFC:fig:PFCIndividual}%
+{Performance de las neuronas PFC - Corridas individuales. LDA}
+
+En la figura~\ref{capAnalisisPFC:fig:PFCIndividual} se puede observar como la media de la neurona $80$ supera el $90\%$ y la $84$ el $80\%$. Estas neuronas son casos aislados, que si bien separan correctamente las clases, no representan el comportamiento global.
+
+
+%-------------------------------------------------------------------
+\subsection{Poblacional General}
+\label{capAnalisisPFC:sec:analisis:subsec:poblacionalGeneral}
+
+Se tomó como criterio eliminar las neuronas cuya performance individual sea mayor en media a $0.7$. Las neuronas eliminadas son 4: (77 80 82 84).
+
+Se realizó nuevamente la corrida de los 4 metodos sin estas neuronas.
+
+\figura{Bitmap/11/PFC_all_line_forbidden}{width=1\textwidth}{capAnalisisPFC:fig:PFCAllLineForbidden}%
+{Comparación apareada para las neuronas PFC que su performance individual no supera en media al $70\%$.}
+
+En la figura~\ref{capAnalisisPFC:fig:PFCAllLineForbidden} se observa como el pico posterior al estimulo desapareció y la performance se incrementa lentamente.\\ 
+Si se compara con la figura~\ref{capAnalisisPFC:fig:PFCAllLine} se puede ver que la performance disminuyó en media. \\\\
+En el grafico de barras~\ref{capAnalisisPFC:fig:PFCAllBarForbidden6000} se aprecía que hubo una disminución de aproximadamente 5\% en ton todos los métodos con respecto al gráfico~\ref{capAnalisisPFC:fig:PFCAllBar6000}.
+
+\figura{Bitmap/11/PFC_all_bar_forbidden_6000}{width=1\textwidth}{capAnalisisPFC:fig:PFCAllBarForbidden6000}%
+{Comparación apareada para todas las neuronas PFC que su performance individual no supera en media al $70\%$. Grafico de barras a partir del milisegundo $6000$.}
+
+
+%-------------------------------------------------------------------
+\section{Análisis VTA}
+\label{capAnalisisPFC:sec:analisisVTA}
+
+Dado el comportamiento extraño observado en PFC debido a unas pocas neuronas, se decidió aplicar el mismo análisis para VTA con el objetivo de confirmar que la información está en el conjunto de neuronas y no en cada neurona individualmente.
+
+%-------------------------------------------------------------------
+\subsection{Individual}
+\label{capAnalisisPFC:sec:analisisVTA:subsec:individual}
+
+Se realizó entonces el entrenamiento de un LDA para cada neurona tal y como se explicó en la seccion~\ref{capAnalisisPFC:sec:analisis:subsec:individual}.
+
+\figura{Bitmap/11/VTA_individual}{width=1\textwidth}{capAnalisisPFC:fig:VTAIndividual}%
+{Performance de las neuronas VTA - Corridas individuales.}
+
+Si bien no hay ninguna neurona que sobrepase el $90\%$ como se da en PFC, se observan varias que estan por arriba del $80\%$.
+
+%-------------------------------------------------------------------
+\subsection{Poblacional General}
+\label{capAnalisisPFC:sec:analisisVTA:subsec:poblacionalGeneral}
+
+Al igual que en la seccion~\ref{capAnalisisPFC:sec:analisis:subsec:poblacionalGeneral} se eliminaron las neuronas que superan el $70\%$ de performance.\\
+Las $27$ neuronas eliminadas son: (2 3 6 29 45 72 73 87 102 105 109 110 113 114 115 116 118 122 123 131 132 133 137 138 141 143 145).\\
+
+Se corrieron los algoritmos con las neuronas restantes.
+
+\figura{Bitmap/11/VTA_all_line_forbidden}{width=1\textwidth}{capAnalisisPFC:fig:VTAAllLineForbidden}%
+{Comparación apareada para las neuronas VTA que su performance individual no supera en media al $70\%$.}
+
+Comparando la figura~\ref{capAnalisisPFC:fig:VTAAllLineForbidden} con la figura~\ref{capCompYApareadas:fig:linCompAll} se puede ver un deterioro pequeño en la performance, aunque la forma creciente de la funcion sigue siendo exactamente la misma.\\
+Para apreciarlo mejor se realizó el siguiente gráfico de barras.
+
+\figura{Bitmap/11/VTA_all_bar_forbidden_5000}{width=1\textwidth}{capAnalisisPFC:fig:VTAAllBarForbidden5000}%
+{Comparación apareada para todas las neuronas VTA que su performance individual no supera en media al $70\%$. Grafico de barras a partir del milisegundo $5000$.}
+
+Al compararlo con el grafico~\ref{capCompYApareadas:fig:linCompAllBar} se puede apreciar una disminución de la performance en 1.66\% con Random forest.\\
+En el capítulo~\ref{capConjRed} se vio que si se corría Random Forest eliminando 38 neuronas al azar, la performance disminuía en 0.32\%. Con lo que se demuestra que estas 27 neuronas eliminadas eran importantes para la clasificación (mas importantes que la media de las demas neuronas), pero también demuestra que la información está almacenada en el conjunto de las neuronas y no depende de ninguna de ellas individualmente.
+
+%-------------------------------------------------------------------
+\section{Conclusión}
+\label{capAnalisisPFC:sec:conclusion}
+En este capítulo se demostró que hay suficiente información en el conjunto de neuronas de PFC para separar las clases GOc y NOGOc con una performance de $0.9566 \pm 0.0498$ y $0.9131 \pm 0.0691$ si se eliminan las neuronas que separan individualmente las clases.\\
+A su vez esto demuestra que en el área PFC hay información del estimulo auditivo, aunque es mas dificil de recuperar que en el área VTA.\\
+
+Como adicional se demostró que la información no depende de ninguna neurona en particular, sino del conjunto de las mismas.

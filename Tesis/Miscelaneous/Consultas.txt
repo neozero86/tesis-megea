@@ -1,0 +1,4 @@
+¿Cual frecuencia corresponde a un tono de GO y cual a uno de NOGO (1KHz y 8KHz)?
+¿La ventana de las neuronas VTA va de -4000 a 4001?
+¿Para la corrida del LDA por ej, que parametros tengo que especificar (ya aclaré que use la 
+versión pseudolinear... hace falta en el apendice poner como se corre en MATLAB?

@@ -1,0 +1,279 @@
+\begin{thebibliography}{39}
+\expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
+
+\bibitem[{Ac{\i}r y G{\"u}zeli{\c{s}}(2004)}]{acir2004automatic}
+{\sc Ac{\i}r, N.} y {\sc G{\"u}zeli{\c{s}}, C.}
+\newblock Automatic spike detection in eeg by a two-stage procedure based on
+  support vector machines.
+\newblock {\em Computers in Biology and Medicine\/}, vol.\ 34(7), p\'aginas
+  561--575, 2004.
+
+\bibitem[{Aflalo et\ al.(2015)Aflalo, Kellis, Klaes, Lee, Shi, Pejsa,
+  Shanfield, Hayes-Jackson, Aisen, Heck et\ al.}]{aflalo2015decoding}
+{\sc Aflalo, T.}, {\sc Kellis, S.}, {\sc Klaes, C.}, {\sc Lee, B.}, {\sc Shi,
+  Y.}, {\sc Pejsa, K.}, {\sc Shanfield, K.}, {\sc Hayes-Jackson, S.}, {\sc
+  Aisen, M.}, {\sc Heck, C.} {\sc et\ al.}
+\newblock Decoding motor imagery from the posterior parietal cortex of a
+  tetraplegic human.
+\newblock {\em Science\/}, vol. 348(6237), p\'aginas 906--910, 2015.
+
+\bibitem[{Aggarwal et\ al.(2013)Aggarwal, Mollazadeh, Davidson, Schieber y
+  Thakor}]{aggarwal2013state}
+{\sc Aggarwal, V.}, {\sc Mollazadeh, M.}, {\sc Davidson, A.~G.}, {\sc Schieber,
+  M.~H.} y {\sc Thakor, N.~V.}
+\newblock State-based decoding of hand and finger kinematics using neuronal
+  ensemble and lfp activity during dexterous reach-to-grasp movements.
+\newblock {\em Journal of neurophysiology\/}, vol. 109(12), p\'aginas
+  3067--3081, 2013.
+
+\bibitem[{Breiman(2001)}]{breiman2001random}
+{\sc Breiman, L.}
+\newblock Random forests.
+\newblock {\em Machine learning\/}, vol.\ 45(1), p\'aginas 5--32, 2001.
+
+\bibitem[{Brown et\ al.(2004)Brown, Kass y Mitra}]{brown2004multiple}
+{\sc Brown, E.~N.}, {\sc Kass, R.~E.} y {\sc Mitra, P.~P.}
+\newblock Multiple neural spike train data analysis: state-of-the-art and
+  future challenges.
+\newblock {\em Nature neuroscience\/}, vol.\ 7(5), p\'aginas 456--461, 2004.
+
+\bibitem[{Churchland et\ al.(2010)Churchland, Byron, Cunningham, Sugrue, Cohen,
+  Corrado, Newsome, Clark, Hosseini, Scott et\ al.}]{churchland2010stimulus}
+{\sc Churchland, M.~M.}, {\sc Byron, M.~Y.}, {\sc Cunningham, J.~P.}, {\sc
+  Sugrue, L.~P.}, {\sc Cohen, M.~R.}, {\sc Corrado, G.~S.}, {\sc Newsome,
+  W.~T.}, {\sc Clark, A.~M.}, {\sc Hosseini, P.}, {\sc Scott, B.~B.} {\sc et\
+  al.}
+\newblock Stimulus onset quenches neural variability: a widespread cortical
+  phenomenon.
+\newblock {\em Nature neuroscience\/}, vol.\ 13(3), p\'aginas 369--378, 2010.
+
+\bibitem[{Cortes y Vapnik(1995)}]{cortes1995support}
+{\sc Cortes, C.} y {\sc Vapnik, V.}
+\newblock Support-vector networks.
+\newblock {\em Machine learning\/}, vol.\ 20(3), p\'aginas 273--297, 1995.
+
+\bibitem[{Ding y Yuan(2008)}]{ding2008spike}
+{\sc Ding, W.} y {\sc Yuan, J.}
+\newblock Spike sorting based on multi-class support vector machine with
+  superposition resolution.
+\newblock {\em Medical \& biological engineering \& computing\/}, vol.\ 46(2),
+  p\'aginas 139--145, 2008.
+
+\bibitem[{Donders(1969)}]{donders1969speed}
+{\sc Donders, F.~C.}
+\newblock On the speed of mental processes.
+\newblock {\em Acta psychologica\/}, vol.\ 30, p\'aginas 412--431, 1969.
+
+\bibitem[{Duda et\ al.(1973)Duda, Hart et\ al.}]{duda1973pattern}
+{\sc Duda, R.~O.}, {\sc Hart, P.~E.} {\sc et\ al.}
+\newblock {\em Pattern classification and scene analysis\/}, vol.\ 3.
+\newblock Wiley New York, 1973.
+
+\bibitem[{Efron(1979)}]{efron1979bootstrap}
+{\sc Efron, B.}
+\newblock Bootstrap methods: another look at the jackknife.
+\newblock {\em The annals of Statistics\/}, p\'aginas 1--26, 1979.
+
+\bibitem[{Fisher(1936)}]{fisher1936use}
+{\sc Fisher, R.~A.}
+\newblock The use of multiple measurements in taxonomic problems.
+\newblock {\em Annals of eugenics\/}, vol.\ 7(2), p\'aginas 179--188, 1936.
+
+\bibitem[{Fraiwan et\ al.(2012)Fraiwan, Lweesy, Khasawneh, Wenz y
+  Dickhaus}]{fraiwan2012automated}
+{\sc Fraiwan, L.}, {\sc Lweesy, K.}, {\sc Khasawneh, N.}, {\sc Wenz, H.} y {\sc
+  Dickhaus, H.}
+\newblock Automated sleep stage identification system based on time--frequency
+  analysis of a single eeg channel and random forest classifier.
+\newblock {\em Computer methods and programs in biomedicine\/}, vol. 108(1),
+  p\'aginas 10--19, 2012.
+
+\bibitem[{Gray et\ al.(1995)Gray, Maldonado, Wilson y
+  McNaughton}]{gray1995tetrodes}
+{\sc Gray, C.~M.}, {\sc Maldonado, P.~E.}, {\sc Wilson, M.} y {\sc McNaughton,
+  B.}
+\newblock Tetrodes markedly improve the reliability and yield of multiple
+  single-unit isolation from multi-unit recordings in cat striate cortex.
+\newblock {\em Journal of neuroscience methods\/}, vol.\ 63(1), p\'aginas
+  43--54, 1995.
+
+\bibitem[{Harris et\ al.(2000)Harris, Henze, Csicsvari, Hirase y
+  Buzs{\'a}ki}]{harris2000accuracy}
+{\sc Harris, K.~D.}, {\sc Henze, D.~A.}, {\sc Csicsvari, J.}, {\sc Hirase, H.}
+  y {\sc Buzs{\'a}ki, G.}
+\newblock Accuracy of tetrode spike separation as determined by simultaneous
+  intracellular and extracellular measurements.
+\newblock {\em Journal of neurophysiology\/}, vol.\ 84(1), p\'aginas 401--414,
+  2000.
+
+\bibitem[{Hastie et\ al.(2009)Hastie, Tibshirani, Friedman, Hastie, Friedman y
+  Tibshirani}]{hastie2009elements}
+{\sc Hastie, T.}, {\sc Tibshirani, R.}, {\sc Friedman, J.}, {\sc Hastie, T.},
+  {\sc Friedman, J.} y {\sc Tibshirani, R.}
+\newblock {\em The elements of statistical learning\/}, vol.\ 2.
+\newblock Springer, 2009.
+
+\bibitem[{Hu et\ al.(2005)Hu, Si, Olson y He}]{hu2005feature}
+{\sc Hu, J.}, {\sc Si, J.}, {\sc Olson, B.~P.} y {\sc He, J.}
+\newblock Feature detection in motor cortical spikes by principal component
+  analysis.
+\newblock {\em Neural Systems and Rehabilitation Engineering, IEEE Transactions
+  on\/}, vol.\ 13(3), p\'aginas 256--262, 2005.
+
+\bibitem[{Hubel y Wiesel(1962)}]{hubel1962receptive}
+{\sc Hubel, D.~H.} y {\sc Wiesel, T.~N.}
+\newblock Receptive fields, binocular interaction and functional architecture
+  in the cat's visual cortex.
+\newblock {\em The Journal of physiology\/}, vol. 160(1), p\'aginas 106--154,
+  1962.
+
+\bibitem[{Kim y Kang(2013)}]{kim2013fire}
+{\sc Kim, O.} y {\sc Kang, D.-J.}
+\newblock Fire detection system using random forest classification for image
+  sequences of complex background.
+\newblock {\em Optical Engineering\/}, vol.\ 52(6), p\'aginas 067202--067202,
+  2013.
+
+\bibitem[{Kononenko(1993)}]{kononenko1993successive}
+{\sc Kononenko, I.}
+\newblock Successive naive bayesian classifier.
+\newblock {\em Informatica\/}, vol.\ 17, p\'aginas 167--74, 1993.
+
+\bibitem[{Lebedev y Nicolelis(2006)}]{lebedev2006brain}
+{\sc Lebedev, M.~A.} y {\sc Nicolelis, M.~A.}
+\newblock Brain--machine interfaces: past, present and future.
+\newblock {\em TRENDS in Neurosciences\/}, vol.\ 29(9), p\'aginas 536--546,
+  2006.
+
+\bibitem[{Lee et\ al.(2005)Lee, Lee, Park y Song}]{lee2005extensive}
+{\sc Lee, J.~W.}, {\sc Lee, J.~B.}, {\sc Park, M.} y {\sc Song, S.~H.}
+\newblock An extensive comparison of recent classification tools applied to
+  microarray data.
+\newblock {\em Computational Statistics \& Data Analysis\/}, vol.\ 48(4),
+  p\'aginas 869--885, 2005.
+
+\bibitem[{Lehmann et\ al.(2007)Lehmann, Koenig, Jelic, Prichep, John, Wahlund,
+  Dodge y Dierks}]{lehmann2007application}
+{\sc Lehmann, C.}, {\sc Koenig, T.}, {\sc Jelic, V.}, {\sc Prichep, L.}, {\sc
+  John, R.~E.}, {\sc Wahlund, L.-O.}, {\sc Dodge, Y.} y {\sc Dierks, T.}
+\newblock Application and comparison of classification algorithms for
+  recognition of alzheimer's disease in electrical brain activity (eeg).
+\newblock {\em Journal of neuroscience methods\/}, vol. 161(2), p\'aginas
+  342--350, 2007.
+
+\bibitem[{Liu et\ al.(2007)Liu, Chen, Tan y Zhang}]{liu2007efficient}
+{\sc Liu, J.}, {\sc Chen, S.}, {\sc Tan, X.} y {\sc Zhang, D.}
+\newblock Efficient pseudoinverse linear discriminant analysis and its
+  nonlinear form for face recognition.
+\newblock {\em International Journal of Pattern Recognition and Artificial
+  Intelligence\/}, vol.\ 21(08), p\'aginas 1265--1278, 2007.
+
+\bibitem[{Maroco et\ al.(2011)Maroco, Silva, Rodrigues, Guerreiro, Santana y
+  de~Mendon{\c{c}}a}]{maroco2011data}
+{\sc Maroco, J.}, {\sc Silva, D.}, {\sc Rodrigues, A.}, {\sc Guerreiro, M.},
+  {\sc Santana, I.} y {\sc de~Mendon{\c{c}}a, A.}
+\newblock Data mining methods in the prediction of dementia: A real-data
+  comparison of the accuracy, sensitivity and specificity of linear
+  discriminant analysis, logistic regression, neural networks, support vector
+  machines, classification trees and random forests.
+\newblock {\em BMC research notes\/}, vol.\ 4(1), p\'agina 299, 2011.
+
+\bibitem[{Miller et\ al.(1991)Miller, Sch{\"a}ffer y
+  Hackley}]{millers1991speed}
+{\sc Miller, J.}, {\sc Sch{\"a}ffer, R.} y {\sc Hackley, S.~A.}
+\newblock Effects of preliminary information in a go versus no-go task.
+\newblock {\em Acta Psychologica\/}, vol.\ 76(3), p\'aginas 241--292, 1991.
+
+\bibitem[{Mohri et\ al.(2012)Mohri, Rostamizadeh y
+  Talwalkar}]{mohri2012foundations}
+{\sc Mohri, M.}, {\sc Rostamizadeh, A.} y {\sc Talwalkar, A.}
+\newblock {\em Foundations of machine learning\/}.
+\newblock MIT press, 2012.
+
+\bibitem[{Oh et\ al.(2003)Oh, Laubach y Luczak}]{oh2003estimating}
+{\sc Oh, J.}, {\sc Laubach, M.} y {\sc Luczak, A.}
+\newblock Estimating neuronal variable importance with random forest.
+\newblock En {\em Bioengineering Conference, 2003 IEEE 29th Annual, Proceedings
+  of\/}, p\'aginas 33--34. IEEE, 2003.
+
+\bibitem[{Pais-Vieira et\ al.(2013)Pais-Vieira, Lebedev, Kunicki, Wang y
+  Nicolelis}]{pais2013brain}
+{\sc Pais-Vieira, M.}, {\sc Lebedev, M.}, {\sc Kunicki, C.}, {\sc Wang, J.} y
+  {\sc Nicolelis, M.~A.}
+\newblock A brain-to-brain interface for real-time sharing of sensorimotor
+  information.
+\newblock {\em Scientific reports\/}, vol.\ 3, 2013.
+
+\bibitem[{Platt et\ al.(1998)}]{platt1998sequential}
+{\sc Platt, J.} {\sc et\ al.}
+\newblock Sequential minimal optimization: A fast algorithm for training
+  support vector machines.
+\newblock 1998.
+
+\bibitem[{Polikov et\ al.(2005)Polikov, Tresco y
+  Reichert}]{polikov2005response}
+{\sc Polikov, V.~S.}, {\sc Tresco, P.~A.} y {\sc Reichert, W.~M.}
+\newblock Response of brain tissue to chronically implanted neural electrodes.
+\newblock {\em Journal of neuroscience methods\/}, vol. 148(1), p\'aginas
+  1--18, 2005.
+
+\bibitem[{Press(2007)}]{press2007numerical}
+{\sc Press, W.~H.}
+\newblock {\em Numerical recipes 3rd edition: The art of scientific
+  computing\/}.
+\newblock Cambridge university press, 2007.
+
+\bibitem[{Quiroga et\ al.(2004)Quiroga, Nadasdy y Ben-Shaul}]{spikeSorting}
+{\sc Quiroga, R.~Q.}, {\sc Nadasdy, Z.} y {\sc Ben-Shaul, Y.}
+\newblock Unsupervised spike sorting with wavelets and superparamagnetic
+  clustering.
+\newblock {\em Neural Computation\/}, vol.\ 16, p\'aginas 1661--1687, 2004.
+
+\bibitem[{Quiroga y Panzeri(2009)}]{quiroga2009extracting}
+{\sc Quiroga, R.~Q.} y {\sc Panzeri, S.}
+\newblock Extracting information from neuronal populations: information theory
+  and decoding approaches.
+\newblock {\em Nature Reviews Neuroscience\/}, vol.\ 10(3), p\'aginas 173--185,
+  2009.
+
+\bibitem[{Rao(1948)}]{rao1948utilization}
+{\sc Rao, C.~R.}
+\newblock The utilization of multiple measurements in problems of biological
+  classification.
+\newblock {\em Journal of the Royal Statistical Society. Series B
+  (Methodological)\/}, vol.\ 10(2), p\'aginas 159--203, 1948.
+
+\bibitem[{Schmuker et\ al.(2014)Schmuker, Pfeil y
+  Nawrot}]{schmuker2014neuromorphic}
+{\sc Schmuker, M.}, {\sc Pfeil, T.} y {\sc Nawrot, M.~P.}
+\newblock A neuromorphic network for generic multivariate data classification.
+\newblock {\em Proceedings of the National Academy of Sciences\/}, vol. 111(6),
+  p\'aginas 2081--2086, 2014.
+
+\bibitem[{Valenti et\ al.(2006)Valenti, Cazamajou, Scarpettini, Aizemberg,
+  Silva y Kochen}]{valenti2006automatic}
+{\sc Valenti, P.}, {\sc Cazamajou, E.}, {\sc Scarpettini, M.}, {\sc Aizemberg,
+  A.}, {\sc Silva, W.} y {\sc Kochen, S.}
+\newblock Automatic detection of interictal spikes using data mining models.
+\newblock {\em Journal of neuroscience methods\/}, vol. 150(1), p\'aginas
+  105--110, 2006.
+
+\bibitem[{Velliste et\ al.(2014)Velliste, Kennedy, Schwartz, Whitford, Sohn y
+  McMorland}]{velliste2014motor}
+{\sc Velliste, M.}, {\sc Kennedy, S.~D.}, {\sc Schwartz, A.~B.}, {\sc Whitford,
+  A.~S.}, {\sc Sohn, J.-W.} y {\sc McMorland, A.~J.}
+\newblock Motor cortical correlates of arm resting in the context of a reaching
+  task and implications for prosthetic control.
+\newblock {\em The Journal of Neuroscience\/}, vol.\ 34(17), p\'aginas
+  6011--6022, 2014.
+
+\bibitem[{Vogelstein et\ al.(2004)Vogelstein, Murari, Thakur, Diehl,
+  Chakrabartty y Cauwenberghs}]{vogelstein2004spike}
+{\sc Vogelstein, R.~J.}, {\sc Murari, K.}, {\sc Thakur, P.~H.}, {\sc Diehl,
+  C.}, {\sc Chakrabartty, S.} y {\sc Cauwenberghs, G.}
+\newblock Spike sorting with support vector machines.
+\newblock En {\em Engineering in Medicine and Biology Society, 2004. IEMBS'04.
+  26th Annual International Conference of the IEEE\/}, vol.\ 1, p\'aginas
+  546--549. IEEE, 2004.
+
+\end{thebibliography}

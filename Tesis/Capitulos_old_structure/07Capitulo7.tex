@@ -1,0 +1,88 @@
+%---------------------------------------------------------------------
+%
+%                          Capítulo 7
+%
+%---------------------------------------------------------------------
+
+\chapter{Comparaciones y corridas apareadas}
+\label{capCompYApareadas}
+	
+\begin{resumen}
+En este capítulo se compararán los distintos resultados y se realizarán corridas utilizando exactamente las mismas entradas para los diferentes algoritmos con el objetivo de lograr una comparación estadística válida.
+\end{resumen}	
+
+%-------------------------------------------------------------------
+\section{Introducción}
+\label{capCompYApareadas:sec:introduccion}
+Existen muchas formas de comparar los resultados obtenidos anteriormente, en este capítulo se mostrarán algunas de ellas. 
+\pagebreak
+%-------------------------------------------------------------------
+\section{Comparación}
+\label{capCompYApareadas:sec:comparacion}
+
+Se incluyen en el siguiente gráfico los cuatro métodos corridos anteriormente en función del tiempo.
+
+\figura{Bitmap/07/linear_comparation_all_unpaired}{width=1\linewidth}{capCompYApareadas:fig:linCompAllUnpaired}%
+{Comparación no apareada para todas las neuronas.}
+
+Como se había detallado en el capítulo anterior, se observa una gran diferencia entre LDA y cualquiera de los otros tres métodos. Al querer comparar Bayes-Naive, Random Forest y SVM existe la dificutad que cada uno tiene mejor perfomance en diferentes zonas. Dependiendo de que ventana elija, será mas eficiente uno u otro método.
+
+\figura{Bitmap/07/linear_comparation_all_zoom_unpaired}{width=1\linewidth}{capCompYApareadas:fig:linCompAllZoomUnpaired}%
+{Comparación no apareada para todas las neuronas con zoom.}
+
+La figura~\ref{capCompYApareadas:fig:linCompAllBarUnpaired} permite observar lo que ocurre en el último período de tiempo. La performance de Bayes Naive parece ligeramente inferior a la de Random Forest y SVM.
+
+Debido a que el tono es mostrado a partir del milisegundo $4000$, no tiene sentido comparar los métodos antes de este instante, por ende, para poder apreciarlos mejor se calculó la media del promedio de la precisión para todas las ventanas posteriores al milisegundo $5000$ (cuando los metodos empiezan a establizarse). Se presenta el correspondiente gráfico debajo, junto a su desvío estandar.
+
+\figura{Bitmap/07/linear_comparation_all_bar_5000_unpaired}{width=1\linewidth}{capCompYApareadas:fig:linCompAllBarUnpaired}%
+{Comparación no apareada para todas las neuronas en barras a partir del milisegundo $5000$.}
+
+En la figura~\ref{capCompYApareadas:fig:mediaCompUnpaired} se aprecia una comparación ventana a ventana de la media de cada método.   
+
+\figura{Bitmap/07/media_mayor_que_unpaired}{width=1\linewidth}{capCompYApareadas:fig:mediaCompUnpaired}%
+{Porcentaje en el que la media de un método es mejor que la de otro a partir del milisegundo $5000$.}
+
+Queda entonces demostrado que LDA es inferior a los otros tres metodos cuando se trata de clasificar \textit{spikes}. En la seccion~\ref{capCompYApareadas:sec:resultadosapareados:subsec:conclusion} se profundizará sobre estos resultados.\\\\
+A pesar que Random Forest pareciera tener mayor precisión, los desvíos estandar de Random Forest, Bayes-Naive y SVM se solapan. Dada dicha situación, no es posible inferir cual de estos tres métodos es preferible. Se procede, en la siguiente sección, a realizar corridas de los métodos con exactamente las mismas entradas, dado que en ciertas ventanas la performance de los métodos podría verse afectada por las neuronas y los trials elegidos aleatoriamente.
+
+
+\pagebreak
+%-------------------------------------------------------------------
+\section{Corridas apareadas}
+\label{capCompYApareadas:sec:resultadosapareados}
+
+\subsection{Comparación}
+\label{capCompYApareadas:sec:resultadosapareados:subsec:comparacion}
+
+Se entrenaron, entonces, los cuatro algoritmos estadísticos con las mismas entradas realizando 500 iteraciones para obtener el promedio y el desvío estandar de la precisión en los cuatro métodos. De esta manera se podrá apreciar si existe un clasificador que funcione mejor en ciertas ventanas o instantes de tiempo.
+
+\figura{Bitmap/07/linear_comparation_all}{width=1\linewidth}{capCompYApareadas:fig:linCompAll}%
+{Comparación apareada para todas las neuronas.}
+
+La figura~\ref{capCompYApareadas:fig:linCompAll} permite observar los métodos a lo largo de los $8001$ ms.  
+
+Para poder observar cuales métodos poseen mejor performance se muestra la figura~\ref{capCompYApareadas:fig:linCompAllZoom} donde se puede apreciar como Random Forest y SVM estan por encima de Bayes Naive y LDA durante la mayoría de las ventanas.
+
+\figura{Bitmap/07/linear_comparation_all_zoom}{width=1\linewidth}{capCompYApareadas:fig:linCompAllZoom}%
+{Comparación apareada para todas las neuronas con zoom.}
+
+En el grafico~\ref{capCompYApareadas:fig:linCompAllBar} se aprecia lo expresado anteriormente. Se puede ver mas claramente la diferencia entre los métodos a partir del milisegundo $5000$
+
+\figura{Bitmap/07/linear_comparation_all_bar_5000}{width=1\linewidth}{capCompYApareadas:fig:linCompAllBar}%
+{Comparación apareada para todas las neuronas en barras a partir del milisegundo $5000$.}
+
+Dado que se quiere poder conocer cual método es que mejor performance tiene, se compararon todos los métodos entre si, ventana a ventana.  
+
+\figura{Bitmap/07/media_mayor_que}{width=1\linewidth}{capCompYApareadas:fig:mediaComp}%
+{Porcentaje en el que la media de un método es mejor que la de otro a partir del milisegundo $5000$.}
+ \pagebreak
+\subsection{Conclusión}
+\label{capCompYApareadas:sec:resultadosapareados:subsec:conclusion}
+
+En las figuras~\ref{capCompYApareadas:fig:mediaCompUnpaired} y~\ref{capCompYApareadas:fig:mediaComp} se muestra el porcentaje de ventanas en las que un método es superior a otro.\\
+Se observa que tanto Random Forest como SVM son superiores a LDA en media siempre. A su vez, Bayes Naive es superior a LDA en media con un nivel de significación de $0,01$.\\
+Se concluye entonces que LDA es inferior a los tres métodos anteriores para el análisis de \textit{spikes} en roedores.\\\\ 
+En contraste Random Forest y SVM son superiores en media a Bayes Naive con un nivel de significación de $0,13$ y $0,20$ respectivamente para corridas no apareadas y de $0,13$ y $0,15$ respectivamente para corridas apareadas.\\
+Si bien estos niveles de significación no son concluyentes para determinar la superioridad de un método sobre otro, son valores interesantes que pueden ayudar a decidir que clasificador utilizar a la hora de clasificar \textit{spikes}.\\\\
+
+\textbf{En conclusión se recomienda utilizar Random Forest o SVM a la hora de analizar \textit{spikes} registrados en el área tegmental ventral del cerebro de una rata.} 

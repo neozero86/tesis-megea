@@ -1,0 +1,82 @@
+%---------------------------------------------------------------------
+%
+%                          Apéndice A
+%
+%---------------------------------------------------------------------
+
+%\appendixtitleoff
+%\appendixpageoff
+\chapter{Set de datos}
+\label{apendiceSetDeDatos}
+
+%-------------------------------------------------------------------
+\section{Origen}
+%-------------------------------------------------------------------
+\label{apendiceSetDeDatos:sec:origen}
+
+\subsection{Procedimientos experimentales}
+\label{apendiceSetDeDatos:sec:origen:subsec:procExperimentales}
+
+Todos los protocolos animales utilizados en este estudio fueron aprobados por el Comité de Ética y Cuidado Animal del Instituto de Biología y Medicina Experimental - Consejo Nacional de Investigaciones Científicas y Técnicas ( IBYME - CONICET ) , y fueron realizados de acuerdo con la Guía para el Cuidado y Uso de Animales de Laboratorio del Instituto Nacional de Salud (NIH).
+
+\subsection{Animales}
+\label{apendiceSetDeDatos:sec:origen:subsec:animales}
+
+Todas las ratas utilizadas en este experimento fueron ratas macho adultas Long Evans, proporcionadas por el IBYME - CONICET y mantenidas en ciclos de $12 h$ de oscuridad/luz. Los animales fueron alojados en jaulas individuales con agua y comida \textit{ad libitum}. Su peso se mantuvo entre $270 g$ y $330 g$.
+
+\subsection{Manipulación Pre-quirúrgica}
+\label{apendiceSetDeDatos:sec:origen:subsec:preQuirurgica}
+
+La manipulación pre-quirúrgica comenzó dos semanas antes de la cirugía para que los animales consiguieran habituarse al operador. Los animales fueron levantados por el operador, primero por un corto tiempo ($30 s$), aumentando gradualmente hasta $10 min$. Fueron puestos en libertad sólo cuando estaban calmos y quietos , teniendo especial cuidado de no liberarlos mientras intentaran escapar de la contención.
+
+\subsection{Dispositivos de fijación a la cabeza}
+\label{apendiceSetDeDatos:sec:origen:subsec:fijacion}
+
+Los dispositivos de fijación eran piezas de aluminio ($2 g$) en forma de cruz, fabricados a partir de una chapa de aluminio de $2 mm$ de espesor. Los cuatro extremos del dispositivo fueron atornillados a dos adaptadores de plástico, que a su vez estaban colocados a los titulares de la barra del oído de un aparato estereotáxico Kopf .
+
+\subsection{Cirugía}
+\label{apendiceSetDeDatos:sec:origen:subsec:cirugia}
+
+Los animales fueron anestesiados usando ketamina/xilazina ($75 mg/kg$, $10 mg/kg$, respectivamente). El estado adecuado de la anestesia fue probado mediante la observación de la ausencia del reflejo de la pata. A lo largo de la cirugía , los ojos se cubrieron de ungüento para evitar la desecación . La temperatura corporal se midió mediante una sonda rectal y se mantuvo constante a $37 \celsius$, utilizando una almohadilla controlada.\\
+La piel de la cabeza fue afeitada y el cráneo limpiado y desinfectado ($H2O2$ , $3\%$). Una vez que el cráneo estaba expuesto, se perforaron dos agujeros de $2 mm$ de diámetro sobre las áreas PFC y VTA (PFC coordenadas : $AP = +2,7 mm$ , $L = 2 mm$ , $DV = 2 mm$, VTA coordenadas: $AP = -4,8 mm$, $L = 1 mm$, $DV = 8 mm$; Bregma como cero).\\ Se colocó alrededor de cada agujero una cámara de grabación plástica cilíndrica de $3 mm$ de diámetro por $4 mm$ de profundidad. Se colocaron dos tornillos de acero inoxidable en cada uno de los huesos parietales ($4$ tornillos en total), después de ser desinfectados en etanol al $70\%$. Finalmente, el dispositivo de fijación fue mantenido en su lugar, y fijado a los tornillos y las cámaras de grabación con acrílico dental. Las cámaras de grabación se llenaron con solución antibiótica (neomicina $3,5 mg/ml$, polimixina B $5000 UI$, gramicidina USP $0,025 mg$; OFTAL $3$, Holliday - Scott, AR), y se sellaron con un tapón de algodón.\\
+Inmediatamente después de la cirugía las ratas fueron inyectadas subcutáneamente con $1 mg/kg$ del analgésico meloxicam (Mobic, Boehringer Ingelheim, AR). Durante el post-operatorio, las ratas fueron tratadas con antibióticos (enrofloxacina en el agua potable a $0,05 mg/ml$; Floxacin, Afford, AR) y analgésicos ($3$ gotas de Tramadol $5\%$ por cada $100 ml$ de agua potable; Calmador, Finadiet ,AR) durante al menos $5$ días.
+
+\subsection{Electrodos y adquisición de los datos}
+\label{apendiceSetDeDatos:sec:origen:subsec:electrodos}
+
+El registro extracelular se obtuvo utilizando tetrodos de acuerdo con el siguiente procedimiento.\citep{gray1995tetrodes}\\ Basicamente se juntaron cuatro alambres enrollados de nychrome de $12 \micro m$ de diámetro (Kantal, Palm Coast). A continuación, cada tetrodo se introdujo dentro de una cánula de acero inoxidable de $230 \micro m$ de diámetro externo. Cada alambre se aisló con una funda de poliamida, y su impedancia (a $1KHz$) se ajustó entre $0,5 M\ohm$ y $0,8 M\ohm$ por electrodeposición de oro en la punta.\\
+Los haces de electrodos fueron construidos juntando tres cánulas con cianoacrilato en una configuración de triángulo, con una separación entre ellas de $250 \micro m$. Un cable conectado a la cánula de cada conjunto de tetrodos fue utilizado como tierra.\\
+Las señales fueron pre-amplificadas $x10$ y amplificadas $x1000$. Los datos fueron adquiridos con un dispositivo de National Instruments a una frecuencia de muestreo de $30 KHz$.
+
+%-------------------------------------------------------------------
+\section{Formato y distribución}
+%-------------------------------------------------------------------
+\label{apendiceSetDeDatos:sec:formato}
+
+El set de datos fue adquirido en un archivo de matlab dividido en $3$ estructuras, las cuales a su vez están subdivididas en $30$ sesiones. Cada sesión se subdivide en trials.
+\\\\
+Las tres estructuras son:
+\\\\
+dataBEH: Contiene los resultados, las respuestas de las ratas a los estímulos auditivos. Se trata de 4 vectores para cada sesión, cada uno asociado a un resultado (GOc, GOi, NOGOc, NOGOi).
+Cada vector contiene los números de trials para esa sesión que se corresponden con la respuesta que el vector representa.
+\\\\
+dataVTA y dataPFC: Contiene los \textit{spikes} registrados del Área Tegmental Ventral y de la Corteza Pre Frontal respectivamente. Poseen neuronas (representadas en matrices) para cada sesión. Estas matrices tienen como filas los trials (representado por sus números consecutivos) y como columnas el tiempo (representado en milisegundos). En su interior hay un $0$ o un $1$ indicando si en ese par (trial, milisegundo) hubo o no un \textit{spike}.
+
+%-------------------------------------------------------------------
+\section{Observaciones y análisis}
+%-------------------------------------------------------------------
+\label{apendiceSetDeDatos:sec:analisis}
+
+Se observa que el número de neuronas es variable por cada sesión, variando entre $1$ y $13$, con un promedio de $5$ neuronas por sesión para VTA y variando entre $1$ y $8$, con un promedio de $3$ neuronas por sesión para PFC.
+\\\\
+El numero de trials también es variable entre $64$ y $725$ dependiendo de la sesión.
+\\\\
+El hecho de que los trials y las neuronas sean variables en cada sesión, es una cuestión a considerar a la hora de decidir la forma de aplicar un algoritmo clasificador.
+\\\\
+Se puede observar que la distribución de los resultados es bastante despareja:\\
+GOc: $3169$\\
+GOi: $367$\\
+NOGOc: $2701$\\
+NOGOi: $686$\\\\
+Esto se debe, a que las ratas fueron previamente entrenadas hasta alcanzar un $80\%$ de efectividad antes de empezar a registrar las mediciones.\\\\
+Una distribución tan despareja puede generar dificultades para los clasificadores. 

@@ -1,0 +1,216 @@
+%---------------------------------------------------------------------
+%
+%                          Capítulo 8
+%
+%---------------------------------------------------------------------
+
+\chapter{Conjunto reducido}	
+\label{capConjRed}
+\begin{resumen}
+En este capítulo se reducirá la cantidad de neuronas con las que se entrenan los métodos para poder evaluar cuantas neuronas se necesitan como mínimo para clasificar los trials. 
+\end{resumen}
+	
+
+%-------------------------------------------------------------------
+\section{Introducción}
+\label{capConjRed:sec:introduccion}
+Debido a la eficacia de los métodos estudiados en los capítulos anteriores se hará foco en este capítulo en la clasificación de los trials reduciendo gradualmente el número de neuronas utilizadas para extraer la información.
+\pagebreak
+%-------------------------------------------------------------------
+\section{Análisis comparativo}
+\label{capConjRed:análisis comparativo}
+
+Partiendo de la matriz X y el vector Y, generados con anterioridad para cada ventana, se tomó un porcentaje de neuronas para correr nuevamente todos los algoritmos. Los porcentajes elegidos fueron 100\%, 75\%, 50\%, 25\%, 10\% y 5\% del total de neuronas.
+
+\figura{Bitmap/08/porcentaje_neuronas}{width=0.3\linewidth}{capConjRed:fig:porcentageNeuronas}%
+{Relación Porcentaje - Cantidad de neuronas.}
+
+Una vez fijado dicho porcentaje, la selección de las neuronas fue realizada en forma aleatoria.\\
+Se muestran a continuación los resultados obtenidos.
+\pagebreak
+  
+  
+\begin{figure}[H]
+\centering
+%
+\begin{SubFloat}
+	{\label{fig:capConjRed:linearComparationAll}%
+	Comparación apareada para 153 neuronas.}%
+	\includegraphics[width=0.45\textwidth]%
+	{Imagenes/Bitmap/08/linear_comparation_all}%
+	\end{SubFloat}
+	\qquad
+	\begin{SubFloat}
+	{\label{fig:capConjRed:linearComparation34}%
+	Comparación apareada para 115 neuronas.}%
+	\includegraphics[width=0.45\textwidth]%
+	{Imagenes/Bitmap/08/linear_comparation_34}%
+	\end{SubFloat}
+	\begin{SubFloat}
+	{\label{fig:capConjRed:linearComparation12}%
+	Comparación apareada para 77 neuronas.}%
+	\includegraphics[width=0.45\textwidth]%
+	{Imagenes/Bitmap/08/linear_comparation_12}%
+	\end{SubFloat}
+	\qquad
+	\begin{SubFloat}
+	{\label{fig:capConjRed:linearComparation14}%
+	Comparación apareada para 39 neuronas.}%
+	\includegraphics[width=0.45\textwidth]%
+	{Imagenes/Bitmap/08/linear_comparation_14}%
+	\end{SubFloat}
+	\begin{SubFloat}
+	{\label{fig:capConjRed:linearComparation110}%
+	Comparación apareada para 16 neuronas.}%
+	\includegraphics[width=0.45\textwidth]%
+	{Imagenes/Bitmap/08/linear_comparation_110}%
+	\end{SubFloat}
+	\qquad
+	\begin{SubFloat}
+	{\label{fig:capConjRed:linearComparation120}%
+	Comparación apareada para 8 neuronas.}%
+	\includegraphics[width=0.45\textwidth]%
+	{Imagenes/Bitmap/08/linear_comparation_120}%
+	\end{SubFloat}
+	\caption{Gráficos performance/tiempo.%
+\label{fig:capConjRed:linearComparation}}
+\end{figure}
+En la figura~\ref{fig:capConjRed:linearComparation} se ve como cuando las neuronas disminuyen, disminuye la performance de los metodos.  
+\pagebreak
+  
+\begin{figure}[H]
+\centering
+%
+\begin{SubFloat}
+	{\label{fig:capConjRed:linearComparationAllZoom}%
+	Comparación apareada para 153 neuronas.}%
+	\includegraphics[width=0.45\textwidth]%
+	{Imagenes/Bitmap/08/linear_comparation_all_zoom}%
+	\end{SubFloat}
+	\qquad
+	\begin{SubFloat}
+	{\label{fig:capConjRed:linearComparation34Zoom}%
+	Comparación apareada para 115 neuronas.}%
+	\includegraphics[width=0.45\textwidth]%
+	{Imagenes/Bitmap/08/linear_comparation_34_zoom}%
+	\end{SubFloat}
+	\begin{SubFloat}
+	{\label{fig:capConjRed:linearComparation12Zoom}%
+	Comparación apareada para 77 neuronas.}%
+	\includegraphics[width=0.45\textwidth]%
+	{Imagenes/Bitmap/08/linear_comparation_12_zoom}%
+	\end{SubFloat}
+	\qquad
+	\begin{SubFloat}
+	{\label{fig:capConjRed:linearComparation14Zoom}%
+	Comparación apareada para 39 neuronas.}%
+	\includegraphics[width=0.45\textwidth]%
+	{Imagenes/Bitmap/08/linear_comparation_14_zoom}%
+	\end{SubFloat}
+	\begin{SubFloat}
+	{\label{fig:capConjRed:linearComparation110Zoom}%
+	Comparación apareada para 16 neuronas.}%
+	\includegraphics[width=0.45\textwidth]%
+	{Imagenes/Bitmap/08/linear_comparation_110_zoom}%
+	\end{SubFloat}
+	\qquad
+	\begin{SubFloat}
+	{\label{fig:capConjRed:linearComparation120Zoom}%
+	Comparación apareada para 8 neuronas.}%
+	\includegraphics[width=0.45\textwidth]%
+	{Imagenes/Bitmap/08/linear_comparation_120_zoom}%
+	\end{SubFloat}
+	\caption{Gráficos performance/tiempo con zoom.%
+\label{fig:capConjRed:linearComparationZoom}}
+\end{figure}
+Al realizar zoom en los últimos $2500 ms$ observamos como para las cuatro primeras figuras LDA tiene una performance diferenciable de los otros metodos, en cambio para las últimas dos, todos los metodos se superponen bajando a una performance entre $0.6$ y $0.9$.  
+ 
+\pagebreak
+   
+\begin{figure}[H]
+\centering
+%
+\begin{SubFloat}
+	{\label{fig:capConjRed:barComparationAll}%
+	Comparación apareada para 153 neuronas.}%
+	\includegraphics[width=0.45\textwidth]%
+	{Imagenes/Bitmap/08/bar_comparation_all}%
+	\end{SubFloat}
+	\qquad
+	\begin{SubFloat}
+	{\label{fig:capConjRed:barComparation34}%
+	Comparación apareada para 115 neuronas.}%
+	\includegraphics[width=0.45\textwidth]%
+	{Imagenes/Bitmap/08/bar_comparation_34}%
+	\end{SubFloat}
+	\begin{SubFloat}
+	{\label{fig:capConjRed:barComparation12}%
+	Comparación apareada para 77 neuronas.}%
+	\includegraphics[width=0.45\textwidth]%
+	{Imagenes/Bitmap/08/bar_comparation_12}%
+	\end{SubFloat}
+	\qquad
+	\begin{SubFloat}
+	{\label{fig:capConjRed:barComparation14}%
+	Comparación apareada para 39 neuronas.}%
+	\includegraphics[width=0.45\textwidth]%
+	{Imagenes/Bitmap/08/bar_comparation_14}%
+	\end{SubFloat}
+	\begin{SubFloat}
+	{\label{fig:capConjRed:barComparation110}%
+	Comparación apareada para 16 neuronas.}%
+	\includegraphics[width=0.45\textwidth]%
+	{Imagenes/Bitmap/08/bar_comparation_110}%
+	\end{SubFloat}
+	\qquad
+	\begin{SubFloat}
+	{\label{fig:capConjRed:barComparation120}%
+	Comparación apareada para 8 neuronas.}%
+	\includegraphics[width=0.45\textwidth]%
+	{Imagenes/Bitmap/08/bar_comparation_120}%
+	\end{SubFloat}
+	\caption{Gráficos de barras a partir del milisegundo $5000$.%
+\label{fig:capConjRed:barComparation}}
+\end{figure}
+Como se mencionó arriba para la figura~\ref{fig:capConjRed:barComparation120} se aprecia como los metodos se emparejan y tienen \textit{performance} parecida.
+\pagebreak
+   
+\begin{figure}[H]
+\centering
+%
+\begin{SubFloat}
+	{\label{fig:capConjRed:barComparationLDA}%
+	Performance LDA.}%
+	\includegraphics[width=0.75\textwidth]%
+	{Imagenes/Bitmap/08/bar_comparation_lda}%
+	\end{SubFloat}
+	\qquad
+	\begin{SubFloat}
+	{\label{fig:capConjRed:barComparationBN}%
+	Performance Bayes Naive.}%
+	\includegraphics[width=0.75\textwidth]%
+	{Imagenes/Bitmap/08/bar_comparation_bayes_naive}%
+	\end{SubFloat}
+	\begin{SubFloat}
+	{\label{fig:capConjRed:barComparationSVM}%
+	Performance SVM.}%
+	\includegraphics[width=0.75\textwidth]%
+	{Imagenes/Bitmap/08/bar_comparation_svm}%
+	\end{SubFloat}
+	\qquad
+	\begin{SubFloat}
+	{\label{fig:capConjRed:barComparationRF}%
+	Performance Random Forest.}%
+	\includegraphics[width=0.75\textwidth]%
+	{Imagenes/Bitmap/08/bar_comparation_random_forest}%
+	\end{SubFloat}
+	\caption{Gráficos de barras a partir del milisegundo $5000$.%
+\label{fig:capConjRed:barComparationMethods}}
+\end{figure}
+
+Por último en la figura~\ref{fig:capConjRed:barComparationMethods} se observa que independientemente del método, cuando la cantidad de neuronas es mayor o igual a 77 la performance se mantiene casi constante independientemente de cuantas neuronas mas agreguemos. Por el contrario, parece empezar a decrecer linealmente hacia abajo a medida que se disminuye el número de neuronas.
+
+\section{Conclusión}
+\label{capConjRed:conclusion}
+Como conclusión, se percibe que los métodos requieren una cantidad significativa de neuronas para clasificar con una buena performance.\\
+Igualmente, se ve que teniendo solamente la información de 8 neuronas, podemos clasificar los trials de GOc vs NOGOc usando Random Forest con una performance de $0.798\pm0.089$ Lo cual puede ser aceptable dependiendo del problema q se quiera resolver.

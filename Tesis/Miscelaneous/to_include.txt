@@ -1,0 +1,10 @@
+The essential idea in bagging (Section 8.7) is to average many noisy but
+approximately unbiased models, and hence reduce the variance. Trees are
+ideal candidates for bagging, since they can capture complex interaction structures in the data, and if grown sufficiently deep, have relatively low
+bias. Since trees are notoriously noisy, they benefit greatly from the averaging.
+Moreover, since each tree generated in bagging is identically distributed
+(i.d.), the expectation of an average of B such trees is the same as the expectation
+of any one of them. This means the bias of bagged trees is the
+same as that of the individual trees, and the only hope of improvement is
+through variance reduction. This is in contrast to boosting, where the trees
+are grown in an adaptive way to remove bias, and hence are not i.d.

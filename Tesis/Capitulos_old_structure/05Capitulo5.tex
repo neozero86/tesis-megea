@@ -1,0 +1,60 @@
+%---------------------------------------------------------------------
+%
+%                          Capítulo 5
+%
+%---------------------------------------------------------------------
+
+\chapter{Enfoque por ventanas}
+\label{capEnfoqueVentanas}
+	
+\begin{resumen}
+Se describe en este capítulo el análisis realizado para obtener información relativa a los diferentes instantes de tiempo.
+\end{resumen}
+	
+
+%-------------------------------------------------------------------
+\section{Introducción}
+%-------------------------------------------------------------------
+\label{capEnfoqueVentanas:sec:introduccion}
+
+Luego de aplicar el análisis poblacional con resultados satisfactorios, se deduce que la información respecto al tono se encuentra guardada en un grupo de neuronas. Por lo tanto los clasificadores mejoran su performance cuando la entrada se compone de varias neuronas. \\
+Dado que el tono es enseñado al animal a los $4000 ms$, se pretende identificar cuanta información acerca del tono se encuentra almacenada a medida que transcurre el tiempo.
+
+\section{Implementación}
+\label{capEnfoqueVentanas:sec:implementación}
+
+Se analizarán pequeños períodos de tiempo con el fin de observar como evoluciona la performance de clasificación a lo largo del tiempo. Se recorrió la matriz de cada neurona de a 10 en 10 ms tomando ventanas de 300 ms y realizando la suma de los \textit{spikes} en dichas ventanas, con lo cual se pasó de trabajar con una matriz de 8001 columnas llenas de 0 y 1 a trabajar con una matriz de 771 columnas llenas de números enteros. \\\\
+Se probaron diferentes tamaños de ventana y estos impactaron significativamente en la performance. En capítulos posteriores se analizarán las ventajas y desventajas de los distintos tamaños de ventana. Por el momento, y para continuar con el análisis, se dejará el tamaño de ventana fijo en 300 ms.\\
+Este tamaño permitirá ver como la performance crece en función del tiempo. 
+\figura{Bitmap/05/windows_time}{width=1\linewidth}{capEnfoqueVentanas:fig:windowsTime}%
+{Division de la neurona en ventanas}
+
+En forma análoga a lo explicado en el capítulo anterior, se utilizarán las neuronas como variables y la suma de los \textit{spikes} en la ventana como valor, con lo cual se analizará individualmente la clasificación en cada ventana. \\
+
+A este par de $X$ e $Y$ se lo denominará $X_w$ e $Y_w$ ya que en este caso hay un par por cada ventana (window).
+
+\figura{Bitmap/05/XYmatrix}{width=0.9\linewidth}{capEnfoqueVentanas:fig:XYmatrix}%
+{Composición de la matriz $X_w$ y el vector $Y_w$}
+ 
+Nuevamente, se tomará el 70\%  de la matriz $X$ para entrenamiento y el 30\% restante para medir la performance de clasificación.
+
+\section{Resultados}
+\label{capEnfoqueVentanas:sec:resultados}
+
+Se corrió entonces el algoritmo LDA para cada una de las ventanas y se graficó la performance en función de la ventana.
+
+\figura{Bitmap/05/LDA_run_window}{width=1\linewidth}{capEnfoqueVentanas:fig:LDARunWindow}%
+{LDA - Performance en funcion de la ventana.}
+
+Para poder analizar mejor los resultados se graficó nuevamente la performance pero esta vez en función del tiempo (ms), realizando una transformación del espacio de ventanas al espacio de tiempo. Esto es posible debido que hay una relación directa entre las ventanas y el tiempo. \\
+La ecuación utilizada para aproximar a que ventana corresponde la performance es $t=w*10+291$.
+De esta manera para el milisegundo 8001 corresponderá la ventana 771. ($8001=771*10+291$).
+
+\figura{Bitmap/05/LDA_run_time}{width=1\linewidth}{capEnfoqueVentanas:fig:LDARunTime}%
+{LDA - Performance en funcion del tiempo.}
+
+En la figura~\ref{capEnfoqueVentanas:fig:LDARunTime} se puede apreciar claramente como a partir del milisegundo 4000 la performance comienza a incrementarse en media.\\
+\\
+Estos resultados se encuentran dentro de lo esperado debido a que el estímulo auditivo le es enseñado a la rata en el milisegundo 4000, por ende, la información del tono debe encontrarse en un momento posterior a ese instante. Una vez tomada la decisión, es consistente que la información persista en el resto de las ventanas.\\
+Se puede observar también que la performance fluctua demasiado con respecto a la ventana tomada. Se debe analizar si es un problema de esa ventana o simplemente es debido a que los trials fueron tomados al azar. En el siguiente capítulo se analizará esta cuestión en detalle.
+

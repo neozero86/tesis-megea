@@ -1,0 +1,109 @@
+%---------------------------------------------------------------------
+%
+%                          Capítulo 4
+%
+%---------------------------------------------------------------------
+\chapter{Interpretación del problema}
+\label{capInterpretacion}
+\begin{resumen}
+Se comienza a interpretar el problema y se ven los primeros resultados 
+\end{resumen}
+	
+
+%-------------------------------------------------------------------
+\section{Introducción}
+%-------------------------------------------------------------------
+\label{capInterpretacion:sec:introduccion}
+
+Existen muchos enfoques y caminos posibles a tomar para analizar el set de datos descripto en el capítulo~\ref{capSetDeDatos}. \\
+En este capítulo se presentan algunos enfoques tomados y los resultados obtenidos.\\
+De aquí en adelante se realizará el analisis para el área VTA debido a que es la que posee mas neuronas.
+En el capítulo~\ref{capAnalisisPFC} se aplicará lo descubierto a lo largo de los capitulos siguientes para analizar el área PFC.
+
+
+%-------------------------------------------------------------------
+\section{Interpretaciones}
+%-------------------------------------------------------------------
+\label{capInterpretacion:sec:interpretaciones}
+
+La técnica utilizada para entrenar los algorítmos estadísticos elegidos es el aprendizaje supervisado, detallado en \citep{mohri2012foundations}.
+\\
+Esta técnica consiste en predecir el valor correspondiente a cualquier objeto de entrada válida después de haber visto una serie de ejemplos (datos de entrenamiento). 
+\\
+Para el aprendizaje supervisado se tomaron en forma aleatoria el 70\% de los datos como datos de entrenamiento y se prueba el resultado del entrenamiento con el 30\% restante de los datos (etapa de test). 
+\\
+Elegido el método de aprendizaje, queda por definir con que información se van a entrenar los algoritmos. 
+
+\subsection{Análisis de neurona única}
+\label{capInterpretacion:sec:interpretaciones:subsec:monoNeuronal}
+
+Como primera aproximación se trató de conseguir separar las clases con una sola neurona y se repitió el proceso para todas las neuronas de la población registrada. \\En otros términos, se estudió cuanta información en promedio tiene el conjunto de neuronas sin considerar que puede haber interacción entre ellas.
+\\\\
+Para entrenar los clasificadores debemos generar un espacio de \textit{features} que permita al clasificador utilizado encontrar correlaciones entre los mismos y las respuestas esperadas. 
+\\
+Se sabe, de acuerdo a lo observado en el capítulo~\ref{capSetDeDatos}, que cada \textit{trial} se corresponde unívocamente con una respuesta del animal. Por ende, podemos deducir que la respuesta esperada para cada \textit{trial} será la respuesta del animal (GOc, GOi, NOGOc, NOGOi). \\
+Los clasificadores requieren una matriz de \textit{features} y un vector de salidas esperadas para poder realizar el entrenamiento. De ahora en adelante se llamará a esta matriz $X$ y al vector de respuestas esperadas $Y$.\\
+Las columnas de $X$ serán los \textit{features}, y las filas los \textit{trials}. Cada fila de $X$ tendrá una salida esperada, que se incluirá en el vector $Y$. Lo que denota en que la fila $n$ de $X$ corresponde con la posición $n$ de $Y$.\\\\
+El análisis entonces consiste en determinar cuales serán los \textit{features} que se utilizarán en el entrenamiento.
+
+\figura{Bitmap/04/XeY}{width=1\textwidth}{capSetDeDatos:fig:XeY}%
+{Matriz $X$ y Vector $Y$}
+
+Usando solamente una neurona, las opciones a explorar son:
+\begin{enumerate}[A.]
+\item Tomar como un \textit{feature} a cada milisegundo, teniendo entonces una matriz $X$ de $8001$ columnas.
+\item Tomar la suma de todos los milisegundos como un único \textit{feature}, teniendo una sola columna en la matriz $X$.
+\item Combinar las dos ideas anteriores y tomar como un \textit{feature} la suma de $n$ milisegundos, teniendo así ceil(8001/$n$) columnas en $X$, pudiendo variar $n$ para intentar incrementar la performance de clasificación. 
+\item Generar \textit{features} en base a patrones encontrados dentro de cada \textit{trial} y combinar los mismos con alguna de las 3 primeras opciones.\\
+Por ejemplo, se buscaron picos de \textit{spikes} en una ventana de tiempo y se agregaron como \textit{features} extra.
+\end{enumerate}
+
+
+\vspace{0.8cm}
+El primer problema que se observó es que los trials de GOi y NOGOi son tan pocos que los clasificadores no encontraban patrón para poder diferenciarlos de los demás.\\
+
+\figura{Bitmap/04/Analisis_Mononeuronal_Matriz_de_Confusion}{width=1\textwidth}{capSetDeDatos:fig:MonoConfMat}%
+{Matriz de confusión de una neurona con las cuatro clases, donde se observa la poca cantidad de trials GOi y NOGOi en comparacion con las otras dos clases.}
+
+Por el motivo explicado y los resultados obtenidos se decidió de acá en adelante utilizar solamente los trials de GOc y NOGOc para simplificar el trabajo de los clasificadores. 
+\\
+Con esta simplificación, se intentó separar las clases GOc y NOGOc. \\ 
+Utilizando la opcion A, la performance obtenida para las 153 neuronas fue de $0.5354 \pm 0.0956$.\\
+Utilizando la opcion B la performance fue de $0.5910 \pm 0.1179$. \\
+La performance total se calculo como el promedio de la performance individual de clasificación entre las 153 neuronas $\pm$ su desvío estandar. \\\\
+\\\
+Se intentó mejorar estos resultados con técnicas como las descriptas en las opciones C y D, pero no se logró incrementar los números obtenidos anteriormente.
+\\\\ 
+La performance de clasificación $\pm$ su desvio estandar con LDA se solapan con el $0.5$, por lo cual el resultado no es significativo. Por ende se concluyó que con una sola neurona no hay suficiente información para diferenciar los trials. 
+
+\subsection{Análisis poblacional}
+\label{capInterpretacion:sec:interpretaciones:subsec:poblacional}
+
+\subsubsection{Análisis}
+\label{capInterpretacion:sec:interpretaciones:subsec:poblacional:subsubsec:analisis}
+
+Como se vio en la sección anterior, la predicción del estímulo presentado en base a la información obtenida de neuronas individuales no es significativa. Es por este motivo que se intentó analizar si el contenido de información de la población de neuronas aumenta en función del número de neuronas registradas. \\
+Si las neuronas fuesen procesos estocásticos independientes, es esperable que el contenido de información no aumente, pero si existen interacciones de segundo o mayor orden probablemente la predicción del estímulo sea posible. \\\\
+
+Al analizar varias neuronas, al igual que en el caso anterior, se debe definir con que \textit{features} se entrenarán los clasificadores.\\
+Aprovechando el análisis de neurona única realizado en la sección anterior, se puede elaborar un análisis similar para el caso poblacional. La opción B del análisis de neurona única ahora parece mas interesante ya que de esta manerá se tendrá un \textit{feature} por cada neurona.
+
+Para las salidas esperadas $Y$, al igual que en el caso anterior, se tomarán las respuestas de los trials. 
+
+\subsubsection{Preparación}
+\label{capInterpretacion:sec:interpretaciones:subsec:poblacional:subsubsec:preparacion}
+
+La matriz $X$ enseñada al clasificador tendrá a las neuronas como columnas y los distintos trials de GOc y NOGOc como filas. El vector $Y$ tendrá las respuestas esperadas. \\\\
+Para conseguir dicha matriz, se busco el máximo tamaño de trials GOc y NOGOc que aparecía mínimamente en todas las neuronas. Se encontraron 31 trials GOc y 23 trials NOGOc disponibles como mínimo en todas las neuronas. Se tomó entonces el mínimo valor de los dos (23) para conseguir que la matriz tenga la misma cantidad de trials de uno y de otro.\\\\
+Se tiene la matriz $X$ con 153 columnas (cantidad total de neuronas VTA que se registraron en las 30 sesiones) y 46 filas que representan 23 trials GOc y 23 trials NOGOc. También se cuenta con el vector $Y$ con 46 posiciones donde en cada posición se colocará un 1 o un 2, dependiendo si el trial (fila de $X$) correspondiente a este número de posición corresponde a la clase 1 (GOc) o a la clase 2 (NOGOc). \\
+
+\figura{Bitmap/04/XeYPoblacional}{width=1\textwidth}{capSetDeDatos:fig:XeYPoblacional}%
+{Matriz $X$ y Vector $Y$ - Análisis poblacional - $x_{i,j}$ representa la suma de todos los \textit{spikes} para el \textit{trial} $i$ de la neurona $j$ }
+
+A su vez, se tomará el 70\%  de la matriz $X$ para entrenamiento y el 30\% restante para medir la performance de clasificación.\\\\\
+
+\subsubsection{Resultados}
+\label{capInterpretacion:sec:interpretaciones:subsec:poblacional:subsubsec:resultados}
+
+Se entrenó un LDA con las matrices mencionadas anteriormente y se consiguió una performance alrededor del 90\%. \\
+Estos resultados son significativos, mas adelante se analizarán las implicancias de los mismos.  
