@@ -129,18 +129,18 @@
 % muchas más cosas, pero no las he mirado todas.
 %
 % http://www.ctan.org/tex-archive/help/Catalogue/entries/glosstex.html
-\ifx\generaacronimos\undefined
+%\ifx\generaacronimos\undefined
   % No queremos acrónimos. Como no incluiremos el paquete glosstex
   % redefinimos sus comandos para que no cruja si se han usado.
-  \newcommand{\glosstex}[1]{}
-  \newcommand{\acronym}[1]{}
-  \newcommand{\ac}[1]{#1}
-  \newcommand{\acs}[1]{#1}
-  \newcommand{\acl}[1]{#1}
-  \newcommand{\acf}[1]{#1}
-\else
-  \usepackage{glosstex}
-\fi
+%  \newcommand{\glosstex}[1]{}
+%  \newcommand{\acronym}[1]{}
+%  \newcommand{\ac}[1]{#1}
+%  \newcommand{\acs}[1]{#1}
+%  \newcommand{\acl}[1]{#1}
+%  \newcommand{\acf}[1]{#1}
+%\else
+%  \usepackage{glosstex}
+%\fi
 
 % shortvrb supuestamente define algunas macros cómodas como carácteres
 % de escape.  Por ejemplo, para poner  un < normalmente  hay que hacer
@@ -206,7 +206,7 @@
 % tener que escribir  \'a ... aunque eso en teoría  lo hace el paquete
 % inputenc :-m
 
-\usepackage[spanish,activeacute]{babel}
+\usepackage[english,activeacute]{babel}
 
 % El paquete url sirve para poder  poner direcciones Web y no morir en
 % el intento,  sobre todo  en la bibliografía.   Es útil porque  si la
@@ -583,6 +583,15 @@
   \def\listtablename{\'Indice de Tablas}%
   \def\contentsname{\'Indice}%
   \def\chaptername{Cap\'itulo}%
+}
+
+\addto\captionsenglish{%
+  \def\tablename{Tabla}%
+  \def\listtablename{\'Indice de Tablas}%
+  \def\listfigurename{\'Indice de Figuras}%
+  \def\contentsname{\'Indice}%
+  \def\chaptername{Cap\'itulo}%
+  \def\appendixname{Ap\'endice}%
 }
 
 % Supuestamente,  codificación   que  tiene  'nativas'   las  palabras

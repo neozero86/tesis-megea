@@ -34,6 +34,7 @@
 \usepackage{textcomp,gensymb}
 \usepackage{amssymb}
 \setlength{\intextsep}{25pt plus 2pt minus 2pt}
+
 %
 % Definimos  el   comando  \compilaCapitulo,  que   luego  se  utiliza
 % (opcionalmente) en config.tex. Quedaría  mejor si también se definiera
@@ -85,6 +86,9 @@ constantes,guionado,Cascaras/bibliografia,config%
 % Incluimos el fichero con comandos de constantes
 \include{constantes}
 
+\usepackage[numberedsection]{glossaries}
+\input{Apendices/ApendiceGlosario.tex}
+
 % Sacamos en el log de la compilación el copyright
 \typeout{Copyright Matías Leonel Egea}
 
@@ -111,6 +115,7 @@ constantes,guionado,Cascaras/bibliografia,config%
 % Incluimos el  fichero de definición de guionado  de algunas palabras
 % que LaTeX no ha dividido como debería
 \input{guionado}
+
 
 % Marcamos  el inicio  del  documento para  la  numeración de  páginas
 % (usando números romanos para esta primera fase).
@@ -154,6 +159,7 @@ constantes,guionado,Cascaras/bibliografia,config%
 
 \include{Cascaras/bibliografia}
 
+\printglossary[title={Glosario de palabras}]
 %
 % Índice de palabras
 %
@@ -179,14 +185,15 @@ constantes,guionado,Cascaras/bibliografia,config%
 % TeXiS.sty para más información.
 
 
-\ifx\generaacronimos\undefined
-\else
-\include{TeXiS/TeXiS_acron}
-\fi
+%\ifx\generaacronimos\undefined
+%\else
+%\include{TeXiS/TeXiS_acron}
+%\fi
 
 %
 % Final
 %
 %\include{Cascaras/fin}
+
 
 \end{document}

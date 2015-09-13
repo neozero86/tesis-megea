@@ -28,19 +28,20 @@
 \BOOKMARK [1][-]{section.4.5}{Predicci\363n del comportamiento}{chapter.4}% 28
 \BOOKMARK [2][-]{subsection.4.5.1}{Conclusi\363n}{section.4.5}% 29
 \BOOKMARK [0][-]{chapter.5}{Conclusiones}{}% 30
-\BOOKMARK [0][-]{Apéndice.alph1.Alph1}{Ap\351ndice Set de datos}{}% 31
-\BOOKMARK [1][-]{section.alph1.Alph1.1}{Origen}{Apéndice.alph1.Alph1}% 32
-\BOOKMARK [2][-]{subsection.alph1.Alph1.1.1}{Procedimientos experimentales}{section.alph1.Alph1.1}% 33
-\BOOKMARK [2][-]{subsection.alph1.Alph1.1.2}{Animales}{section.alph1.Alph1.1}% 34
-\BOOKMARK [2][-]{subsection.alph1.Alph1.1.3}{Manipulaci\363n Pre-quir\372rgica}{section.alph1.Alph1.1}% 35
-\BOOKMARK [2][-]{subsection.alph1.Alph1.1.4}{Dispositivos de fijaci\363n a la cabeza}{section.alph1.Alph1.1}% 36
-\BOOKMARK [2][-]{subsection.alph1.Alph1.1.5}{Cirug\355a}{section.alph1.Alph1.1}% 37
-\BOOKMARK [2][-]{subsection.alph1.Alph1.1.6}{Electrodos y adquisici\363n de los datos}{section.alph1.Alph1.1}% 38
-\BOOKMARK [1][-]{section.alph1.Alph1.2}{Formato y distribuci\363n}{Apéndice.alph1.Alph1}% 39
-\BOOKMARK [1][-]{section.alph1.Alph1.3}{Observaciones y an\341lisis}{Apéndice.alph1.Alph1}% 40
-\BOOKMARK [0][-]{Apéndice.alph1.Alph2}{Ap\351ndice Configuraci\363n de los algoritmos}{}% 41
-\BOOKMARK [1][-]{section.alph1.Alph2.1}{LDA}{Apéndice.alph1.Alph2}% 42
-\BOOKMARK [1][-]{section.alph1.Alph2.2}{Bayes-Naive}{Apéndice.alph1.Alph2}% 43
-\BOOKMARK [1][-]{section.alph1.Alph2.3}{An\341lisis con SVM}{Apéndice.alph1.Alph2}% 44
-\BOOKMARK [1][-]{section.alph1.Alph2.4}{An\341lisis con Random Forest}{Apéndice.alph1.Alph2}% 45
+\BOOKMARK [0][-]{Apéndice.a.A}{Ap\351ndice Set de datos}{}% 31
+\BOOKMARK [1][-]{section.a.A.1}{Origen}{Apéndice.a.A}% 32
+\BOOKMARK [2][-]{subsection.a.A.1.1}{Procedimientos experimentales}{section.a.A.1}% 33
+\BOOKMARK [2][-]{subsection.a.A.1.2}{Animales}{section.a.A.1}% 34
+\BOOKMARK [2][-]{subsection.a.A.1.3}{Manipulaci\363n Pre-quir\372rgica}{section.a.A.1}% 35
+\BOOKMARK [2][-]{subsection.a.A.1.4}{Dispositivos de fijaci\363n a la cabeza}{section.a.A.1}% 36
+\BOOKMARK [2][-]{subsection.a.A.1.5}{Cirug\355a}{section.a.A.1}% 37
+\BOOKMARK [2][-]{subsection.a.A.1.6}{Electrodos y adquisici\363n de los datos}{section.a.A.1}% 38
+\BOOKMARK [1][-]{section.a.A.2}{Formato y distribuci\363n}{Apéndice.a.A}% 39
+\BOOKMARK [1][-]{section.a.A.3}{Observaciones y an\341lisis}{Apéndice.a.A}% 40
+\BOOKMARK [0][-]{Apéndice.a.B}{Ap\351ndice Configuraci\363n de los algoritmos}{}% 41
+\BOOKMARK [1][-]{section.a.B.1}{LDA}{Apéndice.a.B}% 42
+\BOOKMARK [1][-]{section.a.B.2}{Bayes-Naive}{Apéndice.a.B}% 43
+\BOOKMARK [1][-]{section.a.B.3}{An\341lisis con SVM}{Apéndice.a.B}% 44
+\BOOKMARK [1][-]{section.a.B.4}{An\341lisis con Random Forest}{Apéndice.a.B}% 45
 \BOOKMARK [0][-]{chapter*.36}{Bibliograf\355a}{}% 46
+\BOOKMARK [0][-]{chapter*.38}{Glosario de palabras}{}% 47

@@ -115,6 +115,7 @@
 \cabeceraEspecial{Bibliografía}
 
 
+\renewcommand\bibname{Bibliografía}
 % Creamos la  bibliografía. Lo hacemos  dentro de un bloque  (entre la
 % pareja \begingroup  ... \endgroup) porque  dentro vamos a  anular la
 % semántica que da babel  a la tilde de la eñe (que  hace que un ~N se
@@ -132,7 +133,7 @@
 % incluye natbib y babel.
 
 \begingroup
-\spanishdeactivate{~}
+%\spanishdeactivate{~}
 \bibliographystyle{TeXiS/TeXiS}
 %\bibliographystyle{abbrv}
 \bibliography{\ficherosBibliografia}

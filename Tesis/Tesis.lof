@@ -1,4 +1,4 @@
-\select@language {spanish}
+\select@language {english}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
@@ -50,6 +50,7 @@
 \contentsline {figure}{\numberline {4.19}{\ignorespaces Random Forest - Ventana de tama\~no fijo en $300 ms$ (Verde) vs Ventana ampli\'andose a medida que avanza el tiempo (Rojo).\relax }}{37}{figure.caption.33}
 \contentsline {figure}{\numberline {4.20}{\ignorespaces Gr\'afico de la performance en funci\'on del tiempo separando las clases L (saca lengua) y NO-L (no saca lengua) para la ventana entre $4000ms$ y $4300ms$\relax }}{38}{figure.caption.34}
 \contentsline {figure}{\numberline {4.21}{\ignorespaces Significancia en el que la performance de un m\'etodo es mayor a 0.5 para la ventana entre $4000ms$ y $4300ms$\relax }}{39}{figure.caption.35}
+\addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
