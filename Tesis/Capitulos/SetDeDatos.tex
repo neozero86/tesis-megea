@@ -12,7 +12,7 @@
 %-------------------------------------------------------------------
 \label{capSetDeDatos:sec:origen}
 
-El set de datos analizado proviene del registro de la actividad neuronal correspondiente a cuatro ratas macho adulto Long Evans. Las mismas fueron entrenadas para discriminar dos estímulos auditivos de frecuencias diferentes ($1KHz$ y $8KHz$). Luego que alcanzaran una performace mayor a 80\%, probadas en el paradigma de discriminación, se registró la actividad neuronal del área tegmental ventral (VTA) y de la Corteza PreFrontal (PFC). Se realizaron 30 sesiones de registro (con los 4 animales), obteniéndose luego de un proceso de \textit{spike} sorting 153 neuronas VTA y 95 neuronas PFC. \citep{spikeSorting}.\\\\
+El set de datos analizado proviene del registro de la actividad neuronal correspondiente a cuatro ratas macho adulto Long Evans. Las mismas fueron entrenadas para discriminar dos estímulos auditivos de frecuencias diferentes ($1KHz$ y $8KHz$). Luego que alcanzaran una performace mayor a 80\%, probadas en el \gls{PD}, se registró la actividad neuronal del \gls{VTA} y de la \gls{PFC}. Se realizaron 30 sesiones de registro (con los 4 animales), obteniéndose luego de un proceso de \textit{\gls{S}} sorting 153 neuronas VTA y 95 neuronas PFC. \citep{spikeSorting}.\\\\
 Para el entrenamiento se utilizó el paradigma GO/NOGO. Dicho paradigma consiste en una tarea de discriminación, en la cual los estímulos son presentados en un flujo continuo y los participantes deben realizar una decisión binaria para cada uno de ellos. Se presentan 2 tipos de estímulo distintos, en un caso se espera de los participantes una respuesta motora (caso GO), mientras que en el otro dichos participantes deben contener la respuesta (caso NOGO) \citep{donders1969speed}.\\
 En dos de los animales entrenados, la presentación del estímulo auditivo de mayor frecuencia fue asociada con la respuesta GO (sacar la lengua en una ventana temporal de 2 segundos posteriores al estímulo), mientras que el de menor frecuencia fue asociado con la respuesta NOGO (esconder la lengua por 2 segundos). En los otros dos animales los estímulos se asociaron a las respuestas de manera opuesta, para evitar cualquier sesgo en los resultados. En todos los casos la respuesta GO correcta (sacar la lengua cuando el tono presentado era el correcto) fue recompensada con una gota de agua. La respuesta de \textit{lick} fue filmada con una cámara y se determinó a través del procesamiento de imágenes de la zona bucal de cada animal.\\
 
@@ -36,13 +36,13 @@ La información relativa al formato y distribución de los datos, junto con el aná
 %-------------------------------------------------------------------
 \label{capSetDeDatos:sec:features}
 
-La técnica utilizada para entrenar los algoritmos estadísticos elegidos fue aprendizaje supervisado \citep{mohri2012foundations}. Esta técnica consiste en predecir la clase a la que pertenece una muestra después de haber aprendido con una serie de ejemplos (datos de entrenamiento). Para el aprendizaje supervisado se tomó en forma aleatoria el 70\% de los datos para el entrenamiento y se validó el resultado del entrenamiento con el 30\% restante de los mismos (etapa de test). Como característica de la señal (\textit{feature}) se utilizó la actividad media de las neuronas en una ventana temporal determinada, esto es, la tasa de disparo promedio. Podrían haberse empleado otras características de la señal neuronal como el Inter Spike Interval o incluso la variabilidad con respecto al promedio, pero la tasa de disparo es una medida directa de actividad, lo que simplifica la validación de los resultados obtenidos.
+La técnica utilizada para entrenar los algoritmos estadísticos elegidos fue aprendizaje supervisado \citep{mohri2012foundations}. Esta técnica consiste en predecir la clase a la que pertenece una muestra después de haber aprendido con una serie de ejemplos (datos de entrenamiento). Para el aprendizaje supervisado se tomó en forma aleatoria el 70\% de los datos para el entrenamiento y se validó el resultado del entrenamiento con el 30\% restante de los mismos (etapa de test). Como característica de la señal (\textit{feature}) se utilizó la actividad media de las neuronas en una ventana temporal determinada, esto es, la tasa de disparo promedio. Podrían haberse empleado otras características de la señal neuronal como el \gls{ISI} o incluso la variabilidad con respecto al promedio, pero la tasa de disparo es una medida directa de actividad, lo que simplifica la validación de los resultados obtenidos.
 
 
 \subsection{Análisis de neurona única}
 \label{capSetDeDatos:sec:features:subsec:monoNeuronal}
 
-Como primera aproximación se intentará separar las clases utilizando la actividad de una sola neurona por clasificador, repitiendo el proceso para todas las neuronas de la población registrada. En otros términos, se estudiará cuanta información en promedio tiene el conjunto de neuronas, sin considerar que puede haber interacción entre ellas.
+Como primera aproximación se intentará separar las clases utilizando la actividad de una sola neurona por \gls{C}, repitiendo el proceso para todas las neuronas de la población registrada. En otros términos, se estudiará cuanta información en promedio tiene el conjunto de neuronas, sin considerar que puede haber interacción entre ellas.
 \\\\
 Para entrenar los clasificadores se debe generar un espacio de \textit{features}, que permita al clasificador utilizado, encontrar correlaciones entre los mismos y las respuestas esperadas. \\
 Se sabe, de acuerdo a lo observado en la sección~\ref{capSetDeDatos:sec:origen}, que cada \textit{trial} se corresponde unívocamente con una respuesta del animal. Por ende, es posible deducir que la respuesta esperada para cada \textit{trial} será la respuesta del animal (GOc, GOi, NOGOc, NOGOi). \\
@@ -63,7 +63,7 @@ Utilizando solamente una neurona, se explorarán 2 opciones:
 El primer problema observado radica en la poca cantidad de trials GOi y NOGOi, lo que apareja que los clasificadores no encuentren un patrón para poder diferenciarlos de los demás.\\
 
 \figura{Bitmap/04/Analisis_Mononeuronal_Matriz_de_Confusion}{width=1\textwidth}{capSetDeDatos:fig:MonoConfMat}%
-{Matriz de confusión de una neurona LDA con las cuatro clases, donde se observa la poca cantidad de trials GOi y NOGOi, en comparación con las otras dos clases.}
+{\gls{MCf} de una neurona LDA con las cuatro clases, donde se observa la poca cantidad de trials GOi y NOGOi, en comparación con las otras dos clases.}
 
 Por el motivo explicado y los resultados obtenidos, se decidió de ahora en mas utilizar solamente los trials de GOc y NOGOc para simplificar el trabajo de los clasificadores. \\
 
