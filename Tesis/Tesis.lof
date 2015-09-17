@@ -9,7 +9,7 @@
 \contentsline {figure}{\numberline {2.4}{\ignorespaces Proceso de clasificaci\'on de una muestra con Random Forest\relax }}{10}{figure.caption.8}
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {3.1}{\ignorespaces Matriz $X$ y Vector $Y$\relax }}{14}{figure.caption.9}
-\contentsline {figure}{\numberline {3.2}{\ignorespaces Matriz de confusi\'on de una neurona LDA con las cuatro clases, donde se observa la poca cantidad de trials GOi y NOGOi, en comparaci\'on con las otras dos clases.\relax }}{15}{figure.caption.10}
+\contentsline {figure}{\numberline {3.2}{\ignorespaces \gls {MCf} de una neurona LDA con las cuatro clases, donde se observa la poca cantidad de trials GOi y NOGOi, en comparaci\'on con las otras dos clases.\relax }}{15}{figure.caption.10}
 \contentsline {figure}{\numberline {3.3}{\ignorespaces Performance de las neuronas VTA - Corridas individuales. Cada par X-Y corresponde a una neurona con su precisi\'on de clasificaci\'on (media para las 500 corridas). - LDA\relax }}{16}{figure.caption.11}
 \contentsline {figure}{\numberline {3.4}{\ignorespaces Performance de las neuronas PFC - Corridas individuales. Cada par X-Y corresponde a una neurona con su precisi\'on de clasificaci\'on (media para las 500 corridas). - LDA\relax }}{16}{figure.caption.12}
 \contentsline {figure}{\numberline {3.5}{\ignorespaces Figura a modo de ejemplo (datos ficticios) que ilustra un problema no linealmente separable si se considera cada neurona por separado, pero que se vuelve linealmente clasificable tomando como \textit {feature} a cada neurona.\relax }}{18}{figure.caption.13}

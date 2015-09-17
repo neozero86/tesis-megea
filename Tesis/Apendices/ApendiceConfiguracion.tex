@@ -24,7 +24,7 @@ Ytest = daClassifier.predict(Xtest);
 \section{Bayes-Naive}
 \label{capIterResult:sec:Análisis con Bayes-Naive}
 
-Se entrenó un clasificador Bayes-Naive con una distribución de datos multinomial, dado que esta distribución suele tener buenos resultados para características discretas. \\
+Se entrenó un clasificador Bayes-Naive con una \gls{DDM}, dado que esta distribución suele tener buenos resultados para características discretas. \\
 La probabilidad a priori de las clases se configuro como ``empírica'', es decir que la misma será igual a la frecuencia relativa de distribución de cada clase.\\\\
 Los comandos MatLab para ejecutarlo son:\\
 nbClassifier = NaiveBayes.fit(Xtrain,Ytrain,`Distribution',`mn');\\

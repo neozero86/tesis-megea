@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2015.2.22)  15 SEP 2015 23:18
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2015.2.22)  16 SEP 2015 20:44
 entering extended mode
 **"D:/Neo Zero/UBA/Dropbox/Tesis/ActualGit/Tesis/Tesis.tex"
 ("D:/Neo Zero/UBA/Dropbox/Tesis/ActualGit/Tesis/Tesis.tex"
@@ -989,7 +989,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 15--17
 
  []
 
-<Imagenes/Bitmap/03/LDA.png, id=481, 480.29437pt x 304.88907pt>
+<Imagenes/Bitmap/03/LDA.png, id=485, 480.29437pt x 304.88907pt>
 File: Imagenes/Bitmap/03/LDA.png Graphic file (type png)
 
 <use Imagenes/Bitmap/03/LDA.png>
@@ -1000,7 +1000,7 @@ Package pdftex.def Info: Imagenes/Bitmap/03/LDA.png used on input line 19.
 
 
 ] [5 <./Imagenes/Bitmap/03/LDA.png>]
-<Imagenes/Bitmap/03/BN.png, id=513, 735.74875pt x 562.1pt>
+<Imagenes/Bitmap/03/BN.png, id=528, 735.74875pt x 562.1pt>
 File: Imagenes/Bitmap/03/BN.png Graphic file (type png)
 
 <use Imagenes/Bitmap/03/BN.png>
@@ -1012,7 +1012,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 42--45
  []
 
 [6 <./Imagenes/Bitmap/03/BN.png>]
-<Imagenes/Bitmap/03/SVM.png, id=531, 555.57562pt x 545.78906pt>
+<Imagenes/Bitmap/03/SVM.png, id=554, 555.57562pt x 545.78906pt>
 File: Imagenes/Bitmap/03/SVM.png Graphic file (type png)
 
 <use Imagenes/Bitmap/03/SVM.png>
@@ -1033,7 +1033,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 73--77
 
  []
 
-[9] <Imagenes/Bitmap/03/RF.png, id=583, 748.29562pt x 485.56406pt>
+[9] <Imagenes/Bitmap/03/RF.png, id=621, 748.29562pt x 485.56406pt>
 File: Imagenes/Bitmap/03/RF.png Graphic file (type png)
 
 <use Imagenes/Bitmap/03/RF.png>
@@ -1070,7 +1070,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 28--32
 
  []
 
-<Imagenes/Bitmap/04/XeY.png, id=626, 397.485pt x 107.90312pt>
+<Imagenes/Bitmap/04/XeY.png, id=672, 397.485pt x 107.90312pt>
 File: Imagenes/Bitmap/04/XeY.png Graphic file (type png)
 
 <use Imagenes/Bitmap/04/XeY.png>
@@ -1092,7 +1092,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 63--64
  []
 
 [14 <./Imagenes/Bitmap/04/XeY.png>]
-<Imagenes/Bitmap/04/Analisis_Mononeuronal_Matriz_de_Confusion.png, id=639, 411.
+<Imagenes/Bitmap/04/Analisis_Mononeuronal_Matriz_de_Confusion.png, id=687, 411.
 5375pt x 177.66376pt>
 File: Imagenes/Bitmap/04/Analisis_Mononeuronal_Matriz_de_Confusion.png Graphic 
 file (type png)
@@ -1146,7 +1146,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 80--82
 
  []
 
-<Imagenes/Bitmap/11/VTA_individual.png, id=645, 1028.34187pt x 490.08093pt>
+<Imagenes/Bitmap/11/VTA_individual.png, id=695, 1028.34187pt x 490.08093pt>
 File: Imagenes/Bitmap/11/VTA_individual.png Graphic file (type png)
 
 <use Imagenes/Bitmap/11/VTA_individual.png>
@@ -1154,7 +1154,7 @@ Package pdftex.def Info: Imagenes/Bitmap/11/VTA_individual.png used on input li
 ne 84.
 (pdftex.def)             Requested size: 360.0pt x 171.56828pt.
 
-<Imagenes/Bitmap/11/PFC_individual.png, id=646, 1028.34187pt x 490.08093pt>
+<Imagenes/Bitmap/11/PFC_individual.png, id=696, 1028.34187pt x 490.08093pt>
 File: Imagenes/Bitmap/11/PFC_individual.png Graphic file (type png)
 
 <use Imagenes/Bitmap/11/PFC_individual.png>
@@ -1198,7 +1198,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 104--108
  []
 
 [17]
-<Imagenes/Bitmap/04/2neuronsclassification.png, id=660, 642.4pt x 612.2875pt>
+<Imagenes/Bitmap/04/2neuronsclassification.png, id=710, 642.4pt x 612.2875pt>
 File: Imagenes/Bitmap/04/2neuronsclassification.png Graphic file (type png)
 
 <use Imagenes/Bitmap/04/2neuronsclassification.png>
@@ -1221,7 +1221,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 118--121
  []
 
 [18 <./Imagenes/Bitmap/04/2neuronsclassification.png>]
-<Imagenes/Bitmap/04/XeYPoblacional.png, id=666, 396.98312pt x 122.95938pt>
+<Imagenes/Bitmap/04/XeYPoblacional.png, id=716, 396.98312pt x 122.95938pt>
 File: Imagenes/Bitmap/04/XeYPoblacional.png Graphic file (type png)
 
 <use Imagenes/Bitmap/04/XeYPoblacional.png>
@@ -1245,7 +1245,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 6--8
 
  []
 
-<Imagenes/Bitmap/05/windows_time.png, id=675, 678.535pt x 148.555pt>
+<Imagenes/Bitmap/05/windows_time.png, id=725, 678.535pt x 148.555pt>
 File: Imagenes/Bitmap/05/windows_time.png Graphic file (type png)
 
 <use Imagenes/Bitmap/05/windows_time.png>
@@ -1253,7 +1253,7 @@ Package pdftex.def Info: Imagenes/Bitmap/05/windows_time.png used on input line
  10.
 (pdftex.def)             Requested size: 360.0pt x 78.81537pt.
 
-<Imagenes/Bitmap/05/XYmatrix.png, id=677, 565.36218pt x 591.71063pt>
+<Imagenes/Bitmap/05/XYmatrix.png, id=727, 565.36218pt x 591.71063pt>
 File: Imagenes/Bitmap/05/XYmatrix.png Graphic file (type png)
 
 <use Imagenes/Bitmap/05/XYmatrix.png>
@@ -1265,7 +1265,7 @@ Package pdftex.def Info: Imagenes/Bitmap/05/XYmatrix.png used on input line 16.
 
 
  <./Imagenes/Bitmap/05/windows_time.png>] <Imagenes/Bitmap/05/LDA_run_time.png,
- id=683, 1445.4pt x 767.86874pt>
+ id=733, 1445.4pt x 767.86874pt>
 File: Imagenes/Bitmap/05/LDA_run_time.png Graphic file (type png)
 
 <use Imagenes/Bitmap/05/LDA_run_time.png>
@@ -1289,7 +1289,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 5--12
  []
 
 [23]
-<Imagenes/Bitmap/06/LDA_line_run_paired.png, id=704, 1028.34187pt x 490.08093pt
+<Imagenes/Bitmap/06/LDA_line_run_paired.png, id=761, 1028.34187pt x 490.08093pt
 >
 File: Imagenes/Bitmap/06/LDA_line_run_paired.png Graphic file (type png)
  <use Imagenes/Bitmap/06/LDA_line_run_paired.png>
@@ -1297,14 +1297,14 @@ Package pdftex.def Info: Imagenes/Bitmap/06/LDA_line_run_paired.png used on inp
 ut line 23.
 (pdftex.def)             Requested size: 161.9989pt x 77.20311pt.
 
-<Imagenes/Bitmap/06/BN_line_run_paired.png, id=705, 1028.34187pt x 490.08093pt>
+<Imagenes/Bitmap/06/BN_line_run_paired.png, id=762, 1028.34187pt x 490.08093pt>
 File: Imagenes/Bitmap/06/BN_line_run_paired.png Graphic file (type png)
 <use Imagenes/Bitmap/06/BN_line_run_paired.png>
 Package pdftex.def Info: Imagenes/Bitmap/06/BN_line_run_paired.png used on inpu
 t line 28.
 (pdftex.def)             Requested size: 161.9989pt x 77.20311pt.
 
-<Imagenes/Bitmap/06/SVM_line_run_paired.png, id=706, 1028.34187pt x 490.08093pt
+<Imagenes/Bitmap/06/SVM_line_run_paired.png, id=763, 1028.34187pt x 490.08093pt
 >
 File: Imagenes/Bitmap/06/SVM_line_run_paired.png Graphic file (type png)
  <use Imagenes/Bitmap/06/SVM_line_run_paired.png>
@@ -1312,7 +1312,7 @@ Package pdftex.def Info: Imagenes/Bitmap/06/SVM_line_run_paired.png used on inp
 ut line 33.
 (pdftex.def)             Requested size: 161.9989pt x 77.20311pt.
 
-<Imagenes/Bitmap/06/RF_line_run_paired.png, id=707, 1028.34187pt x 490.08093pt>
+<Imagenes/Bitmap/06/RF_line_run_paired.png, id=764, 1028.34187pt x 490.08093pt>
 File: Imagenes/Bitmap/06/RF_line_run_paired.png Graphic file (type png)
 <use Imagenes/Bitmap/06/RF_line_run_paired.png>
 Package pdftex.def Info: Imagenes/Bitmap/06/RF_line_run_paired.png used on inpu
@@ -1324,7 +1324,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 44--47
  []
 
 
-<Imagenes/Bitmap/07/linear_comparation_all_bar_5000.png, id=710, 1445.4pt x 747
+<Imagenes/Bitmap/07/linear_comparation_all_bar_5000.png, id=767, 1445.4pt x 747
 .54282pt>
 File: Imagenes/Bitmap/07/linear_comparation_all_bar_5000.png Graphic file (type
  png)
@@ -1335,7 +1335,7 @@ Package pdftex.def Info: Imagenes/Bitmap/07/linear_comparation_all_bar_5000.png
  [24 <./Imagenes/Bitmap/06/LDA_line_run_paired.png> <./Imagenes/Bitmap/06/BN_li
 ne_run_paired.png> <./Imagenes/Bitmap/06/SVM_line_run_paired.png (PNG copy)> <.
 /Imagenes/Bitmap/06/RF_line_run_paired.png>]
-<Imagenes/Bitmap/07/media_mayor_que.png, id=724, 519.44063pt x 222.8325pt>
+<Imagenes/Bitmap/07/media_mayor_que.png, id=783, 519.44063pt x 222.8325pt>
 File: Imagenes/Bitmap/07/media_mayor_que.png Graphic file (type png)
 
 <use Imagenes/Bitmap/07/media_mayor_que.png>
@@ -1344,7 +1344,7 @@ ine 58.
 (pdftex.def)             Requested size: 360.0pt x 154.43462pt.
  [25 <./Imagenes/Bitmap/07/linear_comparation_all_bar_5000.png> <./Imagenes/Bit
 map/07/media_mayor_que.png>]
-<Imagenes/Bitmap/11/PFC_lda_line.png, id=734, 1028.34187pt x 490.08093pt>
+<Imagenes/Bitmap/11/PFC_lda_line.png, id=795, 1028.34187pt x 490.08093pt>
 File: Imagenes/Bitmap/11/PFC_lda_line.png Graphic file (type png)
 
 <use Imagenes/Bitmap/11/PFC_lda_line.png>
@@ -1352,7 +1352,7 @@ Package pdftex.def Info: Imagenes/Bitmap/11/PFC_lda_line.png used on input line
  75.
 (pdftex.def)             Requested size: 161.9989pt x 77.20311pt.
 
-<Imagenes/Bitmap/11/PFC_bn_line.png, id=735, 1028.34187pt x 490.08093pt>
+<Imagenes/Bitmap/11/PFC_bn_line.png, id=796, 1028.34187pt x 490.08093pt>
 File: Imagenes/Bitmap/11/PFC_bn_line.png Graphic file (type png)
 
 <use Imagenes/Bitmap/11/PFC_bn_line.png>
@@ -1360,7 +1360,7 @@ Package pdftex.def Info: Imagenes/Bitmap/11/PFC_bn_line.png used on input line
 80.
 (pdftex.def)             Requested size: 161.9989pt x 77.20311pt.
 
-<Imagenes/Bitmap/11/PFC_svm_line.png, id=736, 1028.34187pt x 490.08093pt>
+<Imagenes/Bitmap/11/PFC_svm_line.png, id=797, 1028.34187pt x 490.08093pt>
 File: Imagenes/Bitmap/11/PFC_svm_line.png Graphic file (type png)
 
 <use Imagenes/Bitmap/11/PFC_svm_line.png>
@@ -1368,7 +1368,7 @@ Package pdftex.def Info: Imagenes/Bitmap/11/PFC_svm_line.png used on input line
  85.
 (pdftex.def)             Requested size: 161.9989pt x 77.20311pt.
 
-<Imagenes/Bitmap/11/PFC_rf_line.png, id=737, 1028.34187pt x 490.08093pt>
+<Imagenes/Bitmap/11/PFC_rf_line.png, id=798, 1028.34187pt x 490.08093pt>
 File: Imagenes/Bitmap/11/PFC_rf_line.png Graphic file (type png)
 
 <use Imagenes/Bitmap/11/PFC_rf_line.png>
@@ -1380,7 +1380,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 97--98
 
  []
 
-<Imagenes/Bitmap/11/PFC_all_bar_6000.png, id=738, 963.6pt x 484.81125pt>
+<Imagenes/Bitmap/11/PFC_all_bar_6000.png, id=799, 963.6pt x 484.81125pt>
 File: Imagenes/Bitmap/11/PFC_all_bar_6000.png Graphic file (type png)
 
 <use Imagenes/Bitmap/11/PFC_all_bar_6000.png>
@@ -1390,7 +1390,7 @@ line 100.
  [26 <./Imagenes/Bitmap/11/PFC_lda_line.png> <./Imagenes/Bitmap/11/PFC_bn_line.
 png> <./Imagenes/Bitmap/11/PFC_svm_line.png (PNG copy)> <./Imagenes/Bitmap/11/P
 FC_rf_line.png>]
-<Imagenes/Bitmap/11/PFC_all_bar_3600_3900.png, id=751, 963.6pt x 484.81125pt>
+<Imagenes/Bitmap/11/PFC_all_bar_3600_3900.png, id=812, 963.6pt x 484.81125pt>
 File: Imagenes/Bitmap/11/PFC_all_bar_3600_3900.png Graphic file (type png)
 
 <use Imagenes/Bitmap/11/PFC_all_bar_3600_3900.png>
@@ -1398,7 +1398,7 @@ Package pdftex.def Info: Imagenes/Bitmap/11/PFC_all_bar_3600_3900.png used on i
 nput line 105.
 (pdftex.def)             Requested size: 360.0pt x 181.12318pt.
 
-<Imagenes/Bitmap/07/media_mayor_que_PFC.png, id=753, 475.02469pt x 182.18062pt>
+<Imagenes/Bitmap/07/media_mayor_que_PFC.png, id=814, 475.02469pt x 182.18062pt>
 File: Imagenes/Bitmap/07/media_mayor_que_PFC.png Graphic file (type png)
 <use Imagenes/Bitmap/07/media_mayor_que_PFC.png>
 Package pdftex.def Info: Imagenes/Bitmap/07/media_mayor_que_PFC.png used on inp
@@ -1416,7 +1416,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 121--2
  []
 
 [28 <./Imagenes/Bitmap/07/media_mayor_que_PFC.png>]
-<Imagenes/Bitmap/08/linear_comparation_all.png, id=775, 1028.34187pt x 490.0809
+<Imagenes/Bitmap/08/linear_comparation_all.png, id=839, 1028.34187pt x 490.0809
 3pt>
 File: Imagenes/Bitmap/08/linear_comparation_all.png Graphic file (type png)
  <use Imagenes/Bitmap/08/linear_comparation_all.png>
@@ -1424,7 +1424,7 @@ Package pdftex.def Info: Imagenes/Bitmap/08/linear_comparation_all.png used on
 input line 14.
 (pdftex.def)             Requested size: 161.9989pt x 77.20311pt.
 
-<Imagenes/Bitmap/08/linear_comparation_34.png, id=776, 1028.34187pt x 490.08093
+<Imagenes/Bitmap/08/linear_comparation_34.png, id=840, 1028.34187pt x 490.08093
 pt>
 File: Imagenes/Bitmap/08/linear_comparation_34.png Graphic file (type png)
  <use Imagenes/Bitmap/08/linear_comparation_34.png>
@@ -1432,7 +1432,7 @@ Package pdftex.def Info: Imagenes/Bitmap/08/linear_comparation_34.png used on i
 nput line 20.
 (pdftex.def)             Requested size: 161.9989pt x 77.20311pt.
 
-<Imagenes/Bitmap/08/linear_comparation_12.png, id=777, 1028.34187pt x 490.08093
+<Imagenes/Bitmap/08/linear_comparation_12.png, id=841, 1028.34187pt x 490.08093
 pt>
 File: Imagenes/Bitmap/08/linear_comparation_12.png Graphic file (type png)
  <use Imagenes/Bitmap/08/linear_comparation_12.png>
@@ -1440,7 +1440,7 @@ Package pdftex.def Info: Imagenes/Bitmap/08/linear_comparation_12.png used on i
 nput line 25.
 (pdftex.def)             Requested size: 161.9989pt x 77.20311pt.
 
-<Imagenes/Bitmap/08/linear_comparation_14.png, id=778, 1028.34187pt x 490.08093
+<Imagenes/Bitmap/08/linear_comparation_14.png, id=842, 1028.34187pt x 490.08093
 pt>
 File: Imagenes/Bitmap/08/linear_comparation_14.png Graphic file (type png)
  <use Imagenes/Bitmap/08/linear_comparation_14.png>
@@ -1448,7 +1448,7 @@ Package pdftex.def Info: Imagenes/Bitmap/08/linear_comparation_14.png used on i
 nput line 31.
 (pdftex.def)             Requested size: 161.9989pt x 77.20311pt.
 
-<Imagenes/Bitmap/08/linear_comparation_110.png, id=779, 1028.34187pt x 490.0809
+<Imagenes/Bitmap/08/linear_comparation_110.png, id=843, 1028.34187pt x 490.0809
 3pt>
 File: Imagenes/Bitmap/08/linear_comparation_110.png Graphic file (type png)
  <use Imagenes/Bitmap/08/linear_comparation_110.png>
@@ -1456,7 +1456,7 @@ Package pdftex.def Info: Imagenes/Bitmap/08/linear_comparation_110.png used on
 input line 36.
 (pdftex.def)             Requested size: 161.9989pt x 77.20311pt.
 
-<Imagenes/Bitmap/08/linear_comparation_120.png, id=780, 1028.34187pt x 490.0809
+<Imagenes/Bitmap/08/linear_comparation_120.png, id=844, 1028.34187pt x 490.0809
 3pt>
 File: Imagenes/Bitmap/08/linear_comparation_120.png Graphic file (type png)
  <use Imagenes/Bitmap/08/linear_comparation_120.png>
@@ -1477,7 +1477,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 47--49
 ear_comparation_34.png> <./Imagenes/Bitmap/08/linear_comparation_12.png> <./Ima
 genes/Bitmap/08/linear_comparation_14.png> <./Imagenes/Bitmap/08/linear_compara
 tion_110.png (PNG copy)> <./Imagenes/Bitmap/08/linear_comparation_120.png>]
-<Imagenes/Bitmap/08/bar_comparation.png, id=797, 1028.34187pt x 490.08093pt>
+<Imagenes/Bitmap/08/bar_comparation.png, id=862, 1028.34187pt x 490.08093pt>
 File: Imagenes/Bitmap/08/bar_comparation.png Graphic file (type png)
 
 <use Imagenes/Bitmap/08/bar_comparation.png>
@@ -1495,7 +1495,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 57--59
  []
 
 [30 <./Imagenes/Bitmap/08/bar_comparation.png (PNG copy)>]
-<Imagenes/Bitmap/11/VTA_all_line_forbidden.png, id=805, 1028.34187pt x 490.0809
+<Imagenes/Bitmap/11/VTA_all_line_forbidden.png, id=870, 1028.34187pt x 490.0809
 3pt>
 File: Imagenes/Bitmap/11/VTA_all_line_forbidden.png Graphic file (type png)
  <use Imagenes/Bitmap/11/VTA_all_line_forbidden.png>
@@ -1508,7 +1508,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 63--64
  []
 
 
-<Imagenes/Bitmap/11/VTA_all_bar_forbidden_5000.png, id=808, 963.6pt x 484.81125
+<Imagenes/Bitmap/11/VTA_all_bar_forbidden_5000.png, id=873, 963.6pt x 484.81125
 pt>
 File: Imagenes/Bitmap/11/VTA_all_bar_forbidden_5000.png Graphic file (type png)
 
@@ -1527,7 +1527,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 70--71
  []
 
 
-<Imagenes/Bitmap/11/PFC_all_line_forbidden.png, id=815, 1028.34187pt x 490.0809
+<Imagenes/Bitmap/11/PFC_all_line_forbidden.png, id=880, 1028.34187pt x 490.0809
 3pt>
 File: Imagenes/Bitmap/11/PFC_all_line_forbidden.png Graphic file (type png)
  <use Imagenes/Bitmap/11/PFC_all_line_forbidden.png>
@@ -1545,7 +1545,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 79--80
  []
 
 
-<Imagenes/Bitmap/11/PFC_all_bar_forbidden_6000.png, id=825, 963.6pt x 484.81125
+<Imagenes/Bitmap/11/PFC_all_bar_forbidden_6000.png, id=890, 963.6pt x 484.81125
 pt>
 File: Imagenes/Bitmap/11/PFC_all_bar_forbidden_6000.png Graphic file (type png)
 
@@ -1554,7 +1554,7 @@ Package pdftex.def Info: Imagenes/Bitmap/11/PFC_all_bar_forbidden_6000.png used
  on input line 84.
 (pdftex.def)             Requested size: 360.0pt x 181.12318pt.
  [33 <./Imagenes/Bitmap/11/PFC_all_line_forbidden.png (PNG copy)>]
-<Imagenes/Bitmap/07/media_mayor_que_PFC_forbidden.png, id=830, 474.27188pt x 18
+<Imagenes/Bitmap/07/media_mayor_que_PFC_forbidden.png, id=895, 474.27188pt x 18
 2.18062pt>
 File: Imagenes/Bitmap/07/media_mayor_que_PFC_forbidden.png Graphic file (type p
 ng)
@@ -1576,7 +1576,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 7--8
  []
 
 
-<Imagenes/Bitmap/09/window_change_from_4000_RF.png, id=845, 1445.4pt x 747.5428
+<Imagenes/Bitmap/09/window_change_from_4000_RF.png, id=910, 1445.4pt x 747.5428
 2pt>
 File: Imagenes/Bitmap/09/window_change_from_4000_RF.png Graphic file (type png)
 
@@ -1585,7 +1585,7 @@ Package pdftex.def Info: Imagenes/Bitmap/09/window_change_from_4000_RF.png used
  on input line 10.
 (pdftex.def)             Requested size: 360.0pt x 186.18944pt.
  [36 <./Imagenes/Bitmap/09/window_change_from_4000_RF.png (PNG copy)>]
-<Imagenes/Bitmap/09/window_vs_RF.png, id=851, 1445.4pt x 747.54282pt>
+<Imagenes/Bitmap/09/window_vs_RF.png, id=916, 1445.4pt x 747.54282pt>
 File: Imagenes/Bitmap/09/window_vs_RF.png Graphic file (type png)
 
 <use Imagenes/Bitmap/09/window_vs_RF.png>
@@ -1599,7 +1599,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 5--8
 
  []
 
-<Imagenes/Bitmap/10/mixed_tongue_bar.png, id=858, 1445.4pt x 705.38531pt>
+<Imagenes/Bitmap/10/mixed_tongue_bar.png, id=923, 1445.4pt x 705.38531pt>
 File: Imagenes/Bitmap/10/mixed_tongue_bar.png Graphic file (type png)
 
 <use Imagenes/Bitmap/10/mixed_tongue_bar.png>
@@ -1607,7 +1607,7 @@ Package pdftex.def Info: Imagenes/Bitmap/10/mixed_tongue_bar.png used on input
 line 12.
 (pdftex.def)             Requested size: 360.0pt x 175.68933pt.
 
-<Imagenes/Bitmap/10/significancia.png, id=860, 302.12875pt x 172.645pt>
+<Imagenes/Bitmap/10/significancia.png, id=925, 302.12875pt x 172.645pt>
 File: Imagenes/Bitmap/10/significancia.png Graphic file (type png)
 
 <use Imagenes/Bitmap/10/significancia.png>
@@ -1654,13 +1654,6 @@ Ap\'endice A.
 
 
 ]
-Overfull \hbox (18.97075pt too wide) in paragraph at lines 40--43
-\T1/cmr/m/n/10.95 Los an-i-males fueron aneste-si-a-dos us-ando ke-tam-i-na/x-i
--laz-ina ($\OT1/cmr/m/n/10.95 75\OML/cmm/m/it/10.95 mg=kg$\T1/cmr/m/n/10.95 , $
-\OT1/cmr/m/n/10.95 10\OML/cmm/m/it/10.95 mg=kg$\T1/cmr/m/n/10.95 ,
- []
-
-
 Overfull \hbox (20.18225pt too wide) in paragraph at lines 47--50
 \T1/cmr/m/n/10.95 Los haces de elec-tro-dos fueron con-stru-i-dos jun-tando tre
 s cánu-las con cianoacrilato
@@ -1764,21 +1757,16 @@ Underfull \hbox (badness 1748) in paragraph at lines 272--278
 , \T1/cmr/m/sc/10.95 Diehl, C.\T1/cmr/m/n/10.95 ,
  []
 
-)) [52] (Tesis.gls
-Overfull \hbox (6.37398pt too wide) in paragraph at lines 5--5
-[]\T1/cmr/m/n/10.95 Son meto-dos de....
- []
+)) [52] (Tesis.gls [53
 
-)
+
+
+])
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 199.
- [53
-
-
-
-]
+ [54]
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 199.
- (Tesis.aux (Cascaras/cover.aux) (Cascaras/resumen.aux)
-(Cascaras/agradecimientos.aux) (TeXiS/TeXiS_toc.aux)
+ (Tesis.aux (Cascaras/cover.aux)
+(Cascaras/resumen.aux) (Cascaras/agradecimientos.aux) (TeXiS/TeXiS_toc.aux)
 (Capitulos/Introduccion.aux) (Capitulos/Metodos.aux) (Capitulos/SetDeDatos.aux)
 (Capitulos/Resultados.aux) (Capitulos/Conclusiones.aux)
 (Apendices/ApendiceSetDeDatos.aux) (Apendices/ApendiceConfiguracion.aux)
@@ -1790,13 +1778,13 @@ Package rerunfilecheck Info: File `Tesis.out' has not changed.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 199.
  ) 
 Here is how much of TeX's memory you used:
- 16688 strings out of 493698
- 253823 string characters out of 3144406
- 407117 words of memory out of 3000000
- 19059 multiletter control sequences out of 15000+200000
+ 17433 strings out of 493698
+ 263867 string characters out of 3144406
+ 413579 words of memory out of 3000000
+ 19779 multiletter control sequences out of 15000+200000
  21239 words of font info for 51 fonts, out of 3000000 for 9000
  1263 hyphenation exceptions out of 8191
- 46i,11n,88p,1978b,543s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 46i,11n,88p,1978b,572s stack positions out of 5000i,500n,10000p,200000b,50000s
  <C:\Users\PZandMO\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi60
 0\ecrm0900.pk> <C:\Users\PZandMO\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknap
 pen\ec\dpi600\ecbi1095.pk> <C:\Users\PZandMO\AppData\Local\MiKTeX\2.9\fonts\pk\
@@ -1819,9 +1807,9 @@ ram Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Program Files
 ype1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/pub
 lic/amsfonts/cm/cmsy8.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfo
 nts/symbols/msbm10.pfb>
-Output written on Tesis.pdf (62 pages, 2113223 bytes).
+Output written on Tesis.pdf (63 pages, 2124947 bytes).
 PDF statistics:
- 1563 PDF objects out of 1728 (max. 8388607)
- 226 named destinations out of 1000 (max. 500000)
+ 1683 PDF objects out of 1728 (max. 8388607)
+ 251 named destinations out of 1000 (max. 500000)
  592 words of extra memory for PDF output out of 10000 (max. 10000000)
 
