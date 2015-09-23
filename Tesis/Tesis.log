@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2015.2.22)  16 SEP 2015 20:44
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2015.2.22)  22 SEP 2015 21:54
 entering extended mode
 **"D:/Neo Zero/UBA/Dropbox/Tesis/ActualGit/Tesis/Tesis.tex"
 ("D:/Neo Zero/UBA/Dropbox/Tesis/ActualGit/Tesis/Tesis.tex"
@@ -333,7 +333,7 @@ Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
 )
 \Hy@SectionHShift=\skip45
 )
-Package hyperref Info: Option `colorlinks' set `false' on input line 268.
+Package hyperref Info: Option `colorlinks' set `false' on input line 267.
 
 ("C:\Program Files\MiKTeX 2.9\tex\latex\base\makeidx.sty"
 Package: makeidx 2014/09/29 v1.0m Standard LaTeX package
@@ -914,13 +914,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 12--13
 
 
 
-] (Cascaras/agradecimientos.tex
-Overfull \hbox (1.9589pt too wide) in paragraph at lines 52--53
-[]\T1/cmr/m/n/10.95 Agradezco a mis padres, Ana y Daniel, por la ed-u-cación qu
-e me brindaron,
- []
-
-) [5
+] (Cascaras/agradecimientos.tex) [5
 
 
 
@@ -1653,13 +1647,7 @@ Ap\'endice A.
 
 
 
-]
-Overfull \hbox (20.18225pt too wide) in paragraph at lines 47--50
-\T1/cmr/m/n/10.95 Los haces de elec-tro-dos fueron con-stru-i-dos jun-tando tre
-s cánu-las con cianoacrilato
- []
-
-[44]
+] [44]
 Underfull \hbox (badness 10000) in paragraph at lines 56--64
 
  []
@@ -1701,11 +1689,6 @@ Underfull \hbox (badness 10000) in paragraph at lines 70--151
 
 [45] [46] (Apendices/ApendiceConfiguracion.tex
 Ap\'endice B.
-
-Overfull \hbox (14.44502pt too wide) in paragraph at lines 7--7
-|\T1/cmr/bx/n/20.74 Configuración de los al-go-rit-mos es-tadís-
- []
-
 
 Underfull \hbox (badness 10000) in paragraph at lines 10--12
 
@@ -1757,16 +1740,31 @@ Underfull \hbox (badness 1748) in paragraph at lines 272--278
 , \T1/cmr/m/sc/10.95 Diehl, C.\T1/cmr/m/n/10.95 ,
  []
 
-)) [52] (Tesis.gls [53
+)) [52] (Tesis.gls
+Overfull \hbox (13.99591pt too wide) in paragraph at lines 13--13
+[]\T1/cmr/m/n/10.95 Instrumento dis-eñado orig-i-nal-mente por David
+ []
+
+
+Package amsmath Warning: Foreign command \over;
+(amsmath)                \frac or \genfrac should be used instead
+(amsmath)                 on input line 37.
+
+
+Overfull \hbox (11.39008pt too wide) detected at line 37
+[] []
+ []
+
+[53
 
 
 
-])
+] [54])
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 199.
- [54]
+ [55]
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 199.
- (Tesis.aux (Cascaras/cover.aux)
-(Cascaras/resumen.aux) (Cascaras/agradecimientos.aux) (TeXiS/TeXiS_toc.aux)
+ (Tesis.aux (Cascaras/cover.aux) (Cascaras/resumen.aux)
+(Cascaras/agradecimientos.aux) (TeXiS/TeXiS_toc.aux)
 (Capitulos/Introduccion.aux) (Capitulos/Metodos.aux) (Capitulos/SetDeDatos.aux)
 (Capitulos/Resultados.aux) (Capitulos/Conclusiones.aux)
 (Apendices/ApendiceSetDeDatos.aux) (Apendices/ApendiceConfiguracion.aux)
@@ -1778,13 +1776,13 @@ Package rerunfilecheck Info: File `Tesis.out' has not changed.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 199.
  ) 
 Here is how much of TeX's memory you used:
- 17433 strings out of 493698
- 263867 string characters out of 3144406
- 413579 words of memory out of 3000000
+ 17439 strings out of 493698
+ 263931 string characters out of 3144406
+ 421300 words of memory out of 3000000
  19779 multiletter control sequences out of 15000+200000
  21239 words of font info for 51 fonts, out of 3000000 for 9000
- 1263 hyphenation exceptions out of 8191
- 46i,11n,88p,1978b,572s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 1267 hyphenation exceptions out of 8191
+ 46i,15n,88p,1978b,584s stack positions out of 5000i,500n,10000p,200000b,50000s
  <C:\Users\PZandMO\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi60
 0\ecrm0900.pk> <C:\Users\PZandMO\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknap
 pen\ec\dpi600\ecbi1095.pk> <C:\Users\PZandMO\AppData\Local\MiKTeX\2.9\fonts\pk\
@@ -1800,16 +1798,18 @@ s\pk\ljfour\jknappen\ec\dpi600\ecti1200.pk> <C:\Users\PZandMO\AppData\Local\MiK
 TeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecbx1200.pk> <C:\Users\PZandMO\AppDa
 ta\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecti1440.pk> <C:\Users\P
 ZandMO\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecbx2074.pk>
-<C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Prog
-ram Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Program Files
-/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Program Files/MiKTeX 2
-.9/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Program Files/MiKTeX 2.9/fonts/t
-ype1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/pub
-lic/amsfonts/cm/cmsy8.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfo
-nts/symbols/msbm10.pfb>
-Output written on Tesis.pdf (63 pages, 2124947 bytes).
+<C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Prog
+ram Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Program File
+s/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:/Program Files/MiKTeX 
+2.9/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Program Files/MiKTeX 2.9/fonts
+/type1/public/amsfonts/cm/cmr10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/pu
+blic/amsfonts/cm/cmr6.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfo
+nts/cm/cmr8.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cms
+y10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy8.pfb><
+C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
+Output written on Tesis.pdf (64 pages, 2153212 bytes).
 PDF statistics:
- 1683 PDF objects out of 1728 (max. 8388607)
- 251 named destinations out of 1000 (max. 500000)
+ 1707 PDF objects out of 1728 (max. 8388607)
+ 253 named destinations out of 1000 (max. 500000)
  592 words of extra memory for PDF output out of 10000 (max. 10000000)
 
