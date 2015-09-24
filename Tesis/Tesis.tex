@@ -106,7 +106,6 @@ constantes,guionado,Cascaras/bibliografia,config%
     \pdfinfo{/CreationDate (\today)}
 \fi
 
-
 %- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 %                        Documento
 %- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
@@ -159,36 +158,9 @@ constantes,guionado,Cascaras/bibliografia,config%
 
 \include{Cascaras/bibliografia}
 
-\printglossary[title={Glosario de palabras}]
-%
-% Índice de palabras
-%
-
-% Sólo  la   generamos  si  está   declarada  \generaindice.  Consulta
-% TeXiS.sty para más información.
-
-% En realidad, el soporte para la generación de índices de palabras
-% en TeXiS no está documentada en el manual, porque no ha sido usada
-% "en producción". Por tanto, el fichero que genera el índice
-% *no* se incluye aquí (está comentado). Consulta la documentación
-% en TeXiS_pream.tex para más información.
-\ifx\generaindice\undefined
-\else
-%\include{TeXiS/TeXiS_indice}
-\fi
-
-%
-% Lista de acrónimos
-%
-
-% Sólo  lo  generamos  si  está declarada  \generaacronimos.  Consulta
-% TeXiS.sty para más información.
-
-
-%\ifx\generaacronimos\undefined
-%\else
-%\include{TeXiS/TeXiS_acron}
-%\fi
+\fancyhead[LO]{\nouppercase{Glosario de términos}}
+\fancyhead[RO]{\nouppercase{Glosario de términos}}
+\printglossary[title={Glosario de términos},toctitle={Glosario de términos}]
 
 %
 % Final
