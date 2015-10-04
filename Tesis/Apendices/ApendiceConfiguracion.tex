@@ -10,7 +10,7 @@
 Se utilizó el paquete \textit{Statistics and Machine Learning Toolbox} de la herramienta MATLAB para el uso de los algoritmos LDA, Bayes Naive y SVM.\\
 Para Random Forest, no se utilizó la versión nativa de la herramienta debido a la lentitud de la misma. En su lugar se optó una implementación optimizada para MATLAB del código original en R. La misma es pública, de código abierto y se encuentra disponible para descargar en\\ https://code.google.com/p/randomforest-matlab/\\
 
-Para los comandos de MATLAB, ``Xtrain'' y ``Xtest'' serán la matrices de \textit{features} de entrenamiento y test respectivamente. A su vez ``Ytrain'' e ``Ytest'' serán los vectores resultados esperados y obtenidos respectivamente.
+Para los comandos de MATLAB, ``Xtrain'' y ``Xtest'' serán la matrices de \glspl{F} de entrenamiento y test respectivamente. A su vez ``Ytrain'' e ``Ytest'' serán los vectores resultados esperados y obtenidos respectivamente.
 
 %------------------------------------------------------------------
 \section{LDA}
@@ -24,7 +24,7 @@ Ytest = daClassifier.predict(Xtest);
 \section{Bayes-Naive}
 \label{capIterResult:sec:Análisis con Bayes-Naive}
 
-Se entrenó un clasificador Bayes-Naive con una \gls{DDM}, dado que esta distribución suele tener buenos resultados para características discretas. \\
+Se entrenó un \gls{C} Bayes-Naive con una \gls{DDM}, dado que esta distribución suele tener buenos resultados para características discretas. \\
 La probabilidad a priori de las clases se configuro como ``empírica'', es decir que la misma será igual a la frecuencia relativa de distribución de cada clase.\\\\
 Los comandos MatLab para ejecutarlo son:\\
 nbClassifier = NaiveBayes.fit(Xtrain,Ytrain,`Distribution',`mn');\\
@@ -33,7 +33,7 @@ Ytest = nbClassifier.predict(Xtest);
 \section{Análisis con SVM}
 \label{capIterResult:sec:Análisis con SVM}
 
-Se entrenó un clasificador SVM con una función de kernel lineal.\\ 
+Se entrenó un \gls{C} SVM con una función de kernel lineal.\\ 
 El método utilizado para usar SVM fue SMO (\textit{Sequencial minimal optimization}) \citep{platt1998sequential}.\\
 El parámetro de ajuste \textit{C} fue configurado en 1 que es el valor por defecto de la librería utilizada. (No se varió ya que la performance obtenida ronda el 100\% sin necesidad de ajustar el método).\\
 Se configuraron 30000 iteraciones del método como máximo por cuestiones de velocidad.\\\\
@@ -48,7 +48,7 @@ Se probó con otras funciones de kernel (cuadrática, polinomial (grado 3), Gaussi
 \section{Análisis con Random Forest}
 \label{capIterResult:sec:Análisis con Random Forest}
 
-Se entrenó un clasificador \textit{Random Forest} con 300 árboles.
+Se entrenó un \gls{C} \textit{Random Forest} con 300 árboles.
 El "mtry" que indica el número máximo de variables en cada árbol se configuró en 12. El mismo se calculó como el piso de la raíz cuadrada de la cantidad de neuronas. Se aconseja calcular el "mtry" de esta forma por primera vez, y luego si fuera necesario ir variando el valor hasta obtener la mejor performance. \\\\
 Los comandos MatLab para ejecutarlo son:\\
 rfClassifier = classRF\_train(Xtrain,Ytrain, 300);\\

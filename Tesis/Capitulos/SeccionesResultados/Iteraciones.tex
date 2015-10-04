@@ -2,14 +2,14 @@
 \section[Variabilidad en la decodificación]{Análisis de la variabilidad en la decodificación}
 %-------------------------------------------------------------------
 \label{capResultados:sec:analisisVariabilidad}
-En la sección anterior se mostró que entrenando un clasificador lineal con un porcentaje de los trials (70\%), la performance de la predicción acerca de cual es el estímulo presentado, crece luego de la aparición del mismo. De esta manera, calculando el promedio de los aciertos en los trials de prueba (30\%), se tiene una idea de cual es la performance media esperada, pero no de cuanta variabilidad existe en esta medición. 
+En la sección anterior se mostró que entrenando un \gls{C} lineal con un porcentaje de los trials (70\%), la performance de la predicción acerca de cual es el estímulo presentado, crece luego de la aparición del mismo. De esta manera, calculando el promedio de los aciertos en los trials de prueba (30\%), se tiene una idea de cual es la performance media esperada, pero no de cuanta variabilidad existe en esta medición. 
 Por lo tanto, no es posible saber cuan esperable sería un resultado parecido, si se utilizara otro conjunto de trials para entrenar el decodificador. Para resolver este problema y obtener una estimación de la variabilidad, se empleará en este capítulo una técnica de re-muestreo denominada Bootstrapping \citep{efron1979bootstrap}.\\\\
 Se realizará el análisis utilizando LDA, Bayes Naive, Support Vector Machine (SVM) y Random Forest y se comparará si existen diferencias significativas en el desempeño de estas herramientas.\\
-El análisis se efectuará utilizando ventanas solapadas (10 ms) de 300 ms de longitud. Para cada ventana se creará la matriz $X$ y el vector $Y$, luego se entrenará a la herramienta tomando 70\% de los trials de forma aleatoria y se calculará la performace (número de aciertos / número de trials) con el 30\% restante. Se repetirá este procedimiento 500 veces con el objetivo de calcular la performance promedio y el \gls{BSEM} de la performace de clasificación. En cada una de las corridas se utilizará el mismo conjunto de muestras para entrenar y probar los clasificadores, de esta manera, se podrán realizar \gls{CA} sobre los resultados obtenidos.\\\\
+El análisis se efectuará utilizando ventanas solapadas (10 ms) de 300 ms de longitud. Para cada ventana se creará la matriz $X$ y el vector $Y$, luego se entrenará a la herramienta tomando 70\% de los trials de forma aleatoria y se calculará la performace (número de aciertos / número de trials) con el 30\% restante. Se repetirá este procedimiento 500 veces con el objetivo de calcular la performance promedio y el \gls{BSEM} de la performace de clasificación. En cada una de las corridas se utilizará el mismo conjunto de muestras para entrenar y probar los \glspl{C}, de esta manera, se podrán realizar \gls{CA} sobre los resultados obtenidos.\\\\
 En el Apéndice~\ref{apendiceConfiguracion} se especifican los parámetros utilizados en cada uno de los métodos.
 \pagebreak
 %-------------------------------------------------------------------
-\subsection{Área Tegmental Ventral}
+\subsection{\gls{VTA}}
 %-------------------------------------------------------------------
 \label{capResultados:sec:analisisVariabilidad:subsec:VTA}
 
@@ -60,11 +60,11 @@ p=1-\frac{\#\ Perf(M_i) > Perf(M_j)}{N\acute{u}mero\ de\ ventanas}
 En la tabla~\ref{capResultados:fig:mediaComp} se ve que LDA presenta una performance inferior a los otros métodos, mientras que no hay diferencia significativa entre Bayes Naive, SVM y Random Forest. Un análisis con más datos podría determinar si existen diferencias significativas entre estos tres últimos métodos.
 
 %-------------------------------------------------------------------
-\subsection{Corteza PreFrontal}
+\subsection{\gls{PFC}}
 %-------------------------------------------------------------------
 \label{capResultados:sec:analisisVariabilidad:subsec:PFC}
 
-El análisis precedente se repitió sobre una población de neuronas registradas simultáneamente en la corteza PreFrontal. En la figura~\ref{capResultados:fig:AllMethodsPFC} se puede ver el desempeño de los cuatro métodos. Se grafica la performance promedio de las 500 corridas por cada ventana y el B.S.E.M.
+El análisis precedente se repitió sobre una población de neuronas registradas simultáneamente en la \gls{PFC}. En la figura~\ref{capResultados:fig:AllMethodsPFC} se puede ver el desempeño de los cuatro métodos. Se grafica la performance promedio de las 500 corridas por cada ventana y el B.S.E.M.
 
 \begin{figure}[H]
 \centering
@@ -118,5 +118,5 @@ En la tabla ~\ref{capResultados:fig:mediaCompPFC} se observa que, al igual que e
 %-------------------------------------------------------------------
 \label{capResultados:sec:analisisVariabilidad:subsec:conclusiones}
 
-El análisis del discriminante lineal (LDA), aunque más simple, resulta ser menos eficiente que los otros métodos analizados. Esto ya fue demostrado en la literatura \citep{lee2005extensive,lehmann2007application,maroco2011data} pero nunca con un conjunto de datos de actividad neuronal de neurona única. Sin embargo, la simplicidad de LDA lo hace más atractivo para implementaciones portátiles que requieran volúmenes pequeños (implementaciones en \acrshort{FPGA}) y bajo consumo de energía, como es el caso de las Interfaces Cerebro Computadora portátiles. Estos requerimientos (volumen y consumo) pueden ser minimizados atacando varios factores. Uno de ellos es el número de electrodos que el sistema debe procesar, cuanto menor sea el número de electrodos menor serán los requerimientos computacionales, pero disminuye el número de neuronas promedio registradas, lo que implicaría contar con menor volumen de información.\\
-En la sección siguiente se hará un análisis de como la cantidad de neuronas utilizadas para la decodificación, impacta en la performance de los clasificadores.\\\\
+El análisis del discriminante lineal (LDA), aunque más simple, resulta ser menos eficiente que los otros métodos analizados. Esto ya fue demostrado en la literatura \citep{lee2005extensive,lehmann2007application,maroco2011data} pero nunca con un conjunto de datos de actividad neuronal de neurona única. Sin embargo, la simplicidad de LDA lo hace más atractivo para implementaciones portátiles que requieran volúmenes pequeños (implementaciones en \acrshort{FPGA}) y bajo consumo de energía, como es el caso de las Interfaces Cerebro Computadora portátiles. Estos requerimientos (volumen y consumo) pueden ser minimizados atacando varios factores. Uno de ellos es el número de \gls{E} que el sistema debe procesar, cuanto menor sea el número de \gls{E} menor serán los requerimientos computacionales, pero disminuye el número de neuronas promedio registradas, lo que implicaría contar con menor volumen de información.\\
+En la sección siguiente se hará un análisis de como la cantidad de neuronas utilizadas para la decodificación, impacta en la performance de los \glspl{C}.\\\\

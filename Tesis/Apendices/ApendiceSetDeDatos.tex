@@ -41,11 +41,11 @@ Los animales fueron anestesiados usando ketamina\slash xilazina ($75$$mg\slash k
 La piel de la cabeza fue afeitada y el cráneo limpiado y desinfectado ($H2O2$ , $3\%$). Una vez que el cráneo estaba expuesto, se perforaron dos agujeros de $2 mm$ de diámetro sobre las áreas PFC y VTA (PFC coordenadas : $AP = +2,7 mm$ , $L = 2 mm$ , $DV = 2 mm$, VTA coordenadas: $AP = -4,8 mm$, $L = 1 mm$, $DV = 8 mm$; Bregma como cero).\\ Se colocó alrededor de cada agujero una cámara de grabación plástica cilíndrica de $3 mm$ de diámetro por $4 mm$ de profundidad. Se colocaron dos tornillos de acero inoxidable en cada uno de los huesos parietales ($4$ tornillos en total), después de ser desinfectados en etanol al $70\%$. Finalmente, el dispositivo de fijación fue mantenido en su lugar, y fijado a los tornillos y las cámaras de grabación con acrílico dental. Las cámaras de grabación se llenaron con solución antibiótica (neomicina $3,5 mg/ml$, polimixina B $5000 UI$, gramicidina USP $0,025 mg$; OFTAL $3$, Holliday - Scott, AR), y se sellaron con un tapón de algodón.\\
 Inmediatamente después de la cirugía las ratas fueron inyectadas subcutáneamente con $1 mg/kg$ del analgésico meloxicam (Mobic, Boehringer Ingelheim, AR). Durante el post-operatorio, las ratas fueron tratadas con antibióticos (enrofloxacina en el agua potable a $0,05 mg/ml$; Floxacin, Afford, AR) y analgésicos ($3$ gotas de Tramadol $5\%$ por cada $100 ml$ de agua potable; Calmador, Finadiet ,AR) durante al menos $5$ días.
 
-\subsection{Electrodos y adquisición de los datos}
+\subsection{\Gls{E} y adquisición de los datos}
 \label{apendiceSetDeDatos:sec:origen:subsec:electrodos}
 
 El registro extracelular se obtuvo utilizando tetrodos de acuerdo con el siguiente procedimiento.\citep{gray1995tetrodes}\\ Basicamente se juntaron cuatro alambres enrollados de nychrome de $12 \micro m$ de diámetro (Kantal, Palm Coast). A continuación, cada tetrodo se introdujo dentro de una cánula de acero inoxidable de $230 \micro m$ de diámetro externo. Cada alambre se aisló con una funda de poliamida, y su impedancia (a $1KHz$) se ajustó entre $0,5 M\ohm$ y $0,8 M\ohm$ por electrodeposición de oro en la punta.\\
-Los haces de electrodos fueron construidos juntando tres cánulas con ci\-a\-no\-a\-cri\-la\-to en una configuración de triángulo, con una separación entre ellas de $250 \micro m$. Un cable conectado a la cánula de cada conjunto de tetrodos fue utilizado como tierra.\\
+Los haces de \gls{E} fueron construidos juntando tres cánulas con ci\-a\-no\-a\-cri\-la\-to en una configuración de triángulo, con una separación entre ellas de $250 \micro m$. Un cable conectado a la cánula de cada conjunto de tetrodos fue utilizado como tierra.\\
 Las señales fueron pre-amplificadas $x10$ y amplificadas $x1000$. Los datos fueron adquiridos con un dispositivo de National Instruments a una frecuencia de muestreo de $30 KHz$.
 
 %-------------------------------------------------------------------
@@ -60,7 +60,7 @@ Las tres estructuras son:
 dataBEH: Contiene los resultados, las respuestas de las ratas a los estímulos auditivos. Se trata de 4 vectores para cada sesión, cada uno asociado a un resultado (GOc, GOi, NOGOc, NOGOi).
 Cada vector contiene los números de trials para esa sesión que se corresponden con la respuesta que el vector representa.
 \\\\
-dataVTA y dataPFC: Contiene los \textit{spikes} registrados del Área Tegmental Ventral y de la Corteza Pre Frontal respectivamente. Poseen neuronas (representadas en matrices) para cada sesión. Estas matrices tienen como filas los trials (representado por sus números consecutivos) y como columnas el tiempo (representado en milisegundos). En su interior hay un $0$ o un $1$ indicando si en ese par (trial, milisegundo) hubo o no un \textit{spike}.
+dataVTA y dataPFC: Contiene los \glspl{S} registrados del \gls{VTA} y de la \gls{PFC} respectivamente. Poseen neuronas (representadas en matrices) para cada sesión. Estas matrices tienen como filas los trials (representado por sus números consecutivos) y como columnas el tiempo (representado en milisegundos). En su interior hay un $0$ o un $1$ indicando si en ese par (trial, milisegundo) hubo o no un \gls{S}.
 
 %-------------------------------------------------------------------
 \section{Observaciones y análisis}
@@ -71,7 +71,7 @@ Se observa que el número de neuronas es variable por cada sesión, variando entre
 \\\\
 El numero de trials también es variable entre $64$ y $725$ dependiendo de la sesión.
 \\\\
-El hecho de que los trials y las neuronas sean variables en cada sesión, es una cuestión a considerar a la hora de decidir la forma de aplicar un algoritmo clasificador.
+El hecho de que los trials y las neuronas sean variables en cada sesión, es una cuestión a considerar a la hora de decidir la forma de aplicar un algoritmo \gls{C}.
 \\\\
 Se puede observar que la distribución de los resultados es bastante despareja:\\
 GOc: $3169$\\
@@ -79,4 +79,4 @@ GOi: $367$\\
 NOGOc: $2701$\\
 NOGOi: $686$\\\\
 Esto se debe, a que las ratas fueron previamente entrenadas hasta alcanzar un $80\%$ de efectividad antes de empezar a registrar las mediciones.\\\\
-Una distribución tan despareja puede generar dificultades para los clasificadores. 
+Una distribución tan despareja puede generar dificultades para los \glspl{C}. 
