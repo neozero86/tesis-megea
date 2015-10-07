@@ -3,7 +3,7 @@
 %-------------------------------------------------------------------
 \label{capResultados:sec:analisisVariabilidad}
 En la sección anterior se mostró que entrenando un \gls{C} lineal con un porcentaje de los trials (70\%), la performance de la predicción acerca de cual es el estímulo presentado, crece luego de la aparición del mismo. De esta manera, calculando el promedio de los aciertos en los trials de prueba (30\%), se tiene una idea de cual es la performance media esperada, pero no de cuanta variabilidad existe en esta medición. 
-Por lo tanto, no es posible saber cuan esperable sería un resultado parecido, si se utilizara otro conjunto de trials para entrenar el decodificador. Para resolver este problema y obtener una estimación de la variabilidad, se empleará en este capítulo una técnica de re-muestreo denominada Bootstrapping \citep{efron1979bootstrap}.\\\\
+Por lo tanto, no es posible saber cuan esperable sería un resultado parecido, si se utilizara otro conjunto de trials para entrenar el decodificador. Para resolver este problema y obtener una estimación de la variabilidad, se empleará en este capítulo una técnica de re-muestreo denominada \glssymbol{Bs} \citep{efron1979bootstrap}.\\\\
 Se realizará el análisis utilizando LDA, Bayes Naive, Support Vector Machine (SVM) y Random Forest y se comparará si existen diferencias significativas en el desempeño de estas herramientas.\\
 El análisis se efectuará utilizando ventanas solapadas (10 ms) de 300 ms de longitud. Para cada ventana se creará la matriz $X$ y el vector $Y$, luego se entrenará a la herramienta tomando 70\% de los trials de forma aleatoria y se calculará la performace (número de aciertos / número de trials) con el 30\% restante. Se repetirá este procedimiento 500 veces con el objetivo de calcular la performance promedio y el \gls{BSEM} de la performace de clasificación. En cada una de las corridas se utilizará el mismo conjunto de muestras para entrenar y probar los \glspl{C}, de esta manera, se podrán realizar \gls{CA} sobre los resultados obtenidos.\\\\
 En el Apéndice~\ref{apendiceConfiguracion} se especifican los parámetros utilizados en cada uno de los métodos.
@@ -13,7 +13,7 @@ En el Apéndice~\ref{apendiceConfiguracion} se especifican los parámetros utiliza
 %-------------------------------------------------------------------
 \label{capResultados:sec:analisisVariabilidad:subsec:VTA}
 
-En la figura~\ref{capResultados:fig:AllMethods} se puede observar el desempeño de los cuatro métodos. Se grafica la performance promedio de las 500 corridas por cada ventana y el B.S.E.M.
+En la figura~\ref{capResultados:fig:AllMethods} se puede observar el desempeño de los cuatro métodos. Se grafica la performance promedio de las 500 corridas por cada ventana y el \glssymbol{BSEM}
 \begin{figure}[H]
 \centering
 %
@@ -43,7 +43,7 @@ En la figura~\ref{capResultados:fig:AllMethods} se puede observar el desempeño d
 \vspace{3mm}
 Se observa que la performance de clasificación para LDA es mayor a 50\%, un segundo después de la presentación del estímulo $(5000 ms)$. Para los otros métodos esto sucede aproximadamente $500 ms$ después del inicio del estímulo, lo que indica que estos últimos necesitan menos exposición al estímulo para decodificar correctamente.\\ 
 Si la población neuronal mantiene información acerca de un estímulo que ya no está presente, debería ser posible predecirlo sólo en base a la actividad post-estímulo. \\\\
-En la figura~\ref{capResultados:fig:AllMethods} se ve que la performance en la decodificación crece incluso luego de la desaparición del estímulo (5000 ms). Por esta razón, y para comparar el desempeño de los métodos, se hizo un análisis de las performances obtenidas entre 5000 ms y 8000 ms. En la figura~\ref{capResultados:fig:linCompAllBar} se puede apreciar la performance promedio y el B.S.E.M para cada método.
+En la figura~\ref{capResultados:fig:AllMethods} se ve que la performance en la decodificación crece incluso luego de la desaparición del estímulo (5000 ms). Por esta razón, y para comparar el desempeño de los métodos, se hizo un análisis de las performances obtenidas entre 5000 ms y 8000 ms. En la figura~\ref{capResultados:fig:linCompAllBar} se puede apreciar la performance promedio y el \glssymbol{BSEM} para cada método.
 
 \figura{Bitmap/07/linear_comparation_all_bar_5000}{width=1\linewidth}{capResultados:fig:linCompAllBar}%
 {Comparación para todas las neuronas VTA en barras a partir del milisegundo $5000$}
@@ -64,7 +64,7 @@ En la tabla~\ref{capResultados:fig:mediaComp} se ve que LDA presenta una perform
 %-------------------------------------------------------------------
 \label{capResultados:sec:analisisVariabilidad:subsec:PFC}
 
-El análisis precedente se repitió sobre una población de neuronas registradas simultáneamente en la \gls{PFC}. En la figura~\ref{capResultados:fig:AllMethodsPFC} se puede ver el desempeño de los cuatro métodos. Se grafica la performance promedio de las 500 corridas por cada ventana y el B.S.E.M.
+El análisis precedente se repitió sobre una población de neuronas registradas simultáneamente en la \gls{PFC}. En la figura~\ref{capResultados:fig:AllMethodsPFC} se puede ver el desempeño de los cuatro métodos. Se grafica la performance promedio de las 500 corridas por cada ventana y el \glssymbol{BSEM}
 
 \begin{figure}[H]
 \centering

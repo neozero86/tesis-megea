@@ -11,7 +11,7 @@ En la figura~\ref{capResultados:fig:mixedTongueBar} se muestra la performance pa
 \figura{Bitmap/10/mixed_tongue_bar}{width=1\linewidth}{capResultados:fig:mixedTongueBar}%
 {Gráfico de la performance en función del tiempo separando las clases L (saca lengua) y NO-L (no saca lengua) para la ventana entre $4000ms$ y $4300ms$}
 
-Para obtener la significancia de la clasificación, en la tabla~\ref{capResultados:fig:significanciaTongue} se calculó el valor p, el cual indica de las 500 iteraciones realizadas, cuantas veces la performance de clasificación se encuentra por sobre 0.5.
+Para obtener la \gls{Si} de la clasificación, en la tabla~\ref{capResultados:fig:significanciaTongue} se calculó el valor p, el cual indica de las 500 iteraciones realizadas, cuantas veces la performance de clasificación se encuentra por sobre 0.5.
 
 \begin{equation}
 p=1-\frac{\#\ Perf(M_i) > 0.5}{500}
@@ -26,6 +26,6 @@ p=1-\frac{\#\ Perf(M_i) > 0.5}{500}
 \subsection{Conclusión}
 \label{capResultados:sec:prediccionComportamiento:subsec:conclusion}
 
-La performance de clasificación para cualquiera de los 3 mejores métodos es aproximadamente $0.7 \pm 0.1$. La significancia para los mismos es aceptable, demostrando que se alejan del azar.\\
+La performance de clasificación para cualquiera de los 3 mejores métodos es aproximadamente $0.7 \pm 0.1$. La \gls{Si} para los mismos es aceptable, demostrando que se alejan del azar.\\
 Si bien la precisión obtenida no es demasiada, hay que tener en cuenta que se está prediciendo la respuesta antes que ocurra con un 70\% de probabilidad de acierto.\\
 Ademas se pudo observar que para el caso de los primeros milisegundos, con todas las respuestas posibles, es factible utilizar Bayes Naive.
