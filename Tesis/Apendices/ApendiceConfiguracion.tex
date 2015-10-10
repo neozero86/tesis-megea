@@ -14,7 +14,7 @@ Para los comandos de MATLAB, ``Xtrain'' y ``Xtest'' serán la matrices de \glspl{
 
 %------------------------------------------------------------------
 \section{LDA}
-\label{capIterResult:sec:analisis con LDA}
+\label{apendiceConfiguracion:sec:analisisLDA}
 
 En esté método solamente se configuró el uso de la versión pseudolineal.\\\\
 Los comandos MatLab para ejecutarlo son:\\
@@ -22,7 +22,7 @@ daClassifier = ClassificationDiscriminant.fit(Xtrain,Ytrain,`discrimType',\\`pse
 Ytest = daClassifier.predict(Xtest);
 %------------------------------------------------------------------
 \section{Bayes-Naive}
-\label{capIterResult:sec:Análisis con Bayes-Naive}
+\label{apendiceConfiguracion:sec:analisisBN}
 
 Se entrenó un \gls{C} Bayes-Naive con una \gls{DDM}, dado que esta distribución suele tener buenos resultados para características discretas. \\
 La probabilidad a priori de las clases se configuro como ``empírica'', es decir que la misma será igual a la frecuencia relativa de distribución de cada clase.\\\\
@@ -31,7 +31,7 @@ nbClassifier = NaiveBayes.fit(Xtrain,Ytrain,`Distribution',`mn');\\
 Ytest = nbClassifier.predict(Xtest);
 
 \section{Análisis con SVM}
-\label{capIterResult:sec:Análisis con SVM}
+\label{apendiceConfiguracion:sec:analisisSVM}
 
 Se entrenó un \gls{C} SVM con una función de kernel lineal.\\ 
 El método utilizado para usar SVM fue SMO (\textit{Sequencial minimal optimization}) \citep{platt1998sequential}.\\
@@ -46,10 +46,10 @@ Se probó con otras funciones de kernel (cuadrática, polinomial (grado 3), Gaussi
 
 %------------------------------------------------------------------
 \section{Análisis con Random Forest}
-\label{capIterResult:sec:Análisis con Random Forest}
+\label{apendiceConfiguracion:sec:analisisRF}
 
-Se entrenó un \gls{C} \textit{Random Forest} con 300 árboles.
-El "mtry" que indica el número máximo de variables en cada árbol se configuró en 12. El mismo se calculó como el piso de la raíz cuadrada de la cantidad de neuronas. Se aconseja calcular el "mtry" de esta forma por primera vez, y luego si fuera necesario ir variando el valor hasta obtener la mejor performance. \\\\
+Se entrenó un \gls{C} \textit{Random Forest} con 300 árboles (se probó con un número mayor de árboles, pero los resultados se mantienen estables a partir de esta cantidad, sin importar cuanto se incremente dicho número).
+El "mtry" que indica la cantidad máxima de variables en cada árbol se configuró en 12. El mismo se calculó como el piso de la raíz cuadrada de la cantidad de neuronas. Se aconseja calcular el "mtry" de esta forma por primera vez, y luego si fuera necesario ir variando el valor hasta obtener la mejor performance. \\\\
 Los comandos MatLab para ejecutarlo son:\\
 rfClassifier = classRF\_train(Xtrain,Ytrain, 300);\\
 Ytest = classRF\_predict(Xtest,rfClassifier);

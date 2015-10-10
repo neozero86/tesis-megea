@@ -178,12 +178,6 @@
   machines, classification trees and random forests.
 \newblock {\em BMC research notes\/}, vol.\ 4(1), p\'agina 299, 2011.
 
-\bibitem[{Miller et\ al.(1991)Miller, Sch{\"a}ffer y
-  Hackley}]{millers1991speed}
-{\sc Miller, J.}, {\sc Sch{\"a}ffer, R.} y {\sc Hackley, S.~A.}
-\newblock Effects of preliminary information in a go versus no-go task.
-\newblock {\em Acta Psychologica\/}, vol.\ 76(3), p\'aginas 241--292, 1991.
-
 \bibitem[{Mohri et\ al.(2012)Mohri, Rostamizadeh y
   Talwalkar}]{mohri2012foundations}
 {\sc Mohri, M.}, {\sc Rostamizadeh, A.} y {\sc Talwalkar, A.}
@@ -249,6 +243,12 @@
 \newblock A neuromorphic network for generic multivariate data classification.
 \newblock {\em Proceedings of the National Academy of Sciences\/}, vol. 111(6),
   p\'aginas 2081--2086, 2014.
+
+\bibitem[{Schultz(1998)}]{schultz1998predictive}
+{\sc Schultz, W.}
+\newblock Predictive reward signal of dopamine neurons.
+\newblock {\em Journal of neurophysiology\/}, vol.\ 80(1), p\'aginas 1--27,
+  1998.
 
 \bibitem[{Valenti et\ al.(2006)Valenti, Cazamajou, Scarpettini, Aizemberg,
   Silva y Kochen}]{valenti2006automatic}
