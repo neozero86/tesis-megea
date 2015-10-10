@@ -3,7 +3,7 @@
 \label{capResultados:sec:conjRed}
 
 Como se mencionó en la sección anterior, la necesidad de reducir el volumen y consumo de las interfaces portátiles, obligan a reducir el número de \gls{E} a ser registrados y procesados. Por otro lado, la reducción del número de \gls{E} acarrea otras ventajas asociadas a los problemas de rechazo.
-\\En este capítulo se estudia la robustez de cada método de decodificación en función del número de neuronas intervinientes en el análisis. Se utilizó nuevamente la técnica de \gls{Bs} (500 re-muestreos con reemplazo) y en cada re-muestreo se tomó un porcentaje fijo (100\%, 75\%, 50\%, 25\%, 10\% y 5\%) y aleatorio de neuronas del set VTA. La figura siguiente muestra el resultado de la performance de clasificación para los cuatro métodos y diferentes porcentajes de neuronas utilizadas en el análisis.
+\\En este capítulo se estudia la robustez de cada método de decodificación en función del número de neuronas intervinientes en el análisis. Se utilizó nuevamente la técnica de \gls{Bs} (500 re-muestreos con reemplazo) y en cada re-muestreo se tomó un porcentaje fijo (100\%, 75\%, 50\%, 25\%, 10\% y 5\%) y aleatorio (distribución uniforme) de neuronas del set VTA. La cantidad de neuronas tomadas es 153, 115, 77, 39, 16 y 8 respectivamente. La figura siguiente muestra el resultado de la performance de clasificación para los cuatro métodos y diferentes porcentajes de neuronas utilizadas en el análisis.
  
 \begin{figure}[H]
 \centering
@@ -45,7 +45,7 @@ Como se mencionó en la sección anterior, la necesidad de reducir el volumen y co
 \label{fig:capResultados:linearComparation}}
 \end{figure}
 En la figura~\ref{fig:capResultados:linearComparation} se puede ver como, cuando la cantidad de neuronas involucradas disminuye, decrece la performance de clasificación en todos los métodos. 
-Observando los últimos $2500 ms$ se ve que para las cuatro primeras figuras, LDA tiene una performance menor a los otros métodos, diferencia que desaparece cuando el porcentaje de neuronas utilizadas es menor o igual a 10\%.\\\\
+Observando los últimos $2500 ms$ se puede apreciar que para las cuatro primeras figuras, LDA tiene una performance menor a los otros métodos, diferencia que desaparece cuando el porcentaje de neuronas utilizadas es menor o igual a 10\%.\\\\
        
 La figura siguiente muestra la variación de la performance promedio, para los cuatro métodos, tomando la información posterior a la desaparición del estímulo.
 
@@ -54,7 +54,7 @@ La figura siguiente muestra la variación de la performance promedio, para los cu
 
 Se observa que independientemente del método, cuando la cantidad de neuronas es mayor o igual a $77$ ($50\%$) la performance se mantiene casi constante, independientemente de cuantas neuronas mas se agreguen. Por el contrario, debajo del $50\%$ la performance decrece linealmente a medida que el número de neuronas disminuye.\\
 
-Como se ha visto en los análisis de neurona única (sección~\ref{capSetDeDatos:sec:features:subsec:monoNeuronal}), en el conjunto de datos existen neuronas cuya performance de clasificación es alta. Esto puede traer aparejado que el decrecimiento de la performance en alguno de los conjuntos reducidos anteriores, se deba a la eliminación de dichas neuronas. Por este motivo se decidió realizar un nuevo análisis excluyendo aquellas neuronas cuya performance individual supere el 70\%. 
+Como se ha visto en los análisis de neurona única (sección~\ref{capSetDeDatos:sec:features:subsec:monoNeuronal}), en el conjunto de datos existen neuronas cuya performance de clasificación es alta. Esto puede traer aparejado que el decrecimiento de la performance en alguno de los conjuntos reducidos estudiados en este capítulo, se deba a la eliminación de dichas neuronas. Por este motivo se decidió realizar un nuevo análisis excluyendo aquellas neuronas cuya performance individual supere el 70\%. 
 En VTA, se eliminaron $27$ neuronas, de acuerdo con el gráfico~\ref{capSetDeDatos:fig:VTAIndividual}. Las neuronas eliminadas son las siguientes: [2 3 6 29 45 72 73 87 102 105 109 110 113 114 115 116 118 122 123 131 132 133 137 138 141 143 145].\\\\ La figura~\ref{capResultados:fig:VTAAllLineForbidden} muestra la performace de clasificación con este conjunto reducido de datos.
 
 \figura{Bitmap/11/VTA_all_line_forbidden}{width=1\textwidth}{capResultados:fig:VTAAllLineForbidden}%
@@ -76,7 +76,7 @@ Para el área PFC se realizó el mismo procedimiento, corriendo nuevamente los mét
 
 Si se compara la figura~\ref{capResultados:fig:PFCAllLineForbidden} con la figura~\ref{capResultados:fig:AllMethodsPFC}, se observa como el pico posterior al estímulo desapareció y la performance se incrementa lentamente luego del estímulo.\\ 
 
-De esta manera queda demostrado que el pico posterior al estímulo, era un efecto de unas pocas neuronas que separaban las clases $100 ms$ después de escuchado el tono.\\
+De esta manera se concluye que el pico posterior al inicio del estímulo, era un efecto de unas pocas neuronas que separaban las clases $100 ms$ después de escuchado el tono.\\
 
 En el gráfico de barras~\ref{capResultados:fig:PFCAllBarForbidden6000} se aprecia que hubo una disminución de aproximadamente 5\% en todos los métodos con respecto al gráfico~\ref{capResultados:fig:PFCAllBar6000}.
 
@@ -88,7 +88,7 @@ Dado que el resultado varió en un 5\% aproximadamente, se realizó nuevamente la 
 \figura{Bitmap/07/media_mayor_que_PFC_forbidden}{width=1\linewidth}{capResultados:fig:mediaCompPFCForbidden}%
 {Significancia en la que la media de un método es mejor que la de otro a partir del milisegundo $6500$ para las neuronas PFC, sin las cuatro neuronas que superan el 70\% de performance en su clasificación individual.}
 
-En la tabla~\ref{capResultados:fig:mediaCompPFCForbidden} se observa que las conclusiones expuestas en la sección anterior no cambian. La única diferencia con la tabla~\ref{capResultados:fig:mediaCompPFC} radica en entre Random Forest y SVM no se aprecian diferencias significativas.
+En la tabla~\ref{capResultados:fig:mediaCompPFCForbidden} se observa que las conclusiones expuestas en la sección anterior no cambian. La única diferencia con la tabla~\ref{capResultados:fig:mediaCompPFC} radica en que no se aprecian diferencias entre Random Forest y SVM.
 
 \subsection{Conclusión}
 \label{capResultados:sec:conjRed:subsec:conclusion}

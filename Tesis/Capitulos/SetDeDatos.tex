@@ -115,14 +115,14 @@ Definir un \gls{F} por cada neurona implica tener una dimensión distinta para ca
 
 La construcción se realiza para el área VTA para simplificar la explicación, pero el procedimiento aplica de igual manera al área PFC.
 
-La matriz $X$ enseñada al \gls{C} tiene a las neuronas como columnas y los distintos trials de GOc y NOGOc como filas. El vector $Y$ contiene las respuestas esperadas. \\\\
+La matriz $X$ enseñada al \gls{C}, tiene a las neuronas como columnas y los distintos trials de GOc y NOGOc como filas. El vector $Y$ contiene las respuestas esperadas. \\\\
 Para armar dicha matriz, se debe buscar la máxima cantidad de trials GOc y NOGOc que aparecen mínimamente en todas las neuronas. Se cuenta con 31 trials GOc y 23 trials NOGOc disponibles como mínimo en todas las sesiones. Se elije entonces el mínimo valor de los dos (23) para conseguir que la matriz tenga la misma cantidad de trials de uno y de otro y que el análisis resulte balanceado.\\\\
 Se tiene la matriz $X$ con 153 columnas (cantidad total de neuronas VTA que se registraron en las 30 sesiones) y 46 filas que representan 23 trials GOc y 23 trials NOGOc. También se cuenta con el vector $Y$ con 46 posiciones donde en cada posición se colocará un 1 o un 2, dependiendo si el trial (fila de $X$) correspondiente a este número de posición corresponde a la clase 1 (GOc) o a la clase 2 (NOGOc). \\
 
 \figura{Bitmap/04/XeYPoblacional}{width=1\textwidth}{capSetDeDatos:fig:XeYPoblacional}%
 {Matriz $X$ y Vector $Y$ - Análisis poblacional - $x_{i,j}$ representa la suma de todos los \glspl{S} para el \textit{trial} $i$ de la neurona $j$ }
 
-A su vez, se toma el 70\%  de las filas de la matriz $X$ para entrenamiento y el 30\% restante para medir la performance de clasificación.\\\\\
+A su vez, se toma (en forma aleatoria con distribución uniforme) el 70\% de las filas de la matriz $X$ para entrenamiento y el 30\% restante para medir la performance de clasificación.\\\\\
 
 \subsubsection{Resultados}
 \label{capSetDeDatos:sec:features:subsec:poblacional:subsubsec:resultados}
