@@ -1,4 +1,4 @@
-\begin{thebibliography}{39}
+\begin{thebibliography}{41}
 \expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
 
 \bibitem[{Ac{\i}r y G{\"u}zeli{\c{s}}(2004)}]{acir2004automatic}
@@ -25,6 +25,14 @@
   ensemble and lfp activity during dexterous reach-to-grasp movements.
 \newblock {\em Journal of neurophysiology\/}, vol. 109(12), p\'aginas
   3067--3081, 2013.
+
+\bibitem[{Baeg et\ al.(2001)Baeg, Kim, Jang, Kim, Mook-Jung y
+  Jung}]{baeg2001fast}
+{\sc Baeg, E.~H.}, {\sc Kim, Y.~B.}, {\sc Jang, J.}, {\sc Kim, H.~T.}, {\sc
+  Mook-Jung, I.} y {\sc Jung, M.~W.}
+\newblock Fast spiking and regular spiking neural correlates of fear
+  conditioning in the medial prefrontal cortex of the rat.
+\newblock {\em Cerebral Cortex\/}, vol.\ 11(5), p\'aginas 441--451, 2001.
 
 \bibitem[{Breiman(2001)}]{breiman2001random}
 {\sc Breiman, L.}
@@ -216,6 +224,13 @@
 \newblock {\em Numerical recipes 3rd edition: The art of scientific
   computing\/}.
 \newblock Cambridge university press, 2007.
+
+\bibitem[{Puryear et\ al.(2010)Puryear, Kim y
+  Mizumori}]{puryear2010conjunctive}
+{\sc Puryear, C.~B.}, {\sc Kim, M.~J.} y {\sc Mizumori, S.~J.}
+\newblock Conjunctive encoding of movement and reward by ventral tegmental area
+  neurons in the freely navigating rodent.
+\newblock {\em Behavioral neuroscience\/}, vol. 124(2), p\'agina 234, 2010.
 
 \bibitem[{Quiroga et\ al.(2004)Quiroga, Nadasdy y Ben-Shaul}]{spikeSorting}
 {\sc Quiroga, R.~Q.}, {\sc Nadasdy, Z.} y {\sc Ben-Shaul, Y.}

@@ -36,7 +36,7 @@ La información relativa al formato y distribución de los datos, junto con el aná
 %-------------------------------------------------------------------
 \label{capSetDeDatos:sec:features}
 
-La técnica utilizada para entrenar los algoritmos estadísticos elegidos fue aprendizaje supervisado \citep{mohri2012foundations}. Esta técnica consiste en predecir la clase a la que pertenece una muestra después de haber aprendido con una serie de ejemplos (datos de entrenamiento). Para el aprendizaje supervisado se tomó en forma aleatoria (distribución uniforme) el 70\% de los datos para el entrenamiento y se validó el resultado del entrenamiento con el 30\% restante de los mismos (etapa de test). Como característica de la señal (\gls{F}) se utilizó la actividad media de las neuronas en una ventana temporal determinada, esto es, la tasa de disparo promedio. Podrían haberse empleado otras características de la señal neuronal como el \gls{ISI} o incluso la variabilidad con respecto al promedio, pero la tasa de disparo es una medida directa de actividad, lo que simplifica la validación de los resultados obtenidos.
+La técnica utilizada para entrenar los algoritmos estadísticos elegidos fue aprendizaje supervisado \citep{mohri2012foundations}. Esta técnica consiste en predecir la clase a la que pertenece una muestra después de haber aprendido con una serie de ejemplos (datos de entrenamiento). Para el aprendizaje supervisado se tomó en forma aleatoria (\gls{DU}) el 70\% de los datos para el entrenamiento y se validó el resultado del entrenamiento con el 30\% restante de los mismos (etapa de test). Como característica de la señal (\gls{F}) se utilizó la actividad media de las neuronas en una ventana temporal determinada, esto es, la tasa de disparo promedio. Podrían haberse empleado otras características de la señal neuronal como el \gls{ISI} o incluso la variabilidad con respecto al promedio, pero la tasa de disparo es una medida directa de actividad, lo que simplifica la validación de los resultados obtenidos.
 
 
 \subsection{Análisis de neurona única}
@@ -122,7 +122,7 @@ Se tiene la matriz $X$ con 153 columnas (cantidad total de neuronas VTA que se r
 \figura{Bitmap/04/XeYPoblacional}{width=1\textwidth}{capSetDeDatos:fig:XeYPoblacional}%
 {Matriz $X$ y Vector $Y$ - Análisis poblacional - $x_{i,j}$ representa la suma de todos los \glspl{S} para el \textit{trial} $i$ de la neurona $j$ }
 
-A su vez, se toma (en forma aleatoria con distribución uniforme) el 70\% de las filas de la matriz $X$ para entrenamiento y el 30\% restante para medir la performance de clasificación.\\\\\
+A su vez, se toma (en forma aleatoria con \gls{DU}) el 70\% de las filas de la matriz $X$ para entrenamiento y el 30\% restante para medir la performance de clasificación.\\\\\
 
 \subsubsection{Resultados}
 \label{capSetDeDatos:sec:features:subsec:poblacional:subsubsec:resultados}
