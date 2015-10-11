@@ -6,19 +6,19 @@ En un experimento futuro, en el momento de registrar los \glspl{S} de las ratas,
 Con este propósito, se agruparon los trials GOc y NOGOi en una nueva clase llamada L (saca lengua). A su vez, los trials GOi y NOGOc fueron agrupados en una nueva clase llamada NO-L (no saca lengua). El análisis se realizó sobre el Área VTA ya que esta área está relacionada con la predicción del comportamiento \citep{schultz1998predictive}. \\
 Se prepararon los datos tal y como se especificó en la sección~\ref{capSetDeDatos:sec:features:subsec:poblacional:subsubsec:preparacion}, con la salvedad que a la matriz de entrada de los métodos se le agregaron cinco \textit{trials} NOGOi y cinco GOi, indicando que pertenecen a las clases L y NO-L respectivamente.\\
 
-En la figura~\ref{capResultados:fig:mixedTongueBar} se muestra la performance para la ventana de amplitud $300ms$ que va desde $4000ms$ a $4300ms$. Se tomó está ventana, debido a que se quiere predecir como responderá el animal al estímulo antes que se ejecute la respuesta motora.
+En la figura~\ref{capResultados:fig:mixedTongueBar} se muestra la \gls{PDC} para la ventana de amplitud $300ms$ que va desde $4000ms$ a $4300ms$. Se tomó está ventana, debido a que se quiere predecir como responderá el animal al estímulo antes que se ejecute la respuesta motora.
 
 \figura{Bitmap/10/mixed_tongue_bar}{width=1\linewidth}{capResultados:fig:mixedTongueBar}%
-{Gráfico de la performance en función del tiempo separando las clases L (saca lengua) y NO-L (no saca lengua) para la ventana entre $4000ms$ y $4300ms$}
+{Gráfico de la \gls{PDC} en función del tiempo separando las clases L (saca lengua) y NO-L (no saca lengua) para la ventana entre $4000ms$ y $4300ms$}
 
-Para obtener la \gls{Si} de la clasificación, en la tabla~\ref{capResultados:fig:significanciaTongue} se calculó el valor p, el cual indica de las 500 iteraciones realizadas, cuantas veces la performance de clasificación se encuentra por sobre 0.5.
+Para obtener la \gls{Si} de la clasificación, en la tabla~\ref{capResultados:fig:significanciaTongue} se calculó el valor p, el cual indica de las 500 iteraciones realizadas, cuantas veces la \glssymbol{PDC} se encuentra por sobre 0.5.
 
 \begin{equation}
 p=1-\frac{\#\ Perf(M_i) > 0.5}{500}
 \end{equation}
 
 \figura{Bitmap/10/significancia}{width=1\linewidth}{capResultados:fig:significanciaTongue}%
-{Significancia en el que la performance de un método es mayor a 0.5 para la ventana entre $4000ms$ y $4300ms$}
+{Significancia en el que la \gls{PDC} de un método es mayor a 0.5 para la ventana entre $4000ms$ y $4300ms$}
 
 
 
@@ -26,6 +26,6 @@ p=1-\frac{\#\ Perf(M_i) > 0.5}{500}
 \subsection{Conclusión}
 \label{capResultados:sec:prediccionComportamiento:subsec:conclusion}
 
-La performance de clasificación para cualquiera de los 3 mejores métodos es aproximadamente $0.7 \pm 0.1$. La \gls{Si} para los mismos es aceptable ($p<0.05$), demostrando que la performance de clasificación se aleja del azar.\\
-Si bien la precisión obtenida no es demasiada, hay que tener en cuenta que se está prediciendo la respuesta antes que ocurra con un 70\% de probabilidad de acierto.\\
+La \glssymbol{PDC} para cualquiera de los 3 mejores métodos es aproximadamente $0.7 \pm 0.1$. La \gls{Si} para los mismos es aceptable ($p<0.05$), demostrando que la \glssymbol{PDC} se aleja del azar.\\
+Si bien no es demasiado alta, hay que tener en cuenta que se está prediciendo la respuesta antes que ocurra con un 70\% de probabilidad de acierto.\\
 Ademas se pudo observar que para el caso de los primeros milisegundos, con todas las respuestas posibles, es factible utilizar Bayes Naive.

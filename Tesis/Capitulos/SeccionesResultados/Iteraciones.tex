@@ -2,10 +2,10 @@
 \section[Variabilidad en la decodificación]{Análisis de la variabilidad en la decodificación}
 %-------------------------------------------------------------------
 \label{capResultados:sec:analisisVariabilidad}
-En la sección anterior se mostró que entrenando un \gls{C} lineal con un porcentaje de los trials (70\%), la performance de la predicción acerca de cual es el estímulo presentado, crece luego de la aparición del mismo. De esta manera, calculando el promedio de los aciertos en los trials de prueba (30\%), se tiene una idea de cual es la performance media esperada, pero no de cuanta variabilidad existe en esta medición. 
+En la sección anterior se mostró que entrenando un \gls{C} lineal con un porcentaje de los trials (70\%), la \gls{PDC} de la predicción acerca de cual es el estímulo presentado, crece luego de la aparición del mismo. De esta manera, calculando el promedio de los aciertos en los trials de prueba (30\%), se tiene una idea de cual es la \gls{PDC} media esperada, pero no de cuanta variabilidad existe en esta medición. 
 Por lo tanto, no es posible saber cuan esperable sería un resultado parecido, si se utilizara otro conjunto de trials para entrenar el decodificador. Para resolver este problema y obtener una estimación de la variabilidad, se empleará en este capítulo una técnica de re-muestreo denominada \glssymbol{Bs} \citep{efron1979bootstrap}.\\\\
 Se realizará el análisis utilizando LDA, Bayes Naive, Support Vector Machine (SVM) y Random Forest y se comparará si existen diferencias significativas en el desempeño de estas herramientas.\\
-El análisis se efectuará utilizando ventanas solapadas (10 ms) de 300 ms de longitud. Para cada ventana se creará la matriz $X$ y el vector $Y$, luego se entrenará a la herramienta tomando 70\% de los trials de forma aleatoria (\gls{DU}) y se calculará la performace (número de aciertos / número de trials) con el 30\% restante. Se repetirá este procedimiento 500 veces con el objetivo de calcular la performance promedio y el \gls{BSEM} de la performace de clasificación. En cada una de las corridas se utilizará el mismo conjunto de muestras para entrenar y probar los \glspl{C}, de esta manera, se podrán realizar \gls{CA} sobre los resultados obtenidos.\\\\
+El análisis se efectuará utilizando ventanas solapadas (10 ms) de 300 ms de longitud. Para cada ventana se creará la matriz $X$ y el vector $Y$, luego se entrenará a la herramienta tomando 70\% de los trials de forma aleatoria (\gls{DU}) y se calculará la performace (número de aciertos / número de trials) con el 30\% restante. Se repetirá este procedimiento 500 veces con el objetivo de calcular la \gls{PDC} promedio y el \gls{BSEM} de la performace de clasificación. En cada una de las corridas se utilizará el mismo conjunto de muestras para entrenar y probar los \glspl{C}, de esta manera, se podrán realizar \gls{CA} sobre los resultados obtenidos.\\\\
 En el Apéndice~\ref{apendiceConfiguracion} se especifican los parámetros utilizados en cada uno de los métodos.
 \pagebreak
 %-------------------------------------------------------------------
@@ -13,7 +13,7 @@ En el Apéndice~\ref{apendiceConfiguracion} se especifican los parámetros utiliza
 %-------------------------------------------------------------------
 \label{capResultados:sec:analisisVariabilidad:subsec:VTA}
 
-En la figura~\ref{capResultados:fig:AllMethods} se puede observar el desempeño de los cuatro métodos. Se grafica la performance promedio de las 500 corridas por cada ventana y el \glssymbol{BSEM}
+En la figura~\ref{capResultados:fig:AllMethods} se puede observar el desempeño de los cuatro métodos. Se grafica la \gls{PDC} promedio de las 500 corridas por cada ventana y el \glssymbol{BSEM}
 \begin{figure}[H]
 \centering
 %
@@ -37,18 +37,18 @@ En la figura~\ref{capResultados:fig:AllMethods} se puede observar el desempeño d
 	\includegraphics[width=0.45\textwidth]%
 	{Imagenes/Bitmap/06/RF_line_run_paired}%
 	\end{SubFloat}
-	\caption{Performance en la decodificación en función del tiempo para 500 re-muestreos en las neuronas VTA. a) Análisis de discriminante lineal. b) Análisis con Naive Bayes. c) Análisis con Support Vector Machine. d) Análisis con Random Forest.%
+	\caption{\glslink{PDC}{Performance en la decodificación} en función del tiempo para 500 re-muestreos en las neuronas VTA. a) Análisis de discriminante lineal. b) Análisis con Naive Bayes. c) Análisis con Support Vector Machine. d) Análisis con Random Forest.%
 \label{capResultados:fig:AllMethods}}
 \end{figure}
 \vspace{3mm}
-Se observa que la performance de clasificación para LDA es mayor a 50\%, un segundo después de la presentación del estímulo $(5000 ms)$. Para los otros métodos esto sucede aproximadamente $500 ms$ después del inicio del estímulo, lo que indica que estos últimos necesitan menos exposición al estímulo para decodificar correctamente.\\ 
+Se observa que la \glssymbol{PDC} para LDA es mayor a 50\%, un segundo después de la presentación del estímulo $(5000 ms)$. Para los otros métodos esto sucede aproximadamente $500 ms$ después del inicio del estímulo, lo que indica que estos últimos necesitan menos exposición al estímulo para decodificar correctamente.\\ 
 Si la población neuronal mantiene información acerca de un estímulo que ya no está presente, debería ser posible predecirlo sólo en base a la actividad post-estímulo. \\\\
-En la figura~\ref{capResultados:fig:AllMethods} se ve que la performance en la decodificación crece incluso luego de la desaparición del estímulo (5000 ms). Por esta razón, y para comparar el desempeño de los métodos, se hizo un análisis de las performances obtenidas entre 5000 ms y 8000 ms. En la figura~\ref{capResultados:fig:linCompAllBar} se puede apreciar la performance promedio y el \glssymbol{BSEM} para cada método.
+En la figura~\ref{capResultados:fig:AllMethods} se ve que la \glslink{PDC}{performance en la decodificación} crece incluso luego de la desaparición del estímulo (5000 ms). Por esta razón, y para comparar el desempeño de los métodos, se hizo un análisis de la \gls{PDC} obtenida entre 5000 ms y 8000 ms. En la figura~\ref{capResultados:fig:linCompAllBar} se puede apreciar la \gls{PDC} promedio y el \glssymbol{BSEM} para cada método.
 
 \figura{Bitmap/07/linear_comparation_all_bar_5000}{width=1\linewidth}{capResultados:fig:linCompAllBar}%
 {Comparación para todas las neuronas VTA en barras a partir del milisegundo $5000$}
 
-En la Tabla~\ref{capResultados:fig:mediaComp} se muestra el valor \textit{p} con el cual se puede evidenciar que un método $M_i$ funciona mejor que otro $M_j$. Esta \gls{Si} se calculó contando las veces en que la media de la performance de una ventana para uno de los métodos, fue más alta que la del otro, es decir, sin asumir ninguna \gls{DP}:
+En la Tabla~\ref{capResultados:fig:mediaComp} se muestra el valor \textit{p} con el cual se puede evidenciar que un método $M_i$ funciona mejor que otro $M_j$. Esta \gls{Si} se calculó contando las veces en que la media de la \gls{PDC} de una ventana para uno de los métodos, fue más alta que la del otro, es decir, sin asumir ninguna \gls{DP}:
 
 \begin{equation}
 p=1-\frac{\#\ Perf(M_i) > Perf(M_j)}{N\acute{u}mero\ de\ ventanas}
@@ -57,14 +57,14 @@ p=1-\frac{\#\ Perf(M_i) > Perf(M_j)}{N\acute{u}mero\ de\ ventanas}
 \figura{Bitmap/07/media_mayor_que}{width=1\linewidth}{capResultados:fig:mediaComp}%
 {Significancia en la que la media de un método es mejor que la de otro a partir del milisegundo $5000$ para las neuronas VTA.}
 
-En la tabla~\ref{capResultados:fig:mediaComp} se ve que LDA presenta una performance inferior a los otros métodos, mientras que no hay diferencia significativa entre Bayes Naive, SVM y Random Forest. Un análisis con más datos podría determinar si existen diferencias significativas entre estos tres últimos métodos.
+En la tabla~\ref{capResultados:fig:mediaComp} se ve que LDA presenta una \gls{PDC} inferior a los otros métodos, mientras que no hay diferencia significativa entre Bayes Naive, SVM y Random Forest. Un análisis con más datos podría determinar si existen diferencias significativas entre estos tres últimos métodos.
 
 %-------------------------------------------------------------------
 \subsection{\gls{PFC}}
 %-------------------------------------------------------------------
 \label{capResultados:sec:analisisVariabilidad:subsec:PFC}
 
-El análisis precedente se repitió sobre una población de neuronas registradas simultáneamente en la \gls{PFC}. En la figura~\ref{capResultados:fig:AllMethodsPFC} se puede ver el desempeño de los cuatro métodos. Se grafica la performance promedio de las 500 corridas por cada ventana y el \glssymbol{BSEM}
+El análisis precedente se repitió sobre una población de neuronas registradas simultáneamente en la \gls{PFC}. En la figura~\ref{capResultados:fig:AllMethodsPFC} se puede ver el desempeño de los cuatro métodos. Se grafica la \gls{PDC} promedio de las 500 corridas por cada ventana y el \glssymbol{BSEM}
 
 \begin{figure}[H]
 \centering
@@ -89,17 +89,17 @@ El análisis precedente se repitió sobre una población de neuronas registradas si
 	\includegraphics[width=0.45\textwidth]%
 	{Imagenes/Bitmap/11/PFC_rf_line}%
 	\end{SubFloat}
-	\caption{Performance en la decodificación en función del tiempo para 500 re-muestreos en las neuronas PFC. a) Análisis de discriminante lineal. b) Análisis con Naive Bayes. c) Análisis con Support Vector Machine. d) Análisis con Random Forest.%
+	\caption{\glslink{PDC}{performance en la decodificación} en función del tiempo para 500 re-muestreos en las neuronas PFC. a) Análisis de discriminante lineal. b) Análisis con Naive Bayes. c) Análisis con Support Vector Machine. d) Análisis con Random Forest.%
 \label{capResultados:fig:AllMethodsPFC}}
 \end{figure}
 \vspace{3mm}
 
-Se puede observar un incremento importante de la performance $100 ms$ después de la presentación del estímulo, a diferencia de lo que se midió en VTA, donde la performance en la decodificación se incrementa a medida que transcurre el tiempo y, una vez que la rata toma la decisión, la misma se ve reflejada en la performance creciente.\\
+Se puede observar un incremento importante de la \gls{PDC} $100 ms$ después de la presentación del estímulo, a diferencia de lo que se midió en VTA, donde la \glslink{PDC}{performance en la decodificación} se incrementa a medida que transcurre el tiempo y, una vez que la rata toma la decisión, la misma se ve reflejada en la \gls{PDC} creciente.\\
 
 \figura{Bitmap/11/PFC_all_bar_6000}{width=1\textwidth}{capResultados:fig:PFCAllBar6000}%
 {Comparación apareada para todas las neuronas PFC en barras a partir del milisegundo $6500$.}
 
-En la figura~\ref{capResultados:fig:PFCAllBar6000} se aprecia como la performance en la decodificación alcanza un $0.9566 \pm 0.0498$ utilizando \textit{Random Forest}. Si bien es menor que la obtenida en el Área VTA, igualmente alcanza para demostrar que en PFC también hay información acerca del tono. En la siguiente figura~\ref{capResultados:fig:PFCAllBar36003900} se puede observar el incremento que tiene lugar un instante posterior a la presentación del estímulo.
+En la figura~\ref{capResultados:fig:PFCAllBar6000} se aprecia como la \glslink{PDC}{performance en la decodificación} alcanza un $0.9566 \pm 0.0498$ utilizando \textit{Random Forest}. Si bien es menor que la obtenida en el Área VTA, igualmente alcanza para demostrar que en PFC también hay información acerca del tono. En la siguiente figura~\ref{capResultados:fig:PFCAllBar36003900} se puede observar el incremento que tiene lugar un instante posterior a la presentación del estímulo.
 
 \figura{Bitmap/11/PFC_all_bar_3600_3900}{width=1\textwidth}{capResultados:fig:PFCAllBar36003900}%
 {Comparación apareada para todas las neuronas PFC en barras entre los milisegundos $4100$ y $4400$.}
@@ -109,7 +109,7 @@ En la sección~\ref{capResultados:sec:conjRed} se analizará este fenómeno.
 \figura{Bitmap/07/media_mayor_que_PFC}{width=1\linewidth}{capResultados:fig:mediaCompPFC}%
 {Significancia en la que la media de un método es mejor que la de otro a partir del milisegundo $6500$ para las neuronas PFC.}
 
-En la tabla ~\ref{capResultados:fig:mediaCompPFC} se observa que, al igual que en VTA, los métodos \textit{Random Forest}, SVM y \textit{Bayes Naive} son mejores que LDA. Los resultados muestran que hay suficiente información en el conjunto de neuronas de PFC, para predecir el estímulo auditivo con una performance de $0.9566 \pm 0.0498$\\
+En la tabla ~\ref{capResultados:fig:mediaCompPFC} se observa que, al igual que en VTA, los métodos \textit{Random Forest}, SVM y \textit{Bayes Naive} son mejores que LDA. Los resultados muestran que hay suficiente información en el conjunto de neuronas de PFC, para predecir el estímulo auditivo con una \gls{PDC} de $0.9566 \pm 0.0498$\\
 
 
 
@@ -119,4 +119,4 @@ En la tabla ~\ref{capResultados:fig:mediaCompPFC} se observa que, al igual que e
 \label{capResultados:sec:analisisVariabilidad:subsec:conclusiones}
 
 El análisis del discriminante lineal (LDA), aunque más simple, resulta ser menos eficiente que los otros métodos analizados. Esto ya fue demostrado en la literatura \citep{lee2005extensive,lehmann2007application,maroco2011data} pero nunca con un conjunto de datos de actividad neuronal de neurona única. Sin embargo, la simplicidad de LDA lo hace más atractivo para implementaciones portátiles que requieran volúmenes pequeños (implementaciones en \acrshort{FPGA}) y bajo consumo de energía, como es el caso de las Interfaces Cerebro Computadora portátiles. Estos requerimientos (volumen y consumo) pueden ser minimizados atacando varios factores. Uno de ellos es el número de \gls{E} que el sistema debe procesar, cuanto menor sea el número de \gls{E} menor serán los requerimientos computacionales, pero disminuye el número de neuronas promedio registradas, lo que implicaría contar con menor volumen de información.\\
-En la sección siguiente se hará un análisis de como la cantidad de neuronas utilizadas para la decodificación, impacta en la performance de los \glspl{C}.\\\\
+En la sección siguiente se hará un análisis de como la cantidad de neuronas utilizadas para la decodificación, impacta en la \gls{PDC} de los \glspl{C}.\\\\

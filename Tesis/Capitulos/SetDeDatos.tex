@@ -69,28 +69,28 @@ Por el motivo explicado y los resultados obtenidos, se decidió de ahora en mas u
 
 Con esta simplificación, se intentó separar las clases GOc y NOGOc. \\\\
 Para el set de neuronas VTA:\\ 
-Utilizando la opción A, la performance obtenida fue de $0.5354 \pm 0.0956$.\\
-Utilizando la opción B, la performance fue de $0.5910 \pm 0.1179$. \\\\
-La performance total se calculó como el promedio de la performance individual de clasificación entre las 153 neuronas $\pm$ su desvío estándar. \\\\\\
+Utilizando la opción A, la \gls{PDC} obtenida fue de $0.5354 \pm 0.0956$.\\
+Utilizando la opción B, la \gls{PDC} fue de $0.5910 \pm 0.1179$. \\\\
+La \gls{PDC} total se calculó como el promedio de la \gls{PDC} individual de clasificación entre las 153 neuronas $\pm$ su desvío estándar. \\\\\\
 Para el set de neuronas PFC:\\
-Utilizando la opción A, la performance obtenida fue de $0.5072 \pm 0.0485$.\\
-Utilizando la opción B, la performance fue de $0.5433 \pm 0.0755$. \\\\
-La performance total se calculó como el promedio de la performance individual de clasificación entre las 95 neuronas $\pm$ su desvío estándar. \\\\
+Utilizando la opción A, la \gls{PDC} obtenida fue de $0.5072 \pm 0.0485$.\\
+Utilizando la opción B, la \gls{PDC} fue de $0.5433 \pm 0.0755$. \\\\
+La \gls{PDC} total se calculó como el promedio de la \gls{PDC} individual de clasificación entre las 95 neuronas $\pm$ su desvío estándar. \\\\
 
 A efectos de tener una mejor comprensión del set de datos, se muestra a continuación la clasificación individual de cada neurona.\\
 Se entrenó entonces, utilizando la opción B, un \gls{C} LDA para cada neurona corriendo el algoritmo 500 veces y se calculó la media.\\
 
 \figura{Bitmap/11/VTA_individual}{width=1\textwidth}{capSetDeDatos:fig:VTAIndividual}%
-{Performance de las neuronas VTA - Corridas individuales. Cada par X-Y corresponde a una neurona con su precisión de clasificación (media para las 500 corridas). - LDA}
+{\Gls{PDC} de las neuronas VTA - Corridas individuales. Cada par X-Y corresponde a una neurona con su \glssymbol{PDC} (media para las 500 corridas). - LDA}
 
 \figura{Bitmap/11/PFC_individual}{width=1\textwidth}{capSetDeDatos:fig:PFCIndividual}%
-{Performance de las neuronas PFC - Corridas individuales. Cada par X-Y corresponde a una neurona con su precisión de clasificación (media para las 500 corridas). - LDA}
+{\Gls{PDC} de las neuronas PFC - Corridas individuales. Cada par X-Y corresponde a una neurona con su \glssymbol{PDC} (media para las 500 corridas). - LDA}
 
 Se pueden observar neuronas que por si solas clasifican el set de datos.\\
 En el caso de PFC se aprecia como la media de la neurona $80$ supera el $90\%$ y la $84$ el $80\%$. Estas neuronas son casos aislados, que si bien separan correctamente las clases, no representan el comportamiento global.\\
 En VTA, en cambio, no hay ninguna neurona que sobrepase el $90\%$, pero se observan varias que están por arriba del $80\%$.\\\\
 
-Dado que la media de la performance de clasificación $\pm$ su desvio estándar con LDA se solapan con $0.5$ (que es lo esperado por azar) se puede inferir que el resultado no es significativo. Por ende, descartando los casos aislados, se concluyó que con una sola neurona no hay suficiente información para diferenciar los trials.\\\\
+Dado que la media de la \glssymbol{PDC} $\pm$ su desvio estándar con LDA se solapan con $0.5$ (que es lo esperado por azar) se puede inferir que el resultado no es significativo. Por ende, descartando los casos aislados, se concluyó que con una sola neurona no hay suficiente información para diferenciar los trials.\\\\
 
 \subsection{Análisis poblacional}
 \label{capSetDeDatos:sec:features:subsec:poblacional}
@@ -122,10 +122,10 @@ Se tiene la matriz $X$ con 153 columnas (cantidad total de neuronas VTA que se r
 \figura{Bitmap/04/XeYPoblacional}{width=1\textwidth}{capSetDeDatos:fig:XeYPoblacional}%
 {Matriz $X$ y Vector $Y$ - Análisis poblacional - $x_{i,j}$ representa la suma de todos los \glspl{S} para el \textit{trial} $i$ de la neurona $j$ }
 
-A su vez, se toma (en forma aleatoria con \gls{DU}) el 70\% de las filas de la matriz $X$ para entrenamiento y el 30\% restante para medir la performance de clasificación.\\\\\
+A su vez, se toma (en forma aleatoria con \gls{DU}) el 70\% de las filas de la matriz $X$ para entrenamiento y el 30\% restante para medir la \glssymbol{PDC}.\\\\\
 
 \subsubsection{Resultados}
 \label{capSetDeDatos:sec:features:subsec:poblacional:subsubsec:resultados}
 
-Se entrenó un LDA con las matrices mencionadas anteriormente y se consiguió una performance alrededor del 90\%. \\
+Se entrenó un LDA con las matrices mencionadas anteriormente y se consiguió una \gls{PDC} alrededor del 90\%. \\
 Estos resultados son significativos, mas adelante se analizarán las implicancias de los mismos.  

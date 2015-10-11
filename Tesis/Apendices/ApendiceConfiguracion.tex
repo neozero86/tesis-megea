@@ -35,21 +35,21 @@ Ytest = nbClassifier.predict(Xtest);
 
 Se entrenó un \gls{C} SVM con una función de kernel lineal.\\ 
 El método utilizado para usar SVM fue SMO (\textit{Sequencial minimal optimization}) \citep{platt1998sequential}.\\
-El parámetro de ajuste \textit{C} fue configurado en 1 que es el valor por defecto de la librería utilizada. (No se varió ya que la performance obtenida ronda el 100\% sin necesidad de ajustar el método).\\
+El parámetro de ajuste \textit{C} fue configurado en 1 que es el valor por defecto de la librería utilizada. (No se varió ya que la \gls{PDC} obtenida ronda el 100\% sin necesidad de ajustar el método).\\
 Se configuraron 30000 iteraciones del método como máximo por cuestiones de velocidad.\\\\
 Los comandos MatLab para ejecutarlo son:\\
 opts = statset(`MaxIter',30000,`UseParallel',`Always');\\
 svmClassifier = svmtrain(Xtrain,Ytrain,`options',opts);\\
 Ytest = svmclassify(svmClassifier,Xtest);\\\\
 
-Se probó con otras funciones de kernel (cuadrática, polinomial (grado 3), Gaussiana radial básica y perceptrón multicapa) pero con el set de datos utilizado, la performance de cada una de ellas era igual o peor que la obtenida con un kernel lineal. Dado que el mismo es computacionalmente menos costoso, se utilizó dicho kernel durante todo el trabajo. 
+Se probó con otras funciones de kernel (cuadrática, polinomial (grado 3), Gaussiana radial básica y perceptrón multicapa) pero con el set de datos utilizado, la \gls{PDC} de cada una de ellas era igual o peor que la obtenida con un kernel lineal. Dado que el mismo es computacionalmente menos costoso, se utilizó dicho kernel durante todo el trabajo. 
 
 %------------------------------------------------------------------
 \section{Análisis con Random Forest}
 \label{apendiceConfiguracion:sec:analisisRF}
 
 Se entrenó un \gls{C} \textit{Random Forest} con 300 árboles (se probó con un número mayor de árboles, pero los resultados se mantienen estables a partir de esta cantidad, sin importar cuanto se incremente dicho número).
-El "mtry" que indica la cantidad máxima de variables en cada árbol se configuró en 12. El mismo se calculó como el piso de la raíz cuadrada de la cantidad de neuronas. Se aconseja calcular el "mtry" de esta forma por primera vez, y luego si fuera necesario ir variando el valor hasta obtener la mejor performance. \\\\
+El "mtry" que indica la cantidad máxima de variables en cada árbol se configuró en 12. El mismo se calculó como el piso de la raíz cuadrada de la cantidad de neuronas. Se aconseja calcular el "mtry" de esta forma por primera vez, y luego si fuera necesario ir variando el valor hasta obtener la mejor \gls{PDC}. \\\\
 Los comandos MatLab para ejecutarlo son:\\
 rfClassifier = classRF\_train(Xtrain,Ytrain, 300);\\
 Ytest = classRF\_predict(Xtest,rfClassifier);
