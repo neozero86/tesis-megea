@@ -37,7 +37,7 @@ En la figura~\ref{capResultados:fig:AllMethods} se puede observar el desempeño d
 	\includegraphics[width=0.45\textwidth]%
 	{Imagenes/Bitmap/06/RF_line_run_paired}%
 	\end{SubFloat}
-	\caption{\glslink{PDC}{Performance en la decodificación} en función del tiempo para 500 re-muestreos en las neuronas VTA. a) Análisis de discriminante lineal. b) Análisis con Naive Bayes. c) Análisis con Support Vector Machine. d) Análisis con Random Forest.%
+	\caption{\glslink{PDC}{Performance en la decodificación} en función del tiempo para 500 re-muestreos en las neuronas \glslink{VTA}{VTA}. a) Análisis de discriminante lineal. b) Análisis con Naive Bayes. c) Análisis con Support Vector Machine. d) Análisis con Random Forest.%
 \label{capResultados:fig:AllMethods}}
 \end{figure}
 \vspace{3mm}
@@ -46,7 +46,7 @@ Si la población neuronal mantiene información acerca de un estímulo que ya no es
 En la figura~\ref{capResultados:fig:AllMethods} se ve que la \glslink{PDC}{performance en la decodificación} crece incluso luego de la desaparición del estímulo (5000 ms). Por esta razón, y para comparar el desempeño de los métodos, se hizo un análisis de la \gls{PDC} obtenida entre 5000 ms y 8000 ms. En la figura~\ref{capResultados:fig:linCompAllBar} se puede apreciar la \gls{PDC} promedio y el \glssymbol{BSEM} para cada método.
 
 \figura{Bitmap/07/linear_comparation_all_bar_5000}{width=1\linewidth}{capResultados:fig:linCompAllBar}%
-{Comparación para todas las neuronas VTA en barras a partir del milisegundo $5000$}
+{Comparación para todas las neuronas \glslink{VTA}{VTA} en barras a partir del milisegundo $5000$}
 
 En la Tabla~\ref{capResultados:fig:mediaComp} se muestra el valor \textit{p} con el cual se puede evidenciar que un método $M_i$ funciona mejor que otro $M_j$. Esta \gls{Si} se calculó contando las veces en que la media de la \gls{PDC} de una ventana para uno de los métodos, fue más alta que la del otro, es decir, sin asumir ninguna \gls{DP}:
 
@@ -55,7 +55,7 @@ p=1-\frac{\#\ Perf(M_i) > Perf(M_j)}{N\acute{u}mero\ de\ ventanas}
 \end{equation}
 
 \figura{Bitmap/07/media_mayor_que}{width=1\linewidth}{capResultados:fig:mediaComp}%
-{Significancia en la que la media de un método es mejor que la de otro a partir del milisegundo $5000$ para las neuronas VTA.}
+{Significancia en la que la media de un método es mejor que la de otro a partir del milisegundo $5000$ para las neuronas \glslink{VTA}{VTA}.}
 
 En la tabla~\ref{capResultados:fig:mediaComp} se ve que LDA presenta una \gls{PDC} inferior a los otros métodos, mientras que no hay diferencia significativa entre Bayes Naive, SVM y Random Forest. Un análisis con más datos podría determinar si existen diferencias significativas entre estos tres últimos métodos.
 
@@ -89,27 +89,27 @@ El análisis precedente se repitió sobre una población de neuronas registradas si
 	\includegraphics[width=0.45\textwidth]%
 	{Imagenes/Bitmap/11/PFC_rf_line}%
 	\end{SubFloat}
-	\caption{\glslink{PDC}{performance en la decodificación} en función del tiempo para 500 re-muestreos en las neuronas PFC. a) Análisis de discriminante lineal. b) Análisis con Naive Bayes. c) Análisis con Support Vector Machine. d) Análisis con Random Forest.%
+	\caption{\glslink{PDC}{performance en la decodificación} en función del tiempo para 500 re-muestreos en las neuronas \glslink{PFC}{PFC}. a) Análisis de discriminante lineal. b) Análisis con Naive Bayes. c) Análisis con Support Vector Machine. d) Análisis con Random Forest.%
 \label{capResultados:fig:AllMethodsPFC}}
 \end{figure}
 \vspace{3mm}
 
-Se puede observar un incremento importante de la \gls{PDC} $100 ms$ después de la presentación del estímulo, a diferencia de lo que se midió en VTA, donde la \glslink{PDC}{performance en la decodificación} se incrementa a medida que transcurre el tiempo y, una vez que la rata toma la decisión, la misma se ve reflejada en la \gls{PDC} creciente.\\
+Se puede observar un incremento importante de la \gls{PDC} $100 ms$ después de la presentación del estímulo, a diferencia de lo que se midió en \glslink{VTA}{VTA}, donde la \glslink{PDC}{performance en la decodificación} se incrementa a medida que transcurre el tiempo y, una vez que la rata toma la decisión, la misma se ve reflejada en la \gls{PDC} creciente.\\
 
 \figura{Bitmap/11/PFC_all_bar_6000}{width=1\textwidth}{capResultados:fig:PFCAllBar6000}%
-{Comparación apareada para todas las neuronas PFC en barras a partir del milisegundo $6500$.}
+{Comparación apareada para todas las neuronas \glslink{PFC}{PFC} en barras a partir del milisegundo $6500$.}
 
-En la figura~\ref{capResultados:fig:PFCAllBar6000} se aprecia como la \glslink{PDC}{performance en la decodificación} alcanza un $0.9566 \pm 0.0498$ utilizando \textit{Random Forest}. Si bien es menor que la obtenida en el Área VTA, igualmente alcanza para demostrar que en PFC también hay información acerca del tono. En la siguiente figura~\ref{capResultados:fig:PFCAllBar36003900} se puede observar el incremento que tiene lugar un instante posterior a la presentación del estímulo.
+En la figura~\ref{capResultados:fig:PFCAllBar6000} se aprecia como la \glslink{PDC}{performance en la decodificación} alcanza un $0.9566 \pm 0.0498$ utilizando \textit{Random Forest}. Si bien es menor que la obtenida en el \glslink{VTA}{área VTA}, igualmente alcanza para demostrar que en \glslink{PFC}{PFC} también hay información acerca del tono. En la siguiente figura~\ref{capResultados:fig:PFCAllBar36003900} se puede observar el incremento que tiene lugar un instante posterior a la presentación del estímulo.
 
 \figura{Bitmap/11/PFC_all_bar_3600_3900}{width=1\textwidth}{capResultados:fig:PFCAllBar36003900}%
-{Comparación apareada para todas las neuronas PFC en barras entre los milisegundos $4100$ y $4400$.}
+{Comparación apareada para todas las neuronas \glslink{PFC}{PFC} en barras entre los milisegundos $4100$ y $4400$.}
 
 En la sección~\ref{capResultados:sec:conjRed} se analizará este fenómeno.
 
 \figura{Bitmap/07/media_mayor_que_PFC}{width=1\linewidth}{capResultados:fig:mediaCompPFC}%
-{Significancia en la que la media de un método es mejor que la de otro a partir del milisegundo $6500$ para las neuronas PFC.}
+{Significancia en la que la media de un método es mejor que la de otro a partir del milisegundo $6500$ para las neuronas \glslink{PFC}{PFC}.}
 
-En la tabla ~\ref{capResultados:fig:mediaCompPFC} se observa que, al igual que en VTA, los métodos \textit{Random Forest}, SVM y \textit{Bayes Naive} son mejores que LDA. Los resultados muestran que hay suficiente información en el conjunto de neuronas de PFC, para predecir el estímulo auditivo con una \gls{PDC} de $0.9566 \pm 0.0498$\\
+En la tabla ~\ref{capResultados:fig:mediaCompPFC} se observa que, al igual que en \glslink{VTA}{VTA}, los métodos \textit{Random Forest}, SVM y \textit{Bayes Naive} son mejores que LDA. Los resultados muestran que hay suficiente información en el conjunto de neuronas de \glslink{PFC}{PFC}, para predecir el estímulo auditivo con una \gls{PDC} de $0.9566 \pm 0.0498$\\
 
 
 

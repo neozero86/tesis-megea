@@ -12,7 +12,7 @@
 %-------------------------------------------------------------------
 \label{capSetDeDatos:sec:origen}
 
-El set de datos analizado proviene del registro de la actividad neuronal correspondiente a cuatro ratas macho adulto Long Evans. Las mismas fueron entrenadas para discriminar dos estímulos auditivos de frecuencias diferentes ($1KHz$ y $8KHz$). Luego que alcanzaran una performace mayor a 80\%, probadas en el \gls{PD}, se registró la actividad neuronal del \glssymbol{VTA} y de la \glssymbol{PFC}. Se realizaron 30 sesiones de registro (con los 4 animales), obteniéndose luego de un proceso de \textit{\gls{S}} sorting 153 neuronas VTA y 95 neuronas PFC. \citep{spikeSorting}.\\\\
+El set de datos analizado proviene del registro de la actividad neuronal correspondiente a cuatro ratas macho adulto Long Evans. Las mismas fueron entrenadas para discriminar dos estímulos auditivos de frecuencias diferentes ($1KHz$ y $8KHz$). Luego que alcanzaran una performace mayor a 80\%, probadas en el \gls{PD}, se registró la actividad neuronal del \glssymbol{VTA} y de la \glssymbol{PFC}. Se realizaron 30 sesiones de registro (con los 4 animales), obteniéndose luego de un proceso de \textit{\gls{S}} sorting 153 neuronas \glslink{VTA}{VTA} y 95 neuronas \glslink{PFC}{PFC}. \citep{spikeSorting}.\\\\
 Para el entrenamiento se utilizó el paradigma GO/NOGO. Dicho paradigma consiste en una tarea de discriminación, en la cual los estímulos son presentados en un flujo continuo y los participantes deben tomar una decisión binaria para cada uno de ellos. Se presentan 2 tipos de estímulo distintos, en un caso se espera de los participantes una respuesta motora (caso GO), mientras que en el otro dichos participantes deben contener la respuesta (caso NOGO) \citep{donders1969speed}.\\
 En dos de los animales entrenados, la presentación del estímulo auditivo de mayor frecuencia fue asociada con la respuesta GO (sacar la lengua en una ventana temporal de 2 segundos posteriores al estímulo), mientras que el de menor frecuencia fue asociado con la respuesta NOGO (esconder la lengua por 2 segundos). En los otros dos animales los estímulos se asociaron a las respuestas de manera opuesta, para evitar cualquier sesgo en los resultados. En todos los casos la respuesta GO correcta (sacar la lengua cuando el tono presentado era el correcto) fue recompensada con una gota de agua. La respuesta de la lengua fue filmada con una cámara y se determinó a través del procesamiento de imágenes de la zona bucal de cada animal.\\
 
@@ -26,7 +26,7 @@ Los animales fueron registrados una vez por día (sesión) y en cada sesión se rep
 \item \textbf{NOGOi}: trial NOGO incorrecto, el animal tuvo que esconder la lengua durante 2 segundos y sin embargo la sacó.
 \end{itemize}
 Como cada tipo de trial tiene unívocamente asociado un estímulo auditivo determinado, la relación estímulo-respuesta es unívoca. Por este motivo hablar de trial GOc en el procesamiento de datos es equivalente a hablar de un estímulo auditivo determinado, presentado durante ese trial.\\\\
-Para el análisis se tomó una ventana de $-4000$ $ms$ a $+4001$ $ms$ para las neuronas VTA y de $-4000$ $ms$ a $+3000$ $ms$ para las neuronas PFC, siendo $0 ms$ el inicio del estímulo. La duración del mismo es de $1000 ms$.
+Para el análisis se tomó una ventana de $-4000$ $ms$ a $+4001$ $ms$ para las neuronas \glslink{VTA}{VTA} y de $-4000$ $ms$ a $+3000$ $ms$ para las neuronas \glslink{PFC}{PFC}, siendo $0 ms$ el inicio del estímulo. La duración del mismo es de $1000 ms$.
 \\\\
 La información relativa al formato y distribución de los datos, junto con el análisis de los mismos se detalla en las secciones~\ref{apendiceSetDeDatos:sec:formato} y~\ref{apendiceSetDeDatos:sec:analisis} del Apéndice~\ref{apendiceSetDeDatos}.  
 
@@ -63,16 +63,16 @@ Utilizando solamente una neurona, se explorarán 2 opciones:
 El primer problema observado radica en la poca cantidad de trials GOi y NOGOi, lo que apareja que los \glspl{C} no encuentren un patrón para poder diferenciarlos de los demás.\\
 
 \figura{Bitmap/04/Analisis_Mononeuronal_Matriz_de_Confusion}{width=1\textwidth}{capSetDeDatos:fig:MonoConfMat}%
-{\gls{MCf} de una neurona VTA con las cuatro clases, donde se observa la poca cantidad de trials GOi y NOGOi, en comparación con las otras dos clases.}
+{\gls{MCf} de una neurona \glslink{VTA}{VTA} con las cuatro clases, donde se observa la poca cantidad de trials GOi y NOGOi, en comparación con las otras dos clases.}
 
 Por el motivo explicado y los resultados obtenidos, se decidió de ahora en mas utilizar solamente los trials de GOc y NOGOc para simplificar el trabajo de los \glspl{C}. \\
 
 Con esta simplificación, se intentó separar las clases GOc y NOGOc. \\\\
-Para el set de neuronas VTA:\\ 
+Para el set de neuronas \glslink{VTA}{VTA}:\\ 
 Utilizando la opción A, la \gls{PDC} obtenida fue de $0.5354 \pm 0.0956$.\\
 Utilizando la opción B, la \gls{PDC} fue de $0.5910 \pm 0.1179$. \\\\
 La \gls{PDC} total se calculó como el promedio de la \gls{PDC} individual de clasificación entre las 153 neuronas $\pm$ su desvío estándar. \\\\\\
-Para el set de neuronas PFC:\\
+Para el set de neuronas \glslink{PFC}{PFC}:\\
 Utilizando la opción A, la \gls{PDC} obtenida fue de $0.5072 \pm 0.0485$.\\
 Utilizando la opción B, la \gls{PDC} fue de $0.5433 \pm 0.0755$. \\\\
 La \gls{PDC} total se calculó como el promedio de la \gls{PDC} individual de clasificación entre las 95 neuronas $\pm$ su desvío estándar. \\\\
@@ -81,14 +81,14 @@ A efectos de tener una mejor comprensión del set de datos, se muestra a continua
 Se entrenó entonces, utilizando la opción B, un \gls{C} LDA para cada neurona corriendo el algoritmo 500 veces y se calculó la media.\\
 
 \figura{Bitmap/11/VTA_individual}{width=1\textwidth}{capSetDeDatos:fig:VTAIndividual}%
-{\Gls{PDC} de las neuronas VTA - Corridas individuales. Cada par X-Y corresponde a una neurona con su \glssymbol{PDC} (media para las 500 corridas). - LDA}
+{\Gls{PDC} de las neuronas \glslink{VTA}{VTA} - Corridas individuales. Cada par X-Y corresponde a una neurona con su \glssymbol{PDC} (media para las 500 corridas). - LDA}
 
 \figura{Bitmap/11/PFC_individual}{width=1\textwidth}{capSetDeDatos:fig:PFCIndividual}%
-{\Gls{PDC} de las neuronas PFC - Corridas individuales. Cada par X-Y corresponde a una neurona con su \glssymbol{PDC} (media para las 500 corridas). - LDA}
+{\Gls{PDC} de las neuronas \glslink{PFC}{PFC} - Corridas individuales. Cada par X-Y corresponde a una neurona con su \glssymbol{PDC} (media para las 500 corridas). - LDA}
 
 Se pueden observar neuronas que por si solas clasifican el set de datos.\\
-En el caso de PFC se aprecia como la media de la neurona $80$ supera el $90\%$ y la $84$ el $80\%$. Estas neuronas son casos aislados, que si bien separan correctamente las clases, no representan el comportamiento global.\\
-En VTA, en cambio, no hay ninguna neurona que sobrepase el $90\%$, pero se observan varias que están por arriba del $80\%$.\\\\
+En el caso de \glslink{PFC}{PFC} se aprecia como la media de la neurona $80$ supera el $90\%$ y la $84$ el $80\%$. Estas neuronas son casos aislados, que si bien separan correctamente las clases, no representan el comportamiento global.\\
+En \glslink{VTA}{VTA}, en cambio, no hay ninguna neurona que sobrepase el $90\%$, pero se observan varias que están por arriba del $80\%$.\\\\
 
 Dado que la media de la \glssymbol{PDC} $\pm$ su desvio estándar con LDA se solapan con $0.5$ (que es lo esperado por azar) se puede inferir que el resultado no es significativo. Por ende, descartando los casos aislados, se concluyó que con una sola neurona no hay suficiente información para diferenciar los trials.\\\\
 
@@ -113,11 +113,11 @@ Definir un \gls{F} por cada neurona implica tener una dimensión distinta para ca
 \subsubsection{Preparación}
 \label{capSetDeDatos:sec:features:subsec:poblacional:subsubsec:preparacion}
 
-La construcción se realiza para el área VTA para simplificar la explicación, pero el procedimiento aplica de igual manera al área PFC.
+La construcción se realiza para el \glslink{VTA}{área VTA} para simplificar la explicación, pero el procedimiento aplica de igual manera al \glslink{PFC}{área PFC}.
 
 La matriz $X$ enseñada al \gls{C}, tiene a las neuronas como columnas y los distintos trials de GOc y NOGOc como filas. El vector $Y$ contiene las respuestas esperadas. \\\\
 Para armar dicha matriz, se debe buscar la máxima cantidad de trials GOc y NOGOc que aparecen mínimamente en todas las neuronas. Se cuenta con 31 trials GOc y 23 trials NOGOc disponibles como mínimo en todas las sesiones. Se elije entonces el mínimo valor de los dos (23) para conseguir que la matriz tenga la misma cantidad de trials de uno y de otro y que el análisis resulte balanceado.\\\\
-Se tiene la matriz $X$ con 153 columnas (cantidad total de neuronas VTA que se registraron en las 30 sesiones) y 46 filas que representan 23 trials GOc y 23 trials NOGOc. También se cuenta con el vector $Y$ con 46 posiciones donde en cada posición se colocará un 1 o un 2, dependiendo si el trial (fila de $X$) correspondiente a este número de posición corresponde a la clase 1 (GOc) o a la clase 2 (NOGOc). \\
+Se tiene la matriz $X$ con 153 columnas (cantidad total de neuronas \glslink{VTA}{VTA} que se registraron en las 30 sesiones) y 46 filas que representan 23 trials GOc y 23 trials NOGOc. También se cuenta con el vector $Y$ con 46 posiciones donde en cada posición se colocará un 1 o un 2, dependiendo si el trial (fila de $X$) correspondiente a este número de posición corresponde a la clase 1 (GOc) o a la clase 2 (NOGOc). \\
 
 \figura{Bitmap/04/XeYPoblacional}{width=1\textwidth}{capSetDeDatos:fig:XeYPoblacional}%
 {Matriz $X$ y Vector $Y$ - Análisis poblacional - $x_{i,j}$ representa la suma de todos los \glspl{S} para el \textit{trial} $i$ de la neurona $j$ }

@@ -3,7 +3,7 @@
 \label{capResultados:sec:conjRed}
 
 Como se mencionó en la sección anterior, la necesidad de reducir el volumen y consumo de las interfaces portátiles, obligan a reducir el número de \gls{E} a ser registrados y procesados. Por otro lado, la reducción del número de \gls{E} acarrea otras ventajas asociadas a los problemas de rechazo.
-\\En este capítulo se estudia la robustez de cada método de decodificación en función del número de neuronas intervinientes en el análisis. Se utilizó nuevamente la técnica de \gls{Bs} (500 re-muestreos con reemplazo) y en cada re-muestreo se tomó un porcentaje fijo (100\%, 75\%, 50\%, 25\%, 10\% y 5\%) y aleatorio (\gls{DU}) de neuronas del set VTA. La cantidad de neuronas tomadas es 153, 115, 77, 39, 16 y 8 respectivamente. La figura siguiente muestra el resultado de la \glssymbol{PDC} para los cuatro métodos y diferentes porcentajes de neuronas utilizadas en el análisis.
+\\En este capítulo se estudia la robustez de cada método de decodificación en función del número de neuronas intervinientes en el análisis. Se utilizó nuevamente la técnica de \gls{Bs} (500 re-muestreos con reemplazo) y en cada re-muestreo se tomó un porcentaje fijo (100\%, 75\%, 50\%, 25\%, 10\% y 5\%) y aleatorio (\gls{DU}) de neuronas del set \glslink{VTA}{VTA}. La cantidad de neuronas tomadas es 153, 115, 77, 39, 16 y 8 respectivamente. La figura siguiente muestra el resultado de la \glssymbol{PDC} para los cuatro métodos y diferentes porcentajes de neuronas utilizadas en el análisis.
  
 \begin{figure}[H]
 \centering
@@ -55,24 +55,24 @@ La figura siguiente muestra la variación de la \gls{PDC} promedio, para los cuat
 Se observa que independientemente del método, cuando la cantidad de neuronas es mayor o igual a $77$ ($50\%$) la \gls{PDC} se mantiene casi constante, independientemente de cuantas neuronas mas se agreguen. Por el contrario, debajo del $50\%$ la \gls{PDC} decrece linealmente a medida que el número de neuronas disminuye.\\
 
 Como se ha visto en los análisis de neurona única (sección~\ref{capSetDeDatos:sec:features:subsec:monoNeuronal}), en el conjunto de datos existen neuronas cuya \glssymbol{PDC} es alta. Esto puede traer aparejado que el decrecimiento de la \gls{PDC} en alguno de los conjuntos reducidos estudiados en este capítulo, se deba a la eliminación de dichas neuronas. Por este motivo se decidió realizar un nuevo análisis excluyendo aquellas neuronas cuya \gls{PDC} individual supere el 70\%. 
-En VTA, se eliminaron $27$ neuronas, de acuerdo con el gráfico~\ref{capSetDeDatos:fig:VTAIndividual}. Las neuronas eliminadas son las siguientes: [2 3 6 29 45 72 73 87 102 105 109 110 113 114 115 116 118 122 123 131 132 133 137 138 141 143 145].\\\\ La figura~\ref{capResultados:fig:VTAAllLineForbidden} muestra la performace de clasificación con este conjunto reducido de datos.
+En \glslink{VTA}{VTA}, se eliminaron $27$ neuronas, de acuerdo con el gráfico~\ref{capSetDeDatos:fig:VTAIndividual}. Las neuronas eliminadas son las siguientes: [2 3 6 29 45 72 73 87 102 105 109 110 113 114 115 116 118 122 123 131 132 133 137 138 141 143 145].\\\\ La figura~\ref{capResultados:fig:VTAAllLineForbidden} muestra la performace de clasificación con este conjunto reducido de datos.
 
 \figura{Bitmap/11/VTA_all_line_forbidden}{width=1\textwidth}{capResultados:fig:VTAAllLineForbidden}%
-{Comparación para las neuronas VTA que su \gls{PDC} individual no supera en media al $70\%$.}
+{Comparación para las neuronas \glslink{VTA}{VTA} que su \gls{PDC} individual no supera en media al $70\%$.}
 
 Comparando la figura~\ref{capResultados:fig:VTAAllLineForbidden} con la figura~\ref{capResultados:fig:AllMethods} se puede observar que la forma de la curva para los cuatro métodos continúa siendo exactamente la misma.\\
 
 Para poder observar si la \gls{PDC} disminuyó se realizó el siguiente gráfico de barras.
 
 \figura{Bitmap/11/VTA_all_bar_forbidden_5000}{width=1\textwidth}{capResultados:fig:VTAAllBarForbidden5000}%
-{Comparación para todas las neuronas VTA cuya \gls{PDC} individual no supera en media al $70\%$. Gráfico de barras a partir del milisegundo $5000$.}
+{Comparación para todas las neuronas \glslink{VTA}{VTA} cuya \gls{PDC} individual no supera en media al $70\%$. Gráfico de barras a partir del milisegundo $5000$.}
 
 Al compararlo con el gráfico~\ref{capResultados:fig:linCompAllBar} se puede apreciar una disminución en la \gls{PDC} del $1.66\%$ con \textit{Random Forest}. A su vez, eliminando 38 neuronas al azar (corrida con el 75\% de neuronas), la \gls{PDC} con Random Forest disminuyó apenas en 0.32\%. Por consiguiente se demuestra que esas 27 neuronas eliminadas son mas importantes que la media de las demás para la clasificación. Asimismo se logra probar que la información está almacenada en el conjunto de las neuronas y no depende de ninguna de ellas individualmente.\\\\
 
-Para el área PFC se realizó el mismo procedimiento, corriendo nuevamente los métodos y descartando las neuronas cuya \gls{PDC} individual sea mayor en media al $70\%$ de acuerdo con el gráfico~\ref{capSetDeDatos:fig:PFCIndividual}. Las neuronas eliminadas son cuatro: (77 80 82 84).
+Para el \glslink{PFC}{área PFC} se realizó el mismo procedimiento, corriendo nuevamente los métodos y descartando las neuronas cuya \gls{PDC} individual sea mayor en media al $70\%$ de acuerdo con el gráfico~\ref{capSetDeDatos:fig:PFCIndividual}. Las neuronas eliminadas son cuatro: (77 80 82 84).
 
 \figura{Bitmap/11/PFC_all_line_forbidden}{width=1\textwidth}{capResultados:fig:PFCAllLineForbidden}%
-{Comparación para las neuronas PFC cuya \gls{PDC} individual no supera en media al $70\%$.}
+{Comparación para las neuronas \glslink{PFC}{PFC} cuya \gls{PDC} individual no supera en media al $70\%$.}
 
 Si se compara la figura~\ref{capResultados:fig:PFCAllLineForbidden} con la figura~\ref{capResultados:fig:AllMethodsPFC}, se observa como el pico posterior al estímulo desapareció y la \gls{PDC} se incrementa lentamente luego del estímulo.\\ 
 
@@ -81,12 +81,12 @@ De esta manera se concluye que el pico posterior al inicio del estímulo, era un 
 En el gráfico de barras~\ref{capResultados:fig:PFCAllBarForbidden6000} se aprecia que hubo una disminución de aproximadamente 5\% en todos los métodos con respecto al gráfico~\ref{capResultados:fig:PFCAllBar6000}.
 
 \figura{Bitmap/11/PFC_all_bar_forbidden_6000}{width=1\textwidth}{capResultados:fig:PFCAllBarForbidden6000}%
-{Comparación para todas las neuronas PFC cuya \gls{PDC} individual no supera en media al $70\%$. Gráfico de barras a partir del milisegundo $6500$.}
+{Comparación para todas las neuronas \glslink{PFC}{PFC} cuya \gls{PDC} individual no supera en media al $70\%$. Gráfico de barras a partir del milisegundo $6500$.}
 
 Dado que el resultado varió en un 5\% aproximadamente, se realizó nuevamente la comparación de las medias ventana a ventana.
 
 \figura{Bitmap/07/media_mayor_que_PFC_forbidden}{width=1\linewidth}{capResultados:fig:mediaCompPFCForbidden}%
-{Significancia en la que la media de un método es mejor que la de otro a partir del milisegundo $6500$ para las neuronas PFC, sin las cuatro neuronas que superan el 70\% de \gls{PDC} en su clasificación individual.}
+{Significancia en la que la media de un método es mejor que la de otro a partir del milisegundo $6500$ para las neuronas \glslink{PFC}{PFC}, sin las cuatro neuronas que superan el 70\% de \gls{PDC} en su clasificación individual.}
 
 En la tabla~\ref{capResultados:fig:mediaCompPFCForbidden} se observa que las conclusiones expuestas en la sección anterior no cambian. La única diferencia con la tabla~\ref{capResultados:fig:mediaCompPFC} radica en que no se aprecian diferencias entre Random Forest y SVM.
 
@@ -94,4 +94,4 @@ En la tabla~\ref{capResultados:fig:mediaCompPFCForbidden} se observa que las con
 \label{capResultados:sec:conjRed:subsec:conclusion}
 Los \glspl{MDC} analizados requieren una cantidad mínima de neuronas para clasificar con \gls{PDC} significativamente mayor al 50\%.\\
 Es importante notar que con sólo 8 neuronas se puede predecir el estímulo presentado (con \textit{Random Forest}) con una \gls{PDC} de $0.798\pm0.089$. Este resultado puede ser aceptable dependiendo del problema que se quiera resolver, pero resulta importante cuando se desea minimizar la cantidad de \gls{E} implantados.\\
-Asimismo es para destacar la distribución poblacional de la información, dado que la \gls{PDC} de la misma sobrepasa el 90\%, aunque se tomen neuronas cuya \gls{PDC} individual no supere el 70\%.
+Asimismo, resulta interesante destacar la distribución poblacional de la información, dado que la \gls{PDC} de la misma sobrepasa el 90\%, aunque se tomen neuronas cuya \gls{PDC} individual no supere el 70\%.
