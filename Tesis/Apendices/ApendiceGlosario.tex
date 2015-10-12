@@ -324,8 +324,15 @@ f(x_1\ldots x_k;n,p_1\ldots p_k) & {} = \begin{cases} { \displaystyle {n! \over 
     name={Performance de clasificación},
     text={performance},
     symbol={performance de clasificación},
-    description={Se encuentra determinada por la \textit{accuracy} o \glssymbol{PCSN}.\\
-	Dado que en este documento, los \glspl{C} están trabajando sobre set de datos de \gls{PAN}, se utilizan performance en la decodificación o performance de decodificación como sinónimos de performance de clasificación}
+    description={Se encuentra determinada por la precisión de clasificación (\textit{accuracy}). La misma se calcula como:\\ (aciertos totales)/(total de casos) $ = (T1+T2)/(T1+F1+T2+F2)$ siendo T1 y T2 las veces que el clasificador predijo correctamente las clases 1 y 2 respectivamente y F1 y F2 las veces que el clasificador predijo la clase en forma incorrecta.\\
+Ejemplos: 
+\begin{itemize}
+\item Si para una muestra de la clase 1, el \gls{C} infiere que pertenece a la clase 2, es un F2 (falso 2).
+\item Si para una muestra de la clase 2, el \gls{C} infiere que pertenece a la clase 1, es un F1 (falso 1).
+\item Si para una muestra de la clase 1, el \gls{C} infiere que pertenece a la clase 1, es un T1 (acierto 1).
+\item Si para una muestra de la clase 2, el \gls{C} infiere que pertenece a la clase 2, es un T2 (acierto 2).
+\end{itemize}
+	Dado que en este documento, los \glspl{C} están trabajando sobre set de datos de \gls{PAN}, se utilizan ``performance en la decodificación'' o ``performance de decodificación'' como sinónimos de performance de clasificación}
 }
 
 \newglossaryentry{PCSN}
